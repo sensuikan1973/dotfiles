@@ -18,3 +18,6 @@ source $ZSH_SETTINGS_PATH/.opt.zsh
 
 # eval
 source $ZSH_SETTINGS_PATH/.eval.zsh
+
+# plugin
+source $PWD/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
