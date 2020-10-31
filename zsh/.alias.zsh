@@ -1,5 +1,6 @@
 # terminal
-alias l='gls -CF --color=auto'
+alias ls='gls -CF --color=auto'
+alias l='ls'
 alias la='ls -al'
 alias ll='ls -l -F'
 alias df='df -h'
