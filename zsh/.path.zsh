@@ -12,6 +12,7 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
 # Google Cloud SDK
+# TODO: HOME におくように変える. See: https://cloud.google.com/sdk/docs/install
 export PATH=$PATH:~/Downloads/google-cloud-sdk/bin
 
 # nodebrew
