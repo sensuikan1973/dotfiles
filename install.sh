@@ -1,0 +1,11 @@
+# == brew ==
+# See: https://brew.sh/index_ja.html
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+brew install coreutils # gls を使いたい
+
+# == plugin ==
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/dotfiles/plugin/zsh-syntax-highlighting
+
+# == extension ==
+git clone https://github.com/seebi/dircolors-solarized.git $HOME/dotfiles/extension/dircolors-solarized
