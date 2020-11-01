@@ -1,0 +1,18 @@
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  create_release_merge_PR:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: create RELEASE MERGE PR for job_d
+        uses: peter-evans/create-pull-request@v3
+        with:
+          base: job_d
+          # delete-branch: true
+          title: '[RELEASE MERGE] update job_d branch'
