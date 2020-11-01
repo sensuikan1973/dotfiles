@@ -12,5 +12,6 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info } # プロンプトを表示する直前に毎回実行する
 
 DIR='%F{081}%~%f'
-PROMPT='${DIR} ${vcs_info_msg_0_}
+PROMPT='
+${DIR} ${vcs_info_msg_0_}
 $ '
