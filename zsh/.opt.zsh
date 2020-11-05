@@ -39,3 +39,6 @@ setopt hist_reduce_blanks
 
 # Ctrl+D では終了させない（exit や logout を使う）
 setopt ignore_eof
+
+# コマンドライン実行時にもコメントを使いたい
+setopt interactivecomments
