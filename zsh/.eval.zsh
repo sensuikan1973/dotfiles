@@ -3,3 +3,6 @@ eval "$(gdircolors $HOME/dotfiles/extension/dircolors-solarized/dircolors.ansi-u
 
 # pyenv
 eval "$(pyenv init -)"
+
+# ruby
+eval "$(rbenv init -)"
