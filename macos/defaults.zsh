@@ -11,4 +11,12 @@ defaults write com.apple.finder ShowStatusBar -bool true # ステータスバー
 defaults write com.apple.finder AppleShowAllFiles YES # 隠しファイルを表示する
 defaults write com.apple.finder ShowPathbar -bool true # パスバーを表示
 defaults write com.apple.finder ShowTabView -bool true # タブバーを表示
+defaults write com.apple.finder DisableAllAnimations -boolean true # アニメーション無効
+defaults write com.apple.finder AnimateInfoPanes -boolean false # アニメーション無効
 chflags nohidden ~/Library # ライブラリディレクトリを表示
+
+# ネットワークドライブで .DS_Store ファイルを作成しない
+defaults write com.apple.desktopservices DSDontWriteNetworkStores true
+
+# ダイアログの表示速度
+defaults write -g NSWindowResizeTime 0.001
