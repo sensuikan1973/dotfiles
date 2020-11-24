@@ -8,3 +8,5 @@ do
 done
 
 source $HOME/dotfiles/install.sh
+
+source $HOME/dotfiles/macos/defaults.zsh
