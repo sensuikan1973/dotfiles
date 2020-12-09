@@ -9,7 +9,7 @@ alias ..='cd ..; gls -CF --color=auto'
 # Git
 alias g='git'
 alias st='git status'
-alias b='git branch -a'
+alias b='git branch'
 alias amend='git commit --amend'
 alias fp='git fetch -p'
 
