@@ -5,7 +5,6 @@ alias la='ls -al'
 alias ll='ls -l -F'
 alias df='df -h'
 alias ..='cd ..; gls -CF --color=auto'
-alias kindle='open ~/Library/Application\ Support/Kindle'
 
 # Git
 alias g='git'
