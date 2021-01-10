@@ -20,3 +20,6 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores true
 
 # ダイアログの表示速度
 defaults write -g NSWindowResizeTime 0.001
+
+# 「最新の使用状況に基づいて操作スペースを自動的に並べ替える」をオフにする
+defaults write com.apple.dock mru-spaces -bool false
