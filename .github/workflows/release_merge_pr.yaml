@@ -22,12 +22,10 @@ jobs:
       # See: https://cli.github.com/manual/gh_auth_login
       # See: https://cli.github.com/manual/gh_pr_create
       - name: create RELEASE MERGE PR for job_d
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |-
           git checkout -b release_merge_for_job_d
           git push --force origin release_merge_for_job_d
-          echo $GITHUB_TOKEN > token.txt
+          echo ${{ secrets.GITHUB_TOKEN }} > token.txt
           gh auth login --with-token < token.txt
           gh pr create \
           --title "RELEASE MERGE for job_d" \
