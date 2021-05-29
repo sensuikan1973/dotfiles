@@ -7,8 +7,12 @@ brew install rbenv ruby-build # ruby
 
 # == plugin ==
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/dotfiles/plugin/zsh-syntax-highlighting
+cd $HOME/dotfiles/plugin/zsh-syntax-highlighting
 git pull --prune
+cd $HOME/dotfiles
 
 # == extension ==
 git clone https://github.com/seebi/dircolors-solarized.git $HOME/dotfiles/extension/dircolors-solarized
+cd $HOME/dotfiles/extension/dircolors-solarized
 git pull --prune
+cd $HOME/dotfiles
