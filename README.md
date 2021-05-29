@@ -1,5 +1,11 @@
 # dotfiles
 
+## usage
+
+```sh
+./setup.sh
+```
+
 ## references
 
 ### migration: bash -> [zsh](http://www.strcat.de/zsh/)
