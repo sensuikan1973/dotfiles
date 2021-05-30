@@ -3,8 +3,8 @@
 
 ## usage
 
-```sh
-./setup.sh
+```zsh
+./setup.zsh
 ```
 
 ## references

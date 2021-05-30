@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 DOT_FILES=( .zshrc)
 
@@ -7,6 +7,6 @@ do
   ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
-source $HOME/dotfiles/install.sh
+source $HOME/dotfiles/install.zsh
 
 source $HOME/dotfiles/macos/main.zsh

@@ -1,3 +1,4 @@
+#!/bin/zsh
 source $HOME/dotfiles/macos/chflags.zsh
 source $HOME/dotfiles/macos/brew.zsh
 

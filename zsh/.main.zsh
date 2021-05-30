@@ -1,3 +1,4 @@
+#!/bin/zsh
 ZSH_SETTINGS_PATH=$HOME/dotfiles/zsh
 
 # completion
