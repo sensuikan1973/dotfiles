@@ -19,13 +19,14 @@ jobs:
       - name: checkout repository to HOME
         run: git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
 
-      # - name: debug
-      #   uses: mxschmitt/action-tmate@v3
+      - name: debug
+        uses: mxschmitt/action-tmate@v3
 
       - name: run setup script
         run: |-
           cd ~/dotfiles
           ls
           pwd
+          cat ~/dotfiles/setup.zsh
           ~/dotfiles/setup.zsh
         # working-directory: ~/dotfiles
