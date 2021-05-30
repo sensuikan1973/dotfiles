@@ -20,8 +20,8 @@ jobs:
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
-          git fetch origin '+refs/pull/*:refs/remotes/pr/*'
-          git checkout $GITHUB_REF
+          git fetch origin '+refs/pull/*:refs/remotes/pr/*' # See: https://qiita.com/sonots/items/16df445132e704198e3e
+          git checkout -b target_ref $GITHUB_REF
 
       # - name: debug
       #   uses: mxschmitt/action-tmate@v3
