@@ -34,5 +34,5 @@ jobs:
           exec $SHELL -l
           la
           rbenv versions
-          cd ~/dotfiles && g status
           brew cleanup && brew upgrade
+          cd ~/dotfiles && g status
