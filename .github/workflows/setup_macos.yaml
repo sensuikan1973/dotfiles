@@ -19,6 +19,7 @@ jobs:
       - name: checkout repository to HOME
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          cd ~/dotfiles
           git checkout $GITHUB_REF
 
       # - name: debug
