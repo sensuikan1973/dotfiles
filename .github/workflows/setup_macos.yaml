@@ -27,5 +27,5 @@ jobs:
           cd ~/dotfiles
           ls
           pwd
-          ./setup.zsh
+          ~/dotfiles/setup.zsh
         # working-directory: ~/dotfiles
