@@ -20,7 +20,7 @@ jobs:
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
-          git checkout $GITHUB_REF
+          git checkout $GITHUB_SHA
 
       # - name: debug
       #   uses: mxschmitt/action-tmate@v3
