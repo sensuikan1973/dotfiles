@@ -14,5 +14,5 @@ jobs:
         with:
           path: $HOME
       - run: ./setup.zsh
-        shell: /bin/zsh
+        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
         working-directory: $HOME/dotfiles
