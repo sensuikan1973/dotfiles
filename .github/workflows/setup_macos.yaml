@@ -31,6 +31,7 @@ jobs:
 
       - name: rough command test
         run: |-
+          exec $SHELL -l
           la
           ruby -v
           cd ~/dotfiles && g status
