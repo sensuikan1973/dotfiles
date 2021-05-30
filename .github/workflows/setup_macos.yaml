@@ -20,8 +20,7 @@ jobs:
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
-          git fetch
-          echo $GITHUB_SHA
+          git fetch origin '+refs/pull/*:refs/remotes/pr/*'
           git checkout $GITHUB_REF
 
       # - name: debug
