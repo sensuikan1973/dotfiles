@@ -33,6 +33,6 @@ jobs:
         run: |-
           exec $SHELL -l
           la
-          ruby -v
+          rbenv versions
           cd ~/dotfiles && g status
           brew cleanup && brew upgrade
