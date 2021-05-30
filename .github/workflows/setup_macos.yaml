@@ -9,10 +9,12 @@ jobs:
   setup:
     runs-on: macos-10.15
     timeout-minutes: 10
+    defaults:
+      run:
+        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
     steps:
       - uses: actions/checkout@v2
         with:
           path: $HOME
       - run: ./setup.zsh
-        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
         working-directory: $HOME/dotfiles
