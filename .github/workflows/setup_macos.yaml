@@ -14,4 +14,5 @@ jobs:
         with:
           path: $HOME
       - run: ./setup.zsh
+        shell: /bin/zsh
         working-directory: $HOME/dotfiles
