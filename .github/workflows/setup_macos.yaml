@@ -13,12 +13,12 @@ jobs:
       run:
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
     steps:
-      - uses: actions/checkout@v2
+      - name: display shell info
+        run: echo $ZSH_NAME $ZSH_VERSION
+
+      - run: git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git
         with:
           path: '~' # HOME
 
-      - name: debug
-        uses: mxschmitt/action-tmate@v3
-
-      - run: ./setup.zsh
+      - run: ls && ./setup.zsh
         working-directory: ~/dotfiles
