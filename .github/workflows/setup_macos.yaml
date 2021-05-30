@@ -35,3 +35,4 @@ jobs:
           la
           ruby -v
           cd ~/dotfiles && g status
+          brew cleanup && brew upgrade
