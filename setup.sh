@@ -9,4 +9,4 @@ done
 
 source $HOME/dotfiles/install.sh
 
-source $HOME/dotfiles/macos/defaults.zsh
+source $HOME/dotfiles/macos/main.zsh

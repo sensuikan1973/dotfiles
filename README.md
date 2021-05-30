@@ -1,4 +1,5 @@
 # dotfiles
+[![os](https://img.shields.io/badge/macOS-000.svg?logo=Apple)](https://www.apple.com/jp/macos)  
 
 ## usage
 

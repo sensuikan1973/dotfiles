@@ -1,18 +1,17 @@
-# == brew ==
-# See: https://brew.sh/index_ja.html
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+echo "install useful extensions"
 
-brew install coreutils # gls を使いたい
-brew install rbenv ruby-build # ruby
+echo "install/update https://github.com/zsh-users/zsh-syntax-highlighting.git"
+zsh_syntax_highlighting_repo_dir=$HOME/dotfiles/plugin/zsh-syntax-highlighting
+if [ ! -d "$zsh_syntax_highlighting_repo_dir" ] ; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $zsh_syntax_highlighting_repo_dir
+else
+  cd $zsh_syntax_highlighting_repo_dir && git pull --prune
+fi
 
-# == plugin ==
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/dotfiles/plugin/zsh-syntax-highlighting
-cd $HOME/dotfiles/plugin/zsh-syntax-highlighting
-git pull --prune
-cd $HOME/dotfiles
-
-# == extension ==
-git clone https://github.com/seebi/dircolors-solarized.git $HOME/dotfiles/extension/dircolors-solarized
-cd $HOME/dotfiles/extension/dircolors-solarized
-git pull --prune
-cd $HOME/dotfiles
+echo "install/update https://github.com/seebi/dircolors-solarized.git"
+dircolors_solarized_repo_dir=$HOME/dotfiles/extension/dircolors-solarized
+if [ ! -d "$dircolors_solarized_repo_dir" ] ; then
+  git clone https://github.com/seebi/dircolors-solarized.git $dircolors_solarized_repo_dir
+else
+  cd $dircolors_solarized_repo_dir && git pull --prune
+fi
