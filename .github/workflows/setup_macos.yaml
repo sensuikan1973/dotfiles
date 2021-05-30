@@ -1,0 +1,38 @@
+name: setup macOS
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  setup:
+    runs-on: macos-10.15
+    timeout-minutes: 10
+    defaults:
+      run:
+        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
+    steps:
+      - name: display shell info
+        run: echo $ZSH_NAME $ZSH_VERSION
+
+      - name: checkout repository to HOME
+        run: |-
+          git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          cd ~/dotfiles
+          git fetch origin '+refs/pull/*:refs/remotes/pr/*' # See: https://qiita.com/sonots/items/16df445132e704198e3e
+          git checkout $GITHUB_SHA
+
+      # - name: debug
+      #   uses: mxschmitt/action-tmate@v3
+
+      - name: run setup script
+        run: cd ~/dotfiles && ./setup.zsh
+
+      - name: rough command test
+        run: |-
+          exec $SHELL -l
+          la
+          rbenv versions
+          brew cleanup && brew upgrade
+          cd ~/dotfiles && g status
