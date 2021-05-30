@@ -1,4 +1,4 @@
-name: Setup macOS
+name: setup macOS
 
 on:
   pull_request:
