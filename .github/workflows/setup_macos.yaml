@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          path: ${{ HOME }}
+          path: ${{ env.HOME }}
 
       - name: debug
         uses: mxschmitt/action-tmate@v3
