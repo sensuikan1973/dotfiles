@@ -18,7 +18,8 @@ jobs:
 
       - name: checkout repository to HOME
         run: |-
-          git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          git fetch
           cd ~/dotfiles
           git checkout $GITHUB_SHA
 
