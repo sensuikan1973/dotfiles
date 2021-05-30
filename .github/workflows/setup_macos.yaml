@@ -11,4 +11,7 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v2
+        with:
+          path: $HOME
       - run: ./setup.zsh
+        working-directory: $HOME/dotfiles
