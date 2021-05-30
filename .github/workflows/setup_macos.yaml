@@ -14,11 +14,8 @@ jobs:
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
     steps:
       - uses: actions/checkout@v2
-        with:
-          path: ${{ env.HOME }}
 
       - name: debug
         uses: mxschmitt/action-tmate@v3
 
       - run: ./setup.zsh
-        working-directory: ${{ env.HOME }}/dotfiles
