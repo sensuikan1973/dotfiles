@@ -28,3 +28,9 @@ jobs:
 
       - name: run setup script
         run: cd ~/dotfiles && ./setup.zsh
+
+      - name: rough command test
+        run: |-
+          la
+          ruby -v
+          cd ~/dotfiles && g status
