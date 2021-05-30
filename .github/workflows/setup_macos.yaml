@@ -26,5 +26,4 @@ jobs:
         run: |-
           cd ~/dotfiles
           ls
-          zsh setup.zsh
-          ./setup.zsh
+          setup.zsh
