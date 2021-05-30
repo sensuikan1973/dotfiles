@@ -5,6 +5,7 @@
 
 ```zsh
 ./setup.zsh
+exec $SHELL -l
 ```
 
 ## references
