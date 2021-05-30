@@ -21,7 +21,8 @@ jobs:
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
           git fetch
-          git checkout $GITHUB_SHA
+          echo $GITHUB_SHA
+          git checkout $GITHUB_REF
 
       # - name: debug
       #   uses: mxschmitt/action-tmate@v3
