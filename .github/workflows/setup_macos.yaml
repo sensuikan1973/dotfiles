@@ -23,4 +23,8 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
 
       - name: run setup script
-        run: cd ~/dotfiles && ls && ./setup.zsh
+        run: |-
+          cd ~/dotfiles
+          ls
+          zsh setup.zsh
+          ./setup.zsh
