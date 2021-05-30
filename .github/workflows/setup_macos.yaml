@@ -26,4 +26,5 @@ jobs:
         run: |-
           cd ~/dotfiles
           ls
+          pwd
           ./setup.zsh
