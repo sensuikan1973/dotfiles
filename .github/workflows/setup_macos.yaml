@@ -16,5 +16,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           path: $HOME
+
+      - name: debug
+        uses: mxschmitt/action-tmate@v3
+
       - run: ./setup.zsh
         working-directory: $HOME/dotfiles
