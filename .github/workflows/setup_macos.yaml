@@ -17,16 +17,12 @@ jobs:
         run: echo $ZSH_NAME $ZSH_VERSION
 
       - name: checkout repository to HOME
-        run: git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+        run: |-
+          git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          git checkout $GITHUB_REF
 
       # - name: debug
       #   uses: mxschmitt/action-tmate@v3
 
       - name: run setup script
-        run: |-
-          cd ~/dotfiles
-          ls
-          pwd
-          cat ~/dotfiles/setup.zsh
-          ~/dotfiles/setup.zsh
-        # working-directory: ~/dotfiles
+        run: cd ~/dotfiles && ./setup.zsh
