@@ -16,7 +16,7 @@ jobs:
       - name: display shell info
         run: echo $ZSH_NAME $ZSH_VERSION
 
-      - run: git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~
+      - run: git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
 
       - run: ls && ./setup.zsh
         working-directory: ~/dotfiles
