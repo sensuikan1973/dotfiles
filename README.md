@@ -1,5 +1,6 @@
 # dotfiles
 [![setup macOS](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_macos.yaml/badge.svg)](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_macos.yaml)
+[![setup linux](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_linux.yaml/badge.svg)](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_linux.yaml)
 
 ## usage
 
