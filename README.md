@@ -6,7 +6,7 @@
 
 ```zsh
 ./setup.zsh
-exec zsh -l
+exec zsh --login
 ```
 
 ## references
