@@ -9,14 +9,16 @@ jobs:
   setup:
     runs-on: ubuntu-20.04
     timeout-minutes: 10
-    defaults:
-      run:
-        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
     steps:
+      - name: setup zsh
+        run: sudo apt-get install zsh
+
       - name: display shell info
+        shell: zsh
         run: echo $ZSH_NAME $ZSH_VERSION
 
       - name: checkout repository to HOME
+        shell: zsh
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
@@ -27,9 +29,11 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
 
       - name: run setup script
+        shell: zsh
         run: cd ~/dotfiles && ./setup.zsh
 
       - name: rough command test
+        shell: zsh
         run: |-
           exec $SHELL -l
           uname
