@@ -14,11 +14,11 @@ jobs:
         run: sudo apt-get install zsh
 
       - name: display shell info
-        shell: zsh
+        shell: zsh {0}
         run: echo $ZSH_NAME $ZSH_VERSION
 
       - name: checkout repository to HOME
-        shell: zsh
+        shell: zsh {0}
         run: |-
           git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
@@ -29,11 +29,11 @@ jobs:
       #   uses: mxschmitt/action-tmate@v3
 
       - name: run setup script
-        shell: zsh
+        shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
 
       - name: rough command test
-        shell: zsh
+        shell: zsh {0}
         run: |-
           exec $SHELL -l
           uname
