@@ -14,4 +14,4 @@ alias amend='git commit --amend'
 alias fp='git fetch -p'
 
 # シェルの再起動
-alias relogin='exec $SHELL -l'
+alias relogin='exec zsh --login'
