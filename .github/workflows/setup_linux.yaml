@@ -1,4 +1,4 @@
-name: setup macOS
+name: setup linux
 
 on:
   pull_request:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   setup:
-    runs-on: macos-10.15
+    runs-on: ubuntu-20.04
     timeout-minutes: 10
     defaults:
       run:
@@ -34,6 +34,4 @@ jobs:
           exec $SHELL -l
           uname
           la
-          rbenv versions
-          brew cleanup && brew upgrade
           cd ~/dotfiles && g status
