@@ -18,7 +18,7 @@ jobs:
 
       - name: checkout repository to HOME
         run: |-
-          git clone --depth 1 https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
+          git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' # See: https://qiita.com/sonots/items/16df445132e704198e3e
           git checkout $GITHUB_SHA
