@@ -6,7 +6,7 @@ DOT_FILES=( .zshrc)
 
 for file in ${DOT_FILES[@]}
 do
-  ln --symbolic --force $HOME/dotfiles/$file $HOME/$file
+  ln -fs $HOME/dotfiles/$file $HOME/$file
 done
 
 source $HOME/dotfiles/install.zsh
