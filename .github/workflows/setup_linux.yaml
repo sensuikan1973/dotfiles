@@ -35,7 +35,6 @@ jobs:
       - name: rough command test
         shell: zsh {0}
         run: |-
-          exec $SHELL -l
           uname
           la
           cd ~/dotfiles && g status
