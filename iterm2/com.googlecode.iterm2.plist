@@ -936,7 +936,7 @@ Make Text Bigger</string>
 	<key>TabsHaveCloseButton</key>
 	<true/>
 	<key>UseLionStyleFullscreen</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WordCharacters</key>
