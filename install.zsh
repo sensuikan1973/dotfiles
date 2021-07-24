@@ -1,4 +1,6 @@
 #!/bin/zsh
+set -eu
+
 echo "install useful extensions"
 
 echo "install/update https://github.com/zsh-users/zsh-syntax-highlighting.git"

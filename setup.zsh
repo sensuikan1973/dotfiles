@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -eu
 
 echo "start setup script"
 
