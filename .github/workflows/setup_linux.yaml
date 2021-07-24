@@ -28,7 +28,12 @@ jobs:
       # - name: debug
       #   uses: mxschmitt/action-tmate@v3
 
-      - name: run setup script
+      # setup twice
+      # NOTE: I want to ensure idempotent
+      - name: 1st, run setup script
+        shell: zsh {0}
+        run: cd ~/dotfiles && ./setup.zsh
+      - name: 2nd, run setup script
         shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
 
