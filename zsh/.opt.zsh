@@ -1,9 +1,6 @@
 # PROMPT 変数内の変数展開を許す
 setopt prompt_subst
 
-# ディレクトリ名を入力するだけで移動 (cd 省略)
-setopt auto_cd
-
 # コマンドラインのスペルチェック
 setopt correct
 # setopt correct_all
