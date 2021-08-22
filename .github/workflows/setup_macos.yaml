@@ -48,7 +48,10 @@ jobs:
           rbenv versions >> $GITHUB_WORKSPACE/command_test_result.txt
           crontab -l >> $GITHUB_WORKSPACE/command_test_result.txt
 
+          cat $GITHUB_WORKSPACE/command_test_result.txt
+
           relogin
+          cat $GITHUB_WORKSPACE/command_test_result.txt
 
       - name: debug print result
         run: cat $GITHUB_WORKSPACE/command_test_result.txt
