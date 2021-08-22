@@ -37,7 +37,7 @@ jobs:
         run: |-
           # See: https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions
           echo "::group::rough command logs"
-          exec zsh --login
+          # exec zsh --login
           echo "$(uname)"
           la
           echo "aaaa"
