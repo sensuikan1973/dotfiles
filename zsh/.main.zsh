@@ -24,4 +24,4 @@ source $ZSH_SETTINGS_PATH/.eval.zsh
 source $ZSH_SETTINGS_PATH/.plugin.zsh
 
 # cron
-crontab $HOME/dotfiles/macos/cron
+crontab $ZSH_SETTINGS_PATH/cron
