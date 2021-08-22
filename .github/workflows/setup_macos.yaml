@@ -36,9 +36,9 @@ jobs:
       - name: rough command test
         run: |-
           exec zsh --login
-          uname
-          la
-          rbenv versions
-          brew cleanup && brew upgrade
-          cd ~/dotfiles && g status
-          crontab -l
+          echo "$(uname)"
+          echo $(la)
+          echo $(rbenv versions)
+          echo $(brew cleanup && brew upgrade)
+          echo $(cd ~/dotfiles && g status)
+          echo $(crontab -l)
