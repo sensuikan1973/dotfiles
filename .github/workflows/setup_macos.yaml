@@ -38,7 +38,7 @@ jobs:
 
       - name: rough command test after relogin
         run: |-
-          exec zsh --login
+          source $HOME/dotfiles/.zshrc
           set -x
 
           uname >> $GITHUB_WORKSPACE/command_test_result.txt
