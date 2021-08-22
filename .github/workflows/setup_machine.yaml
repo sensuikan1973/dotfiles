@@ -60,9 +60,6 @@ jobs:
           echo "crontab"
           crontab -l
 
-          brew cleanup && brew upgrade && brew doctor
-          rbenv versions
-
           relogin
 
       - name: rough macOS command test
