@@ -15,8 +15,5 @@ killall Dock
 killall Finder
 killall SystemUIServer
 
-# cron
-crontab $HOME/dotfiles/macos/cron
-
 # NOTE: Night Shift はスクリプト書かないと無理なので、ひとまずは手動で済ませて
 # REF: https://gist.github.com/thomasfinch/14bd3181799734c872d2ad3b207cc01c
