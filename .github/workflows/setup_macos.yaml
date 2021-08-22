@@ -46,3 +46,6 @@ jobs:
           cd ~/dotfiles && g status
           crontab -l
           relogin
+
+      - name: brew doctor
+        run: brew doctor
