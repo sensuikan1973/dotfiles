@@ -42,18 +42,14 @@ jobs:
         shell: zsh {0}
         run: |-
           source $HOME/.zshrc
-          set -x
 
           echo "basic info"
           uname
-
           echo "alias"
           la
           ll
-
           echo "git"
           cd ~/dotfiles && g status && fp
-
           echo "crontab"
           crontab -l
 
