@@ -43,14 +43,14 @@ jobs:
         run: |-
           source $HOME/.zshrc
 
-          echo "basic info"
+          echo "### basic info ###"
           uname
-          echo "alias"
+          echo "### alias ###"
           la
           ll
-          echo "git"
+          echo "### git ###"
           cd ~/dotfiles && g status && fp
-          echo "crontab"
+          echo "### crontab ###"
           crontab -l
 
           relogin
@@ -59,6 +59,6 @@ jobs:
         shell: zsh {0}
         if: runner.os == 'macOS'
         run: |-
-          echo "brew"
+          echo "### brew ###"
           brew cleanup && brew upgrade && brew doctor
           rbenv versions
