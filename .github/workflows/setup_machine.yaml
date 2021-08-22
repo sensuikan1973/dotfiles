@@ -38,13 +38,10 @@ jobs:
         shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
 
-      - name: reload zsh
-        shell: zsh {0}
-        run: source $HOME/dotfiles/.zshrc
-
       - name: rough command test
         shell: zsh {0}
         run: |-
+          source $HOME/.zshrc
           set -x
 
           echo "basic info"
