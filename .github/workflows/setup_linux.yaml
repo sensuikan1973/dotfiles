@@ -45,3 +45,4 @@ jobs:
           la
           cd ~/dotfiles && g status
           crontab -l
+          relogin

@@ -43,3 +43,4 @@ jobs:
           brew upgrade
           cd ~/dotfiles && g status
           crontab -l
+          relogin
