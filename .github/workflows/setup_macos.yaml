@@ -35,10 +35,12 @@ jobs:
 
       - name: rough command test
         run: |-
+          # See: https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions
           echo "::group::rough command logs"
           exec zsh --login
           echo "$(uname)"
-          echo $(la)
+          la
+          echo "aaaa"
           echo $(rbenv versions)
           echo $(brew cleanup && brew upgrade)
           echo $(cd ~/dotfiles && g status)
