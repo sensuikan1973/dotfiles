@@ -33,9 +33,11 @@ jobs:
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.zsh
 
+      - name: relogin
+        run: exec zsh --login
+
       - name: rough command test
         run: |-
-          # exec zsh --login
           uname
           la
           rbenv versions

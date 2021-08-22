@@ -37,10 +37,12 @@ jobs:
         shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
 
+      - name: relogin
+        run: exec zsh --login
+
       - name: rough command test
         shell: zsh {0}
         run: |-
-          # exec zsh --login
           uname
           la
           cd ~/dotfiles && g status
