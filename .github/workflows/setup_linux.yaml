@@ -39,32 +39,18 @@ jobs:
 
       - name: rough command test after relogin
         shell: zsh {0}
-        id: command_test
         run: |-
           exec zsh --login
           set -x
 
-          echo "::set-output name=uname::$(uname)"
-
-          echo "::set-output name=alias_ls::$(la && ll)"
-          echo "::set-output name=alias_git::$(cd ~/dotfiles && g status && fp)"
-
-          echo "::set-output name=crontab::$(rcrontab -l)"
+          uname >> $GITHUB_WORKSPACE/command_test_result.txt
+          la && ll >> $GITHUB_WORKSPACE/command_test_result.txt
+          cd ~/dotfiles && g status && fp >> $GITHUB_WORKSPACE/command_test_result.txt
+          brew cleanup && brew upgrade && brew doctor >> $GITHUB_WORKSPACE/command_test_result.txt
+          rbenv versions >> $GITHUB_WORKSPACE/command_test_result.txt
+          crontab -l >> $GITHUB_WORKSPACE/command_test_result.txt
 
           relogin
 
       - name: debug print result
-        run: |-
-          # See: https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#grouping-log-lines
-          echo "::group::basic info"
-          echo "${{ steps.command_test.outputs.uname }}"
-          echo "::endgroup::"
-
-          echo "::group::alias"
-          echo "${{ steps.command_test.outputs.alias_ls }}"
-          echo "${{ steps.command_test.outputs.alias_git }}"
-          echo "::endgroup::"
-
-          echo "::group::crontab"
-          echo "${{ steps.command_test.outputs.crontab }}"
-          echo "::endgroup::"
+        run: cat $GITHUB_WORKSPACE/command_test_result.txt
