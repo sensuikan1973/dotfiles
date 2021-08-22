@@ -33,17 +33,45 @@ jobs:
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.zsh
 
-      - name: rough command test
+      - name: rough command test after relogin
+        id: command_test
         run: |-
           exec zsh --login
-          uname
-          la
-          rbenv versions
-          brew cleanup
-          brew upgrade
-          cd ~/dotfiles && g status
-          crontab -l
+          set -x
+
+          echo "::set-output name=uname::$(uname)"
+
+          echo "::set-output name=alias_ls::$(la && ll)"
+          echo "::set-output name=alias_git::$(cd ~/dotfiles && g status && fp)"
+
+          echo "::set-output name=brew::$(brew cleanup && brew upgrade && brew doctor)"
+
+          echo "::set-output name=package_manager::$(rbenv versions)"
+
+          echo "::set-output name=crontab::$(rcrontab -l)"
+
           relogin
 
-      - name: brew doctor
-        run: brew doctor
+      - name: debug print result
+        run: |-
+          # See: https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#grouping-log-lines
+          echo "::group::basic info"
+          echo "${{ steps.command_test.outputs.uname }}"
+          echo "::endgroup::"
+
+          echo "::group::alias"
+          echo "${{ steps.command_test.outputs.alias_ls }}"
+          echo "${{ steps.command_test.outputs.alias_git }}"
+          echo "::endgroup::"
+
+          echo "::group::brew"
+          echo "${{ steps.command_test.outputs.brew }}"
+          echo "::endgroup::"
+
+          echo "::group::package_manager"
+          echo "${{ steps.command_test.outputs.package_manager }}"
+          echo "::endgroup::"
+
+          echo "::group::crontab"
+          echo "${{ steps.command_test.outputs.crontab }}"
+          echo "::endgroup::"
