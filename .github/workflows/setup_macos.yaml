@@ -36,22 +36,16 @@ jobs:
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.zsh
 
-      - name: rough command test after relogin
+      - name: rough command test
         run: |-
           source $HOME/dotfiles/.zshrc
           set -x
 
-          uname >> $GITHUB_WORKSPACE/command_test_result.txt
-          la && ll >> $GITHUB_WORKSPACE/command_test_result.txt
-          cd ~/dotfiles && g status && fp >> $GITHUB_WORKSPACE/command_test_result.txt
-          brew cleanup && brew upgrade && brew doctor >> $GITHUB_WORKSPACE/command_test_result.txt
-          rbenv versions >> $GITHUB_WORKSPACE/command_test_result.txt
-          crontab -l >> $GITHUB_WORKSPACE/command_test_result.txt
-
-          cat $GITHUB_WORKSPACE/command_test_result.txt
+          uname
+          la && ll
+          cd ~/dotfiles && g status && fp
+          brew cleanup && brew upgrade && brew doctor
+          rbenv versions
+          crontab -l
 
           relogin
-          cat $GITHUB_WORKSPACE/command_test_result.txt
-
-      - name: debug print result
-        run: cat $GITHUB_WORKSPACE/command_test_result.txt
