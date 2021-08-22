@@ -38,6 +38,7 @@ jobs:
         run: cd ~/dotfiles && ./setup.zsh
 
       - name: relogin
+        shell: zsh {0}
         run: exec zsh --login
 
       - name: rough command test
