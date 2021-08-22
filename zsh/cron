@@ -1,2 +1,0 @@
-10 * * * * flutter upgrade
-15 * * * * gcloud components update

@@ -22,6 +22,3 @@ source $ZSH_SETTINGS_PATH/.eval.zsh
 
 # plugin
 source $ZSH_SETTINGS_PATH/.plugin.zsh
-
-# cron
-crontab $ZSH_SETTINGS_PATH/cron

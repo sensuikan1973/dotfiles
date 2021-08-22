@@ -50,8 +50,6 @@ jobs:
           ll
           echo "### git ###"
           cd ~/dotfiles && g status && fp
-          echo "### crontab ###"
-          crontab -l
 
           relogin
 
