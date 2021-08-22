@@ -1,4 +1,4 @@
-name: setup macOS
+name: setup machine
 
 on:
   pull_request:
@@ -10,42 +10,67 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-10.15, macos-11]
+        os: [ubuntu-20.04, macos-10.15, macos-11]
     timeout-minutes: 10
-    defaults:
-      run:
-        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
     steps:
+      - name: setup zsh
+        if: runner.os == 'Linux'
+        run: sudo apt-get install zsh
+
       - name: display shell info
+        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
         run: echo $ZSH_NAME $ZSH_VERSION
 
       - name: checkout repository to HOME
+        shell: zsh {0}
         run: |-
           git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' # See: https://qiita.com/sonots/items/16df445132e704198e3e
           git checkout $GITHUB_SHA
 
-      # - name: debug
-      #   uses: mxschmitt/action-tmate@v3
-
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
+        shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
       - name: 2nd, run setup script
+        shell: zsh {0}
         run: cd ~/dotfiles && ./setup.zsh
 
+      - name: reload zsh
+        shell: zsh {0}
+        run: source $HOME/dotfiles/.zshrc
+
       - name: rough command test
+        shell: zsh {0}
         run: |-
-          source $HOME/dotfiles/.zshrc
           set -x
 
+          echo "basic info"
           uname
-          la && ll
+
+          echo "alias"
+          la
+          ll
+
+          echo "git"
           cd ~/dotfiles && g status && fp
-          brew cleanup && brew upgrade && brew doctor
-          rbenv versions
+
+          echo "crontab"
           crontab -l
 
+          brew cleanup && brew upgrade && brew doctor
+          rbenv versions
+
           relogin
+
+      - name: rough macOS command test
+        shell: zsh {0}
+        if: runner.os == 'macOS'
+        run: |-
+          set -x
+
+          echo "brew"
+          brew cleanup && brew upgrade && brew doctor
+          rbenv versions
