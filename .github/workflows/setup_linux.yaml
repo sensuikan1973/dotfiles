@@ -44,3 +44,4 @@ jobs:
           uname
           la
           cd ~/dotfiles && g status
+          crontab -l
