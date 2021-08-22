@@ -35,6 +35,7 @@ jobs:
 
       - name: rough command test
         run: |-
+          echo "::group::rough command logs"
           exec zsh --login
           echo "$(uname)"
           echo $(la)
@@ -42,3 +43,4 @@ jobs:
           echo $(brew cleanup && brew upgrade)
           echo $(cd ~/dotfiles && g status)
           echo $(crontab -l)
+          echo "::endgroup::"
