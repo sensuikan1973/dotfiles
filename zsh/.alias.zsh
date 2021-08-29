@@ -14,7 +14,7 @@ alias amend='git commit --amend'
 alias fp='git fetch -p'
 
 # ssh
-alias ssh=$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh
+alias ssh="$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh"
 
 # シェルの再起動
 alias relogin='exec zsh --login'
