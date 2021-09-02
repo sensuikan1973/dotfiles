@@ -1,10 +1,6 @@
 # PROMPT 変数内の変数展開を許す
 setopt prompt_subst
 
-# コマンドラインのスペルチェック
-setopt correct
-# setopt correct_all
-
 # 補完候補を詰めて表示
 setopt list_packed
 
