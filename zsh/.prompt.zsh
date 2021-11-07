@@ -10,11 +10,11 @@ zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 precmd () {
-  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
-    vcs_info
-    return 0
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
+    vcs_info_msg_0_=''
+    return 1
   fi
-  return 1
+  vcs_info
 }
 
 DIR='%F{081}%~%f'
