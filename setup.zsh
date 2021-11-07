@@ -1,13 +1,10 @@
 #!/bin/zsh
-set -eu
+set -euo pipefail
 
 echo "start setup script"
 
-LINK_TARGET_FILES=( .zshrc)
-for file in ${LINK_TARGET_FILES[@]}
-do
-  ln -fs $HOME/dotfiles/$file $HOME/$file
-done
+# zsh
+ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 # git
 ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
