@@ -9,6 +9,7 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
+# See: https://zsh.sourceforge.io/Doc/Release/Functions.html#Hook-Functions
 precmd () {
   if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) != 'true' ]]; then
     vcs_info_msg_0_=''
