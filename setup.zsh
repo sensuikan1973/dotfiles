@@ -3,12 +3,15 @@ set -eu
 
 echo "start setup script"
 
-DOT_FILES=( .zshrc)
-
-for file in ${DOT_FILES[@]}
+LINK_TARGET_FILES=( .zshrc)
+for file in ${LINK_TARGET_FILES[@]}
 do
   ln -fs $HOME/dotfiles/$file $HOME/$file
 done
+
+# git
+ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
+cp git/.gitconfig.local $HOME/.gitconfig.local
 
 source $HOME/dotfiles/install.zsh
 
