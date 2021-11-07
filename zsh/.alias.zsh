@@ -18,3 +18,8 @@ alias ssh="$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh"
 
 # シェルの再起動
 alias relogin='exec zsh --login'
+
+# 破壊操作時には、確認を行う
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"

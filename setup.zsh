@@ -1,14 +1,17 @@
 #!/bin/zsh
-set -eu
+set -euo pipefail
 
 echo "start setup script"
 
-DOT_FILES=( .zshrc)
+# zsh
+ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
 
-for file in ${DOT_FILES[@]}
-do
-  ln -fs $HOME/dotfiles/$file $HOME/$file
-done
+# git
+ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
+if [[ ! -e $HOME/.gitconfig.local ]]; then
+  echo "copy .gitconfig.local"
+  cp git/.gitconfig.local $HOME/.gitconfig.local
+fi
 
 source $HOME/dotfiles/install.zsh
 
