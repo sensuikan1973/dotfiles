@@ -8,7 +8,10 @@ ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 # git
 ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
-cp git/.gitconfig.local $HOME/.gitconfig.local
+if [[ ! -e $HOME/.gitconfig.local ]]; then
+  echo "copy .gitconfig.local"
+  cp git/.gitconfig.local $HOME/.gitconfig.local
+fi
 
 source $HOME/dotfiles/install.zsh
 
