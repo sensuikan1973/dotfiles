@@ -9,7 +9,13 @@ zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
 zstyle ':vcs_info:*' formats "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
-precmd () { vcs_info } # プロンプトを表示する直前に毎回実行する
+precmd () {
+  if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]]; then
+    vcs_info
+    return 0
+  fi
+  return 1
+}
 
 DIR='%F{081}%~%f'
 PROMPT='${DIR} ${vcs_info_msg_0_}
