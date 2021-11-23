@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -euo pipefail
+set -euxo pipefail
 
 echo $ZSH_NAME $ZSH_VERSION
 
