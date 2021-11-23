@@ -10,12 +10,12 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-20.04, macos-10.15, macos-11]
+        os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
       - name: setup zsh
         if: runner.os == 'Linux'
-        run: sudo apt-get install zsh
+        run: sudo apt-get update && sudo apt-get install zsh
 
       - name: display shell info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
@@ -51,12 +51,6 @@ jobs:
           echo "### git ###"
           cd ~/dotfiles && g status && fp
 
-          relogin
+          upgrade_system_deps
 
-      - name: rough macOS command test
-        shell: zsh {0}
-        if: runner.os == 'macOS'
-        run: |-
-          echo "### brew ###"
-          brew cleanup && brew upgrade && brew doctor
-          rbenv versions
+          relogin

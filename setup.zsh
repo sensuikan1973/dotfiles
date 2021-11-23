@@ -1,6 +1,8 @@
 #!/bin/zsh
 set -euo pipefail
 
+echo $ZSH_NAME $ZSH_VERSION
+
 echo "start setup script"
 
 # zsh
@@ -16,7 +18,7 @@ fi
 source $HOME/dotfiles/install.zsh
 
 if [ `uname` = "Darwin" ]; then
-  source $HOME/dotfiles/macos/main.zsh
+  source $HOME/dotfiles/macos/setup.zsh
 elif [ `uname` = "Linux" ]; then
   # for Linux
 fi
