@@ -1,6 +1,8 @@
 #!/bin/zsh
 set -euo pipefail
 
+echo $ZSH_NAME $ZSH_VERSION
+
 echo "start setup script"
 
 # zsh
