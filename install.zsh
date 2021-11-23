@@ -1,5 +1,5 @@
 #!/bin/zsh
-set -euo pipefail
+set -euxo pipefail
 
 echo "install useful extensions"
 
