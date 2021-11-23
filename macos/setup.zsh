@@ -1,3 +1,6 @@
+#!/bin/zsh
+set -euxo pipefail
+
 # defaults
 for file in $(find $HOME/dotfiles/macos/defaults -type f)
 do
