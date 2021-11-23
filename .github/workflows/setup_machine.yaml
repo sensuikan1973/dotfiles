@@ -13,13 +13,13 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
-      - name: setup zsh
+      - name: setup Linux machine
         if: runner.os == 'Linux'
         run: |
           sudo apt-get update
           sudo apt-get install zsh
           # See: https://github.com/sensuikan1973/dotfiles/runs/4303472260?check_suite_focus=true
-          sudo apt-get --only-upgrade install google-cloud-sdk-terraform-validator google-cloud-sdk-datastore-emulator google-cloud-sdk-spanner-emulator google-cloud-sdk-skaffold google-cloud-sdk-kubectl-oidc google-cloud-sdk-cloud-build-local google-cloud-sdk-kpt google-cloud-sdk-firestore-emulator google-cloud-sdk-app-engine-go google-cloud-sdk-pubsub-emulator google-cloud-sdk-datalab google-cloud-sdk-config-connector google-cloud-sdk-app-engine-java google-cloud-sdk google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-grpc google-cloud-sdk-minikube google-cloud-sdk-gke-gcloud-auth-plugin google-cloud-sdk-cbt google-cloud-sdk-anthos-auth google-cloud-sdk-app-engine-python-extras google-cloud-sdk-local-extract google-cloud-sdk-bigtable-emulator kubectl
+          sudo apt-get remove google-cloud-sdk
 
       - name: display shell info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
