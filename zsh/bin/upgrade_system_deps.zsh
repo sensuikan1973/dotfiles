@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -uxo pipefail
 
 source $HOME/dotfiles/install.zsh
 
