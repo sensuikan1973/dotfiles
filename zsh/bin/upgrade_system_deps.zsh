@@ -3,8 +3,7 @@
 source $HOME/dotfiles/install.zsh
 
 if [ `uname` = "Darwin" ]; then
-  brew cleanup
-  brew upgrade
+  brew cleanup && brew upgrade
 fi
 
 if command -v flutter &> /dev/null; then

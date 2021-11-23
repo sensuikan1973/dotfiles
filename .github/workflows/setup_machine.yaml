@@ -13,13 +13,9 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
-      - name: setup Linux machine
+      - name: setup zsh
         if: runner.os == 'Linux'
-        run: |
-          sudo apt-get update
-          sudo apt-get install zsh
-          # See: https://github.com/sensuikan1973/dotfiles/runs/4303472260?check_suite_focus=true
-          sudo apt-get remove google-cloud-sdk
+        run: sudo apt-get update && sudo apt-get install zsh
 
       - name: display shell info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
@@ -45,7 +41,6 @@ jobs:
       - name: rough command test
         shell: zsh {0}
         run: |-
-          # set -eux
           source $HOME/.zshrc
 
           echo "### basic info ###"
