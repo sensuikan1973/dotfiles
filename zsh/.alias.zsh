@@ -16,6 +16,9 @@ alias fp='git fetch -p'
 # ssh
 alias ssh="$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh"
 
+# system dependencies
+alias upgrade_system_deps="$HOME/dotfiles/zsh/bin/upgrade_system_deps.zsh"
+
 # シェルの再起動
 alias relogin='exec zsh --login'
 

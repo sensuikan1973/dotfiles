@@ -51,12 +51,6 @@ jobs:
           echo "### git ###"
           cd ~/dotfiles && g status && fp
 
-          relogin
+          upgrade_system_deps
 
-      - name: rough macOS command test
-        shell: zsh {0}
-        if: runner.os == 'macOS'
-        run: |-
-          echo "### brew ###"
-          brew cleanup && brew upgrade && brew doctor
-          rbenv versions
+          relogin
