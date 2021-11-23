@@ -41,7 +41,7 @@ jobs:
       - name: rough command test
         shell: zsh {0}
         run: |-
-          set -eux
+          # set -eux
           source $HOME/.zshrc
 
           echo "### basic info ###"

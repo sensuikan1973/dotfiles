@@ -1,3 +1,4 @@
+#!/bin/zsh
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
 
 # PROMPT 変数内の変数展開を許す
