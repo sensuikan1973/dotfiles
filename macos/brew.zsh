@@ -9,3 +9,6 @@ brew install coreutils
 
 # ruby
 brew install rbenv ruby-build
+
+# python
+brew install pyenv
