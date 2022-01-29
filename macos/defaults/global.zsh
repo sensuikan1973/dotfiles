@@ -11,3 +11,9 @@ defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
 # アニメーション無効化
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+
+# See: https://support.apple.com/ja-jp/HT204788
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# 拡張子を常に表示
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
