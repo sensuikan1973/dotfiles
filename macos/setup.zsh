@@ -2,7 +2,7 @@
 set -euxo pipefail
 
 # defaults
-for file in $(find $HOME/dotfiles/macos/defaults -type f)
+for file in $(find $HOME/dotfiles/macos/defaults -type f -name "*.zsh")
 do
   echo "run $file"
   source $file
