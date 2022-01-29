@@ -11,7 +11,7 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # 隠しファイルを表示する
-defaults write com.apple.finder AppleShowAllFiles YES
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # パスバーを表示
 defaults write com.apple.finder ShowPathbar -bool true
