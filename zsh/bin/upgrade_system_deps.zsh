@@ -1,7 +1,10 @@
 #!/bin/zsh
 set -uxo pipefail
 
-git pull --prune
+cd $HOME/dotfiles
+git remote update --prune
+git switch main
+git pull
 
 source $HOME/dotfiles/install.zsh
 
