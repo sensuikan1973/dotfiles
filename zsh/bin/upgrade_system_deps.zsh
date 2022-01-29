@@ -1,6 +1,8 @@
 #!/bin/zsh
 set -uxo pipefail
 
+git pull --prune
+
 source $HOME/dotfiles/install.zsh
 
 if [ `uname` = "Darwin" ]; then
