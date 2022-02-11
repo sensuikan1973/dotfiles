@@ -1,10 +1,11 @@
 #!/bin/zsh
-set -uxo pipefail
+set -euxo pipefail
 
 cd $HOME/dotfiles
 git remote update --prune
 git switch main
 git pull
+git delete-merged-local-branch main
 
 source $HOME/dotfiles/install.zsh
 
