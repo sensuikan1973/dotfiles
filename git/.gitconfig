@@ -37,7 +37,7 @@
     tree        = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
     wt          = whatchanged --stat
     branch-name = symbolic-ref --short HEAD
-    delete-local-branch-merged-to = "!f () { git switch $1; git branch --merged|egrep -v '\\*|main|master'|xargs git branch -d; };f"
+    delete-local-branches-merged-to = "!f () { git switch $1; git branch --merged | egrep -v '\\*|main|master' | xargs git branch -d; };f"
 [push]
     # default = current # 間違えて push したくないのでオフ
 [pull]

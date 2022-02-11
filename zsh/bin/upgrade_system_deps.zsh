@@ -5,7 +5,7 @@ cd $HOME/dotfiles
 git remote update --prune
 git switch main
 git pull
-git delete-merged-local-branch main
+git delete-local-branches-merged-to main
 
 source $HOME/dotfiles/install.zsh
 
