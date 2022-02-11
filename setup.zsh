@@ -12,6 +12,7 @@ ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -fs $HOME/dotfiles/.gemrc $HOME/.gemrc
 
 # git
+ln -fs $HOME/dotfiles/git/.gitignore $HOME/.gitignore
 ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
 if [[ ! -e $HOME/.gitconfig.local ]]; then
   echo "copy .gitconfig.local"
