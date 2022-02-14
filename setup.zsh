@@ -26,6 +26,15 @@ elif [ `uname` = "Linux" ]; then
   source $HOME/dotfiles/linux/setup.zsh
 fi
 
+# brew
+brew cleanup && brew upgrade
+brew install git # want to use latest git
+brew install coreutils # want to use gls
+brew install rbenv ruby-build # want to use multiple version ruby
+brew install pyenv # want to use multiple version python
+brew install zsh # want to use latest zsh
+brew install peco # select command in history
+
 # shell
 sudo ln -fs $resource_dir/etc/shells /etc/shells
 sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
