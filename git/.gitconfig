@@ -1,7 +1,7 @@
 [include]
     path = ~/.gitconfig.local
 [core]
-    editor          = code --wait # VSCode を使う
+    editor          = code --wait # use Visual Studio Code
     pager           = less
     whitespace      = fix,-indent-with-non-tab,trailing-space,cr-at-eol,space-before-tab
     excludesfile    = ~/.gitignore
@@ -28,7 +28,7 @@
     stat = true
 [merge]
     stat = true
-    ff   = false # マージがファーストフォワードとして解決できる場合でも、必ずマージコミットを作成する。
+    ff   = false # always create merge commit, even if merge can be resolved as fast-forward.
 [alias]
     st          = status
     cm          = commit
@@ -39,7 +39,7 @@
     branch-name = symbolic-ref --short HEAD
     delete-local-branches-merged-to = "!f () { git switch $1; git branch --merged | egrep -v '\\*|main|master' | xargs git branch -d; };f"
 [push]
-    # default = current # 間違えて push したくないのでオフ
+    # default = current # I want to avoid unintended push.
 [pull]
     rebase = true
 [rerere]
@@ -47,7 +47,7 @@
 [grep]
     lineNumber = true
 [help]
-    autocorrect = 0 # 勝手に補完して実行は別にいらない
+    autocorrect = 0 # I don't need this personally.
 [pager]
     log  = diff-highlight | less
     show = diff-highlight | less

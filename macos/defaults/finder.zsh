@@ -1,26 +1,23 @@
-# タイトルバーにフルパスを表示する
+# display full path on title bar.
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
-# 名前で並び替え時に、ディレクトリを前に置くようにする
+# display directory prior to files.
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
-# 検索時にデフォルトでカレントディレクトリを検索する
+# search current directory by default when search.
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
-# ステータスバーを表示
-defaults write com.apple.finder ShowStatusBar -bool true
-
-# 隠しファイルを表示する
+# display hidden files.
 defaults write com.apple.finder AppleShowAllFiles -bool true
 
-# パスバーを表示
+# display path bar.
 defaults write com.apple.finder ShowPathbar -bool true
 
-# タブバーを表示
+# display tab bar.
 defaults write com.apple.finder ShowTabView -bool true
 
-# ステータスバーを表示する
+# display status bar.
 defaults write com.apple.finder ShowStatusBar -bool true
 
-# アニメーション無効
+# disable unnecessary animation.
 defaults write com.apple.finder DisableAllAnimations -boolean true

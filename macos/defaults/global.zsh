@@ -1,19 +1,19 @@
-# キーリピートの高速化
+# increase speed of key repeat.
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
-# マウスを速く動かす
+# increase speed of mouse movement.
 defaults write NSGlobalDomain com.apple.mouse.scaling 30
 defaults write NSGlobalDomain com.apple.trackpad.scaling 30
 
-# ダイアログ表示やウィンドウリサイズ速度の高速化
+# increase speedof window resize.
 defaults write NSGlobalDomain NSWindowResizeTime 0.001
 
-# アニメーション無効化
+# disable unnecessary animation.
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
 
 # See: https://support.apple.com/ja-jp/HT204788
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
-# 拡張子を常に表示
+# always display extensions.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
