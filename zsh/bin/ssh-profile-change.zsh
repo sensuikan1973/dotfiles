@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 echo "\033]1337;SetProfile=Remote\a"
 
 /usr/bin/ssh "$@"

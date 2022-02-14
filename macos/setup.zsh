@@ -1,4 +1,3 @@
-#!/bin/zsh
 set -euxo pipefail
 
 # defaults
@@ -27,6 +26,7 @@ brew install coreutils # gls を使いたい
 brew install rbenv ruby-build # ruby
 brew install pyenv # python
 brew install zsh
+brew install peco
 
 sudo chsh -s $(brew --prefix)/bin/zsh $(whoami) # See: macos/resources/etc/shells
 

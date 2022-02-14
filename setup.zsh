@@ -1,12 +1,10 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 set -euxo pipefail
 
+which zsh
 echo $ZSH_NAME $ZSH_VERSION
 
 echo "start setup script"
-
-# zsh
-ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
 
 # ruby gem
 ln -fs $HOME/dotfiles/ruby/.gemrc $HOME/.gemrc
@@ -19,7 +17,9 @@ if [[ ! -e $HOME/.gitconfig.local ]]; then
   cp git/.gitconfig.local $HOME/.gitconfig.local
 fi
 
-source $HOME/dotfiles/install.zsh
+# zsh
+ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
+source $HOME/dotfiles/zsh/install_plugins.zsh
 
 if [ `uname` = "Darwin" ]; then
   source $HOME/dotfiles/macos/setup.zsh
