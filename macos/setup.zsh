@@ -31,5 +31,3 @@ brew install zsh
 sudo chsh -s $(brew --prefix)/bin/zsh $(whoami) # See: macos/resources/etc/shells
 
 source $HOME/dotfiles/macos/.main.zsh
-
-echo "Successed!"
