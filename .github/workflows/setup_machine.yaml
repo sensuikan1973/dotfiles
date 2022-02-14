@@ -41,8 +41,8 @@ jobs:
       - name: rough command test
         shell: zsh {0}
         run: |-
-          source $HOME/.zshrc
           set -euxo pipefail
+          source $HOME/.zshrc
           uname
           la
           ll
