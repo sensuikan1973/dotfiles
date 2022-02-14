@@ -27,7 +27,6 @@ jobs:
           sudo apt-get remove google-cloud-sdk
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-          rbenv install $(rbenv install -l | grep -v - | tail -1) # 雑に最新版をインストールしてみる
 
       - name: display native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
@@ -57,6 +56,7 @@ jobs:
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           set -euxo pipefail
+          rbenv install $(rbenv install -l | grep -v - | tail -1) # 雑に最新版をインストールしてみる
           source $HOME/.zshrc
           uname
           ls $HOME/dotfiles
