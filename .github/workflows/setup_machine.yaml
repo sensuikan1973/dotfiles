@@ -4,7 +4,7 @@ on:
   pull_request:
     paths-ignore:
       - '.github/dependabot.yml'
-      - '*.md'
+      - '**.md'
   push:
     branches: [main]
 
