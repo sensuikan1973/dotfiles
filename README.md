@@ -4,7 +4,7 @@
 ## usage
 
 ```zsh
-./setup.zsh
+./setup.zsh # This script has idempotence.
 exec zsh --login
 ```
 
