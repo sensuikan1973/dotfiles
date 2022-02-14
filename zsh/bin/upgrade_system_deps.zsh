@@ -9,10 +9,6 @@ git delete-local-branches-merged-to main
 
 source $HOME/dotfiles/setup.zsh
 
-if [ `uname` = "Darwin" ]; then
-  brew cleanup && brew upgrade
-fi
-
 if command -v flutter &> /dev/null; then
   flutter upgrade
 fi
