@@ -2,6 +2,9 @@ name: setup machine
 
 on:
   pull_request:
+    paths-ignore:
+      - '.github/dependabot.yml'
+      - '*.md'
   push:
     branches: [main]
 
