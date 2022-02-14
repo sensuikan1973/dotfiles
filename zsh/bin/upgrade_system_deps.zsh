@@ -22,3 +22,5 @@ fi
 if command -v gem &> /dev/null; then
   gem update --system
 fi
+
+relogin

@@ -24,5 +24,3 @@ brew install rbenv ruby-build # ruby
 brew install pyenv # python
 brew install zsh
 brew install peco
-
-source $HOME/dotfiles/macos/.main.zsh
