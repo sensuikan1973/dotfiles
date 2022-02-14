@@ -3,6 +3,8 @@ alias l='ls'
 alias la='ls -al'
 alias ll='ls -l -F'
 alias df='df -h'
+alias ls='gls -CF --color=auto'
+alias ..='cd ..; gls -CF --color=auto'
 
 # Git
 alias g='git'
