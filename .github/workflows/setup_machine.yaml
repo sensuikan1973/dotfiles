@@ -52,6 +52,11 @@ jobs:
         shell: zsh {0}
         run: cd ~/dotfiles && zsh ./setup.zsh
 
+      # DEBUG
+      - name: setup tmate session for debug ssh
+        if: runner.os == 'Linux'
+        uses: mxschmitt/action-tmate@v3
+
       - name: rough command test
         shell: zsh {0}
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
@@ -64,7 +69,5 @@ jobs:
           la $HOME/dotfiles
           ll $HOME/dotfiles
           cd $HOME/dotfiles && g status && fp
-          which gem
-          rbenv versions
           upgrade_system_deps $GITHUB_HEAD_REF
           relogin
