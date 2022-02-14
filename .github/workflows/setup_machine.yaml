@@ -58,8 +58,9 @@ jobs:
           source $HOME/.zshrc
           set -euxo pipefail
           uname
-          la
-          ll
+          ls $HOME/dotfiles
+          la $HOME/dotfiles
+          ll $HOME/dotfiles
           cd ~/dotfiles && g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
           relogin
