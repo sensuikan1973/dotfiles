@@ -22,4 +22,10 @@ source $ZSH_SETTINGS_PATH/.plugin.zsh
 # chflags
 source $ZSH_SETTINGS_PATH/.chflags.zsh
 
+# pyenv
+# See: https://github.com/pyenv/pyenv
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+# ruby
 eval "$(rbenv init -)"
