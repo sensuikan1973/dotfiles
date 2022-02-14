@@ -5,7 +5,7 @@ branch=${1:-main}
 
 cd $HOME/dotfiles
 git remote update --prune
-git switch $branch
+git checkout $branch
 git pull --prune
 git delete-local-branches-merged-to $branch
 
