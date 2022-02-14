@@ -7,7 +7,7 @@ git switch main
 git pull
 git delete-local-branches-merged-to main
 
-source $HOME/dotfiles/install.zsh
+source $HOME/dotfiles/setup.zsh
 
 if [ `uname` = "Darwin" ]; then
   brew cleanup && brew upgrade
