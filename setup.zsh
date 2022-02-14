@@ -6,10 +6,6 @@ echo $ZSH_NAME $ZSH_VERSION
 
 echo "start setup script"
 
-# zsh
-ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
-source $HOME/dotfiles/zsh/install_plugins.zsh
-
 # ruby gem
 ln -fs $HOME/dotfiles/ruby/.gemrc $HOME/.gemrc
 
@@ -20,6 +16,10 @@ if [[ ! -e $HOME/.gitconfig.local ]]; then
   echo "copy .gitconfig.local"
   cp git/.gitconfig.local $HOME/.gitconfig.local
 fi
+
+# zsh
+ln -fs $HOME/dotfiles/.zshrc $HOME/.zshrc
+source $HOME/dotfiles/zsh/install_plugins.zsh
 
 if [ `uname` = "Darwin" ]; then
   source $HOME/dotfiles/macos/setup.zsh
