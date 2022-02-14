@@ -64,5 +64,7 @@ jobs:
           la $HOME/dotfiles
           ll $HOME/dotfiles
           cd $HOME/dotfiles && g status && fp
+          which gem
+          rbenv versions
           upgrade_system_deps $GITHUB_HEAD_REF
           relogin
