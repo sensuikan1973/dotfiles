@@ -1,5 +1,6 @@
 set -euxo pipefail
 
+which zsh
 echo $ZSH_NAME $ZSH_VERSION
 
 echo "start setup script"

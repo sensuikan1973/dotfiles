@@ -44,9 +44,6 @@ jobs:
         run: |-
           source $HOME/.zshrc
 
-          which zsh
-          echo $ZSH_NAME $ZSH_VERSION
-
           echo "### basic info ###"
           uname
           echo "### alias ###"
