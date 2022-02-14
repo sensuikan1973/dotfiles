@@ -70,7 +70,6 @@ jobs:
           ll $HOME/dotfiles
           cd $HOME/dotfiles && g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
-          relogin
 
       # session for debug
       - name: setup tmate session for debug ssh
