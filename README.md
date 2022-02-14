@@ -27,6 +27,8 @@ update `General settings` to load `~/dotfiles/macos/iterm2`.
 upgrade_system_deps # This script has idempotence.
 ```
 
+---
+
 ## references
 
 ### macos
