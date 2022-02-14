@@ -26,3 +26,5 @@ if [ `uname` = "Darwin" ]; then
 elif [ `uname` = "Linux" ]; then
   # for Linux
 fi
+
+echo "setup has successeded"

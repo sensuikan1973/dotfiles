@@ -16,6 +16,9 @@ killall Dock
 killall Finder
 killall SystemUIServer
 
+# etc
+sudo ln -fs $HOME/dotfiles/macos/resources/etc/shells /etc/shells
+
 # brew
 # See: https://brew.sh/index_ja.html
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -23,5 +26,8 @@ brew cleanup && brew upgrade
 brew install coreutils # gls を使いたい
 brew install rbenv ruby-build # ruby
 brew install pyenv # python
+brew install zsh
+
+sudo chsh -s $(brew --prefix)/bin/zsh $(whoami) # See: macos/resources/etc/shells
 
 source $HOME/dotfiles/macos/.main.zsh
