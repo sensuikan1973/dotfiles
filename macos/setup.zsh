@@ -15,5 +15,6 @@ killall Dock
 killall Finder
 killall SystemUIServer
 
+# brew
 # See: https://brew.sh/index_ja.html
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
