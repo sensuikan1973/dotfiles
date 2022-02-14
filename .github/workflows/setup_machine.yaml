@@ -19,7 +19,10 @@ jobs:
       - name: setup for zsh, Google Cloud SDK
         if: runner.os == 'Linux'
         run: |-
-          sudo apt-get update && sudo apt-get install zsh
+          sudo apt-get update
+          sudo apt-get install zsh
+          # See: https://docs.brew.sh/Homebrew-on-Linux
+          sudo apt-get install build-essential procps curl file git
           # See: https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
           # TODO: ちゃんと update 可能なようにセットアップしてあげる方向で修正したほうがより良い
           sudo apt-get remove google-cloud-sdk
@@ -67,7 +70,7 @@ jobs:
           upgrade_system_deps $GITHUB_HEAD_REF
           relogin
 
-      # DEBUG
+      # session for debug
       - name: setup tmate session for debug ssh
         if: ${{ failure() }}
         uses: mxschmitt/action-tmate@v3
