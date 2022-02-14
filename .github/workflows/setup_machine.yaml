@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
-      - name: setup for zsh, Google Cloud SDK
+      - name: setup for linux
         if: runner.os == 'Linux'
         run: |-
           sudo apt-get update
