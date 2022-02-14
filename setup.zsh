@@ -6,9 +6,6 @@ echo $ZSH_NAME $ZSH_VERSION
 
 echo "start setup script"
 
-# ruby gem
-ln -fs $HOME/dotfiles/ruby/.gemrc $HOME/.gemrc
-
 # git
 ln -fs $HOME/dotfiles/git/.gitignore $HOME/.gitignore
 ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
@@ -30,5 +27,8 @@ fi
 # shell
 sudo ln -fs $HOME/dotfiles/resources/etc/shells /etc/shells
 sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
+
+# ruby gem
+ln -fs $HOME/dotfiles/resources/ruby/.gemrc $HOME/.gemrc
 
 echo "setup has successeded"
