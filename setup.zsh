@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 set -euxo pipefail
 
 which zsh
