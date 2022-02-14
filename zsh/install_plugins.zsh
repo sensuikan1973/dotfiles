@@ -1,4 +1,3 @@
-#!/bin/zsh
 set -euxo pipefail
 
 zsh_plugins_dir="zsh_plugins"

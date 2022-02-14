@@ -1,5 +1,3 @@
-#!/bin/zsh
-
 autoload -Uz vcs_info
 
 # vcs_info_msg_0_変数をどのように表示するかフォーマットの指定

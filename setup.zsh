@@ -1,4 +1,3 @@
-#!/bin/zsh
 set -euxo pipefail
 
 echo $ZSH_NAME $ZSH_VERSION

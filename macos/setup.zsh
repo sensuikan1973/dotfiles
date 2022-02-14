@@ -1,4 +1,3 @@
-#!/bin/zsh
 set -euxo pipefail
 
 # defaults
