@@ -40,6 +40,7 @@ jobs:
 
       - name: rough command test
         shell: zsh {0}
+        # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           # set -euxo pipefail # TODO: should run here
           source $HOME/.zshrc
