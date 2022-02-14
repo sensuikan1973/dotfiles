@@ -59,10 +59,11 @@ jobs:
           rbenv install $(rbenv install -l | grep -v - | tail -1) # 雑に最新版をインストールしてみる
           source $HOME/.zshrc
           uname
+          cd $HOME/dotfiles
           ls $HOME/dotfiles
           la $HOME/dotfiles
           ll $HOME/dotfiles
-          cd $HOME/dotfiles && g status && fp
+          g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
 
       # # session for debug
