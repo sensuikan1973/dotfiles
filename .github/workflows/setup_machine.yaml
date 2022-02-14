@@ -41,8 +41,9 @@ jobs:
       - name: rough command test
         shell: zsh {0}
         run: |-
-          set -euxo pipefail
+          # set -euxo pipefail # TODO: should run here
           source $HOME/.zshrc
+          set -euxo pipefail
           uname
           la
           ll
