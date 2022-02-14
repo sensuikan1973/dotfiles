@@ -28,7 +28,7 @@ brew install rbenv ruby-build # ruby
 brew install pyenv # python
 brew install zsh
 
-chsh -s $(brew --prefix)/bin/zsh # See: macos/resources/etc/shells
+sudo chsh -s $(brew --prefix)/bin/zsh $(whoami) # See: macos/resources/etc/shells
 
 source $HOME/dotfiles/macos/.main.zsh
 
