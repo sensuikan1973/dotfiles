@@ -6,7 +6,7 @@ branch=${1:-main}
 cd $HOME/dotfiles
 git remote update --prune
 git checkout $branch
-git pull --prune
+git branch --set-upstream-to=origin/$branch $branch
 git delete-local-branches-merged-to $branch
 
 source $HOME/dotfiles/setup.zsh
