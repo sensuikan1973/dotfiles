@@ -71,7 +71,7 @@ jobs:
           cd $HOME/dotfiles && g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
 
-      # session for debug
-      - name: setup tmate session for debug ssh
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
+      # # session for debug
+      # - name: setup tmate session for debug ssh
+      #   if: ${{ failure() }}
+      #   uses: mxschmitt/action-tmate@v3
