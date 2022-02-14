@@ -6,6 +6,8 @@ echo $ZSH_NAME $ZSH_VERSION
 
 echo "start setup script"
 
+resource_dir="$HOME/dotfiles/resources"
+
 # git
 ln -fs $HOME/dotfiles/git/.gitignore $HOME/.gitignore
 ln -fs $HOME/dotfiles/git/.gitconfig $HOME/.gitconfig
@@ -25,10 +27,10 @@ elif [ `uname` = "Linux" ]; then
 fi
 
 # shell
-sudo ln -fs $HOME/dotfiles/resources/etc/shells /etc/shells
+sudo ln -fs $resource_dir/etc/shells /etc/shells
 sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
 
 # ruby gem
-ln -fs $HOME/dotfiles/resources/ruby/.gemrc $HOME/.gemrc
+ln -fs $resource_dir/ruby/.gemrc $HOME/.gemrc
 
 echo "setup has successeded"
