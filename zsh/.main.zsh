@@ -16,8 +16,5 @@ source $ZSH_SETTINGS_PATH/.alias.zsh
 # option
 source $ZSH_SETTINGS_PATH/.opt.zsh
 
-# eval
-source $ZSH_SETTINGS_PATH/.eval.zsh
-
 # plugin
 source $ZSH_SETTINGS_PATH/.plugin.zsh
