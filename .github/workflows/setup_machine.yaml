@@ -51,6 +51,6 @@ jobs:
           echo "### git ###"
           cd ~/dotfiles && g status && fp
 
-          upgrade_system_deps
+          upgrade_system_deps $GITHUB_REF
 
           relogin
