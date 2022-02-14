@@ -56,7 +56,6 @@ jobs:
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           set -euo pipefail
-          rbenv install $(rbenv install -l | grep -v - | tail -1) # try to install latest ruby
           source $HOME/.zshrc
           uname
           cd $HOME/dotfiles
