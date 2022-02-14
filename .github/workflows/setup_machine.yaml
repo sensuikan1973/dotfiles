@@ -42,16 +42,10 @@ jobs:
         shell: zsh {0}
         run: |-
           source $HOME/.zshrc
-
           set -euxo pipefail
-          echo "### basic info ###"
           uname
-          echo "### alias ###"
           la
           ll
-          echo "### git ###"
           cd ~/dotfiles && g status && fp
-
           upgrade_system_deps $GITHUB_REF
-
           relogin
