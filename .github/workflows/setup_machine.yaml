@@ -34,10 +34,10 @@ jobs:
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
         shell: zsh {0}
-        run: cd ~/dotfiles && ./setup.zsh
+        run: cd ~/dotfiles && zsh ./setup.zsh
       - name: 2nd, run setup script
         shell: zsh {0}
-        run: cd ~/dotfiles && ./setup.zsh
+        run: cd ~/dotfiles && zsh ./setup.zsh
 
       - name: rough command test
         shell: zsh {0}
