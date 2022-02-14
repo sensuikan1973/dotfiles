@@ -3,13 +3,8 @@ alias l='ls'
 alias la='ls -al'
 alias ll='ls -l -F'
 alias df='df -h'
-if [ `uname` = "Darwin" ]; then
-  alias ls='gls -CF --color=auto'
-  alias ..='cd ..; gls -CF --color=auto'
-elif [ `uname` = "Linux" ]; then
-  alias ls='ls -CF --color=auto'
-  alias ..='cd ..; ls -CF --color=auto'
-fi
+alias ls='gls -CF --color=auto'
+alias ..='cd ..; gls -CF --color=auto'
 
 # Git
 alias g='git'
@@ -24,10 +19,10 @@ alias ssh="$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh"
 # system dependencies
 alias upgrade_system_deps="$HOME/dotfiles/zsh/bin/upgrade_system_deps.zsh"
 
-# シェルの再起動
+# restart shell
 alias relogin='exec zsh --login'
 
-# 破壊操作時には、確認を行う
+# confirm when breaking operations are executed
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"

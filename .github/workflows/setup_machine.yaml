@@ -2,6 +2,9 @@ name: setup machine
 
 on:
   pull_request:
+    paths-ignore:
+      - '.github/dependabot.yml'
+      - '**.md'
   push:
     branches: [main]
 
@@ -13,23 +16,21 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
-      - name: setup for zsh, Google Cloud SDK
+      - name: setup for linux
         if: runner.os == 'Linux'
         run: |-
-          sudo apt-get update && sudo apt-get install zsh
-          # See: https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
-          # TODO: ちゃんと update 可能なようにセットアップしてあげる方向で修正したほうがより良い
+          sudo apt-get update
+          sudo apt-get install zsh
+          # See: https://docs.brew.sh/Homebrew-on-Linux
+          sudo apt-get install build-essential procps curl file git
+          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
           sudo apt-get remove google-cloud-sdk
-          # ruby
-          # TODO: ちゃんとセットアップ
-          # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/59#issuecomment-1039674710
           sudo apt-get remove ruby
+          # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-          git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-          git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-          eval "$(rbenv init -)"
 
-      - name: display shell info
+      - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
         run: echo $ZSH_NAME $ZSH_VERSION
 
@@ -38,7 +39,9 @@ jobs:
         run: |-
           git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
-          git fetch origin '+refs/pull/*:refs/remotes/pr/*' # See: https://qiita.com/sonots/items/16df445132e704198e3e
+          # See: https://qiita.com/sonots/items/16df445132e704198e3e
+          # See: https://github.com/actions/checkout/issues/23
+          git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
           git checkout $GITHUB_SHA
 
       # setup twice
@@ -54,13 +57,17 @@ jobs:
         shell: zsh {0}
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          # set -euxo pipefail # TODO: should run here
+          set -euo pipefail
           source $HOME/.zshrc
-          set -euxo pipefail
           uname
-          ls $HOME/dotfiles
-          la $HOME/dotfiles
-          ll $HOME/dotfiles
-          cd $HOME/dotfiles && g status && fp
+          cd $HOME/dotfiles
+          ls
+          la
+          ll
+          g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
-          relogin
+
+      # # session for debug
+      # - name: setup tmate session for debug ssh
+      #   if: ${{ failure() }}
+      #   uses: mxschmitt/action-tmate@v3

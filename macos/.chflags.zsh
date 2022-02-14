@@ -1,2 +1,2 @@
-# Library ディレクトリを表示
+# show Library directory
 chflags nohidden ~/Library

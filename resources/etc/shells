@@ -10,4 +10,5 @@
 /bin/tcsh
 /bin/zsh
 
-/usr/local/bin/zsh
+/usr/local/bin/zsh # macos
+/home/linuxbrew/.linuxbrew # linux

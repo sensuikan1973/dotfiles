@@ -1,13 +1,11 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
 
-echo "start setup script"
-
-# ruby gem
-ln -fs $HOME/dotfiles/ruby/.gemrc $HOME/.gemrc
+resource_dir="$HOME/dotfiles/resources"
 
 # git
 ln -fs $HOME/dotfiles/git/.gitignore $HOME/.gitignore
@@ -24,7 +22,23 @@ source $HOME/dotfiles/zsh/install_plugins.zsh
 if [ `uname` = "Darwin" ]; then
   source $HOME/dotfiles/macos/setup.zsh
 elif [ `uname` = "Linux" ]; then
-  # for Linux
+  source $HOME/dotfiles/linux/setup.zsh
 fi
+
+# brew
+brew cleanup && brew upgrade
+brew install git # want to use latest git
+brew install coreutils # want to use gls
+brew install rbenv ruby-build # want to use multiple version ruby
+brew install pyenv # want to use multiple version python
+brew install zsh # want to use latest zsh
+brew install peco # select command in history
+
+# set zsh to login shell
+sudo ln -fs $resource_dir/etc/shells /etc/shells
+sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
+
+# ruby gem
+ln -fs $resource_dir/ruby/.gemrc $HOME/.gemrc
 
 echo "setup has successeded"

@@ -1,6 +1,6 @@
 autoload -Uz vcs_info
 
-# vcs_info_msg_0_変数をどのように表示するかフォーマットの指定
+# format for `vcs_info_msg_0_`.
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#Version-Control-Information
 # http://tkengo.github.io/blog/2013/05/12/zsh-vcs-info/
 zstyle ':vcs_info:git:*' check-for-changes true

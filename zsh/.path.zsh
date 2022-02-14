@@ -12,11 +12,11 @@ export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
 
 # Google Cloud SDK
-# Home に置いてあるものとする。See: https://cloud.google.com/sdk/docs/install
+# See: https://cloud.google.com/sdk/docs/install
 export PATH=$PATH:~/google-cloud-sdk/bin
 
 # nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # ruby
-export  PATH=$HOME/.rbenv/bin:$PATH
+export PATH=$PATH:$HOME/.rbenv/bin
