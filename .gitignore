@@ -1,5 +1,5 @@
 .DS_Store
 
- zsh_plugins
+zsh/plugins
 
 .zsh/history/
