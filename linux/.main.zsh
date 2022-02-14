@@ -1,1 +1,1 @@
-source $HOME/dotfiles/linux/.zsh_alias.zsh
+source $HOME/dotfiles/linux/.alias.zsh
