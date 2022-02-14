@@ -13,9 +13,21 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 20
     steps:
-      - name: setup zsh
+      - name: setup for zsh, Google Cloud SDK
         if: runner.os == 'Linux'
-        run: sudo apt-get update && sudo apt-get install zsh
+        run: |-
+          sudo apt-get update && sudo apt-get install zsh
+          # See: https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
+          # TODO: ちゃんと update 可能なようにセットアップしてあげる方向で修正したほうがより良い
+          sudo apt-get remove google-cloud-sdk
+          # ruby
+          # TODO: ちゃんとセットアップ
+          # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
+          sudo apt-get remove ruby
+          sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+          git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+          git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+          eval "$(rbenv init -)"
 
       - name: display shell info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
@@ -40,17 +52,15 @@ jobs:
 
       - name: rough command test
         shell: zsh {0}
+        # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
+          # set -euxo pipefail # TODO: should run here
           source $HOME/.zshrc
-
-          echo "### basic info ###"
+          set -euxo pipefail
           uname
-          echo "### alias ###"
-          la
-          ll
-          echo "### git ###"
-          cd ~/dotfiles && g status && fp
-
-          upgrade_system_deps $GITHUB_REF
-
+          ls $HOME/dotfiles
+          la $HOME/dotfiles
+          ll $HOME/dotfiles
+          cd $HOME/dotfiles && g status && fp
+          upgrade_system_deps $GITHUB_HEAD_REF
           relogin

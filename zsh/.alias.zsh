@@ -1,10 +1,15 @@
 # terminal
-alias ls='gls -CF --color=auto'
 alias l='ls'
 alias la='ls -al'
 alias ll='ls -l -F'
 alias df='df -h'
-alias ..='cd ..; gls -CF --color=auto'
+if [ `uname` = "Darwin" ]; then
+  alias ls='gls -CF --color=auto'
+  alias ..='cd ..; gls -CF --color=auto'
+elif [ `uname` = "Linux" ]; then
+  alias ls='ls -CF --color=auto'
+  alias ..='cd ..; ls -CF --color=auto'
+fi
 
 # Git
 alias g='git'

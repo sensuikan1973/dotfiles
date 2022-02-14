@@ -18,3 +18,5 @@ source $ZSH_SETTINGS_PATH/.opt.zsh
 
 # plugin
 source $ZSH_SETTINGS_PATH/.plugin.zsh
+
+eval "$(rbenv init -)"
