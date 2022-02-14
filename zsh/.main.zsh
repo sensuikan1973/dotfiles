@@ -20,6 +20,6 @@ source $ZSH_SETTINGS_PATH/.opt.zsh
 source $ZSH_SETTINGS_PATH/.plugin.zsh
 
 # chflags
-source $HOME/dotfiles/macos/.chflags.zsh
+source $ZSH_SETTINGS_PATH/.chflags.zsh
 
 eval "$(rbenv init -)"
