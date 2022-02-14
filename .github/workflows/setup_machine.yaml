@@ -47,5 +47,5 @@ jobs:
           la
           ll
           cd ~/dotfiles && g status && fp
-          upgrade_system_deps $GITHUB_REF
+          upgrade_system_deps $GITHUB_SHA
           relogin
