@@ -1,4 +1,4 @@
-# for brew
+# brew
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin
 
 # use diff-highlight with git

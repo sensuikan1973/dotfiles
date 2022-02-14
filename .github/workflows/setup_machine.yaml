@@ -45,7 +45,7 @@ jobs:
           cd ~/dotfiles
           # See: https://qiita.com/sonots/items/16df445132e704198e3e
           # See: https://github.com/actions/checkout/issues/23
-          git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune --unshallow
+          git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune --depth=50
           git checkout $GITHUB_SHA
 
       # setup twice
