@@ -1,11 +1,13 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+branch=${1:-main}
+
 cd $HOME/dotfiles
 git remote update --prune
-git switch main
+git switch $branch
 git pull
-git delete-local-branches-merged-to main
+git delete-local-branches-merged-to $branch
 
 source $HOME/dotfiles/setup.zsh
 
