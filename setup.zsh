@@ -1,10 +1,9 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
-
-echo "start setup script"
 
 resource_dir="$HOME/dotfiles/resources"
 
