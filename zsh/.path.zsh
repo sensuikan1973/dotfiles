@@ -17,3 +17,6 @@ export PATH=$PATH:~/google-cloud-sdk/bin
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# ruby
+export  PATH=$HOME/.rbenv/bin:$PATH
