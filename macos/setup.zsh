@@ -31,3 +31,5 @@ brew install zsh
 chsh -s $(brew --prefix)/bin/zsh # See: macos/resources/etc/shells
 
 source $HOME/dotfiles/macos/.main.zsh
+
+echo "Successed!"
