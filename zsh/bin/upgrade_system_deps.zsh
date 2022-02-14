@@ -4,9 +4,8 @@ set -euxo pipefail
 branch=${1:-main}
 
 cd $HOME/dotfiles
-git remote update --prune
 git checkout $branch
-git pull
+git pull --prune
 git delete-local-branches-merged-to $branch
 
 source $HOME/dotfiles/setup.zsh
