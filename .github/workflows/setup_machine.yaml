@@ -23,8 +23,10 @@ jobs:
           sudo apt-get install zsh
           # See: https://docs.brew.sh/Homebrew-on-Linux
           sudo apt-get install build-essential procps curl file git
-          # NOTE: Workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
+          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
           sudo apt-get remove google-cloud-sdk
+          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/59#issuecomment-1039674710
+          sudo apt-get remove ruby
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 
