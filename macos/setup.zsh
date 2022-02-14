@@ -23,5 +23,6 @@ brew cleanup && brew upgrade
 brew install coreutils # gls を使いたい
 brew install rbenv ruby-build # ruby
 brew install pyenv # python
+brew install zsh
 
 source $HOME/dotfiles/macos/.main.zsh
