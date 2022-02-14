@@ -27,12 +27,9 @@ jobs:
           # TODO: ちゃんと update 可能なようにセットアップしてあげる方向で修正したほうがより良い
           sudo apt-get remove google-cloud-sdk
           # ruby
-          # TODO: ちゃんとセットアップ
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
-          sudo apt-get remove ruby
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-          git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-          git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+          rbenv install $(rbenv install -l | grep -v - | tail -1) # 雑に最新版をインストールしてみる
 
       - name: display native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
