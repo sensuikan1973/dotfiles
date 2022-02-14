@@ -8,8 +8,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
 # dircolors-solarized
 eval "$(gdircolors $zsh_plugins_dir/dircolors-solarized/dircolors.ansi-universal)"
 
-# `ctrl + R` で、履歴から選択できるようにする
-# NOTE: インストールは OS ごとそれぞれの方法ですること。これについては現状 macos しか対応してない。See: macos/setup.zsh
+# select command in history with `ctrl + R`.
 function peco-select-history() {
   BUFFER=$(\history -n -r 1 | peco --query "$LBUFFER")
   CURSOR=$#BUFFER

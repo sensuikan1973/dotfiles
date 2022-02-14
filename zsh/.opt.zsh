@@ -1,16 +1,16 @@
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
 
-# PROMPT 変数内の変数展開を許す
+# allow variable in PROMPT.
 setopt prompt_subst
 
-# 補完候補を詰めて表示
+# display completion list packed.
 setopt list_packed
 
-# ビープ音なし
+# no beep.
 setopt no_beep
 setopt nolistbeep
 
-# バックグラウンドジョブが終了したらすぐに知らせる
+# notify when background job has finished.
 setopt no_tify
 
 # ディレクトリスタックに同じディレクトリを追加しない
@@ -49,11 +49,7 @@ setopt hist_no_store
 # 複数の zsh を同時に使う時など history ファイルに上書きせず追加
 setopt append_history
 
-# ヒストリを保存するファイル
+# for peco, save many history.
 export HISTFILE=~/.zsh_history
-
-# メモリ上のヒストリ数。大きな数を指定してすべてのヒストリを保存するようにしている。
 export HISTSIZE=10000000
-
-# 保存するヒストリ数
 export SAVEHIST=$HISTSIZE
