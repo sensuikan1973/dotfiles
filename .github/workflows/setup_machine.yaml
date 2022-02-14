@@ -61,6 +61,6 @@ jobs:
           ls $HOME/dotfiles
           la $HOME/dotfiles
           ll $HOME/dotfiles
-          cd ~/dotfiles && g status && fp
+          cd $HOME/dotfiles && g status && fp
           upgrade_system_deps $GITHUB_HEAD_REF
           relogin
