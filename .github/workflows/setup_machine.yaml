@@ -26,6 +26,7 @@ jobs:
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
           git clone https://github.com/rbenv/rbenv.git ~/.rbenv
           git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+          eval "$(rbenv init -)"
 
       - name: display shell info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
