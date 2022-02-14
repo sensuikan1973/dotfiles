@@ -24,7 +24,11 @@ source $HOME/dotfiles/zsh/install_plugins.zsh
 if [ `uname` = "Darwin" ]; then
   source $HOME/dotfiles/macos/setup.zsh
 elif [ `uname` = "Linux" ]; then
-  # for Linux
+  source $HOME/dotfiles/linux/setup.zsh
 fi
+
+# shell
+sudo ln -fs $HOME/dotfiles/resources/etc/shells /etc/shells
+sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
 
 echo "setup has successeded"
