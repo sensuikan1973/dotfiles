@@ -14,6 +14,9 @@ zsh ./setup.zsh # This script has idempotence.
 exec zsh --login
 ```
 
+### git
+After shell setup up, you should edit `~/.gitconfig.local`.
+
 ### macos
 
 #### [iTerm2](https://iterm2.com/)
