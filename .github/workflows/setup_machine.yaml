@@ -68,7 +68,6 @@ jobs:
           brew doctor
           brew --prefix
           rbenv versions
-          ruby --version
           nodebrew help
           elasticsearch --version
           upgrade_system_deps $GITHUB_HEAD_REF
