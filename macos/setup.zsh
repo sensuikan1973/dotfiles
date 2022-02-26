@@ -18,3 +18,7 @@ killall SystemUIServer
 # brew
 # See: https://brew.sh/index_ja.html
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# GUI
+brew install --cask iterm2
+brew install --cask visual-studio-code
