@@ -65,6 +65,8 @@ jobs:
           la
           ll
           g status && fp
+          flutter doctor
+          dart --version
           upgrade_system_deps $GITHUB_HEAD_REF
 
       # # session for debug

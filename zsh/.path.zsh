@@ -1,9 +1,3 @@
-# Flutter
-export PATH=$PATH:~/development/flutter/bin
-
-# Dart
-export PATH=$PATH:~/development/flutter/bin/cache/dart-sdk/bin
-
 # Android
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
