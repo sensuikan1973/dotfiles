@@ -65,11 +65,17 @@ jobs:
           la
           ll
           g status && fp
-          flutter doctor
-          dart --version
           rbenv versions
           ruby --version
           upgrade_system_deps $GITHUB_HEAD_REF
+
+      - name: rough command test for only macos
+        shell: zsh {0}
+        run: |-
+          set -euo pipefail
+          source $HOME/.zshrc
+          flutter doctor
+          dart --version
 
       # # session for debug
       # - name: setup tmate session for debug ssh
