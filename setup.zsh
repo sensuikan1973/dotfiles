@@ -34,6 +34,7 @@ brew install pyenv # want to use multiple version python
 brew install zsh # want to use latest zsh
 brew install peco # select command in history
 brew install nodebrew # if you want to `.node-version` on each project, you can use nodenv.
+brew install elasticsearch@6 # if you don't need this anymore, delete this.
 
 # set zsh to login shell
 sudo ln -fs $resource_dir/etc/shells /etc/shells
