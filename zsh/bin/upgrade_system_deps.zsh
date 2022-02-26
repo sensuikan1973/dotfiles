@@ -21,6 +21,7 @@ fi
 
 if command -v gem &> /dev/null; then
   gem update --system
+  gem update
 fi
 
 if command -v docker &> /dev/null; then
