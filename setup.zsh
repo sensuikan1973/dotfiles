@@ -33,6 +33,7 @@ brew install rbenv ruby-build # want to use multiple version ruby
 brew install pyenv # want to use multiple version python
 brew install zsh # want to use latest zsh
 brew install peco # select command in history
+brew install nodebrew # if you want to `.node-version` on each project, you can use nodenv.
 
 # set zsh to login shell
 sudo ln -fs $resource_dir/etc/shells /etc/shells
