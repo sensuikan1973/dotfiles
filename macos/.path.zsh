@@ -1,6 +1,3 @@
-# brew
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin
-
 # use diff-highlight with git
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
