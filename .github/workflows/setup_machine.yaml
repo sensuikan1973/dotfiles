@@ -80,6 +80,7 @@ jobs:
           flutter doctor
           dart --version
           code --version
+          gcloud --version
 
       # # session for debug
       # - name: setup tmate session for debug ssh

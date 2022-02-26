@@ -27,3 +27,4 @@ brew install --cask docker
 brew install --cask google-chrome
 brew install --cask android-studio
 brew install --cask flutter
+brew install --cask google-cloud-sdk
