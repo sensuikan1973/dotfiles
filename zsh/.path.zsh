@@ -1,3 +1,6 @@
+# use diff-highlight with git
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+
 # Android
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
 
