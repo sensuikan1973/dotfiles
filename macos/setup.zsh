@@ -18,3 +18,11 @@ killall SystemUIServer
 # brew
 # See: https://brew.sh/index_ja.html
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# GUI
+# NOTE: cask only supports macos. linix is not supported. See: https://github.com/Homebrew/discussions/discussions/1081
+brew install --cask iterm2
+brew install --cask visual-studio-code # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
+brew install --cask docker
+brew install --cask google-chrome
+brew install --cask android-studio
