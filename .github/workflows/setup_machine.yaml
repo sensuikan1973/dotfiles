@@ -57,7 +57,7 @@ jobs:
         shell: zsh {0}
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          set -euo pipefail
+          set -euxo pipefail
           source $HOME/.zshrc
           uname
           cd $HOME/dotfiles
@@ -66,7 +66,6 @@ jobs:
           ll
           g status && fp
           brew --prefix
-          rbenv versions
           nodebrew help
           elasticsearch --version
           upgrade_system_deps $GITHUB_HEAD_REF
@@ -74,7 +73,7 @@ jobs:
       - name: rough command test for only macos
         shell: zsh {0}
         run: |-
-          set -euo pipefail
+          set -euxo pipefail
           source $HOME/.zshrc
           brew doctor
           flutter doctor
@@ -82,7 +81,7 @@ jobs:
           code --version
           gcloud --version
 
-      # session for debug
-      - name: setup tmate session for debug ssh
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
+      # # session for debug
+      # - name: setup tmate session for debug ssh
+      #   if: ${{ failure() }}
+      #   uses: mxschmitt/action-tmate@v3
