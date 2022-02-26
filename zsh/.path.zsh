@@ -1,8 +1,11 @@
-# Flutter
-export PATH=$PATH:~/development/flutter/bin
+# use diff-highlight with git
+export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
-# Dart
-export PATH=$PATH:~/development/flutter/bin/cache/dart-sdk/bin
+# elsticsearch@6
+export PATH="$PATH:$(brew --prefix elsticsearch@6)/bin"
+
+# See: https://formulae.brew.sh/formula/nodebrew
+export NODEBREW_ROOT=$(brew --prefix)/var/nodebrew
 
 # Android
 export PATH=$PATH:~/Library/Android/sdk/platform-tools
@@ -10,13 +13,3 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 # Go
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
-
-# Google Cloud SDK
-# See: https://cloud.google.com/sdk/docs/install
-export PATH=$PATH:~/google-cloud-sdk/bin
-
-# nodebrew
-export PATH=$PATH:$HOME/.nodebrew/current/bin
-
-# ruby
-export PATH=$PATH:$HOME/.rbenv/bin

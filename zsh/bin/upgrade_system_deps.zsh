@@ -22,3 +22,7 @@ fi
 if command -v gem &> /dev/null; then
   gem update --system
 fi
+
+if command -v docker &> /dev/null; then
+  docker system prune --force
+fi
