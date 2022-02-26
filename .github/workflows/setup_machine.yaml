@@ -65,7 +65,6 @@ jobs:
           la
           ll
           g status && fp
-          brew doctor
           brew --prefix
           rbenv versions
           nodebrew help
@@ -77,6 +76,7 @@ jobs:
         run: |-
           set -euo pipefail
           source $HOME/.zshrc
+          brew doctor
           flutter doctor
           dart --version
           code --version
