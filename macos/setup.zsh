@@ -24,3 +24,4 @@ killall SystemUIServer
 brew install --cask iterm2
 brew install --cask visual-studio-code # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
 brew install --cask docker
+brew install --cask google-chrome
