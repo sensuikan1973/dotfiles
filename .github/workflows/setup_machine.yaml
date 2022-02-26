@@ -65,6 +65,7 @@ jobs:
           la
           ll
           g status && fp
+          brew doctor
           brew --prefix
           rbenv versions
           ruby --version
