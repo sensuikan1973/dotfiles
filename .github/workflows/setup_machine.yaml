@@ -82,7 +82,7 @@ jobs:
           code --version
           gcloud --version
 
-      # # session for debug
-      # - name: setup tmate session for debug ssh
-      #   if: ${{ failure() }}
-      #   uses: mxschmitt/action-tmate@v3
+      # session for debug
+      - name: setup tmate session for debug ssh
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
