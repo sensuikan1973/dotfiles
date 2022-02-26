@@ -67,7 +67,6 @@ jobs:
           g status && fp
           brew --prefix
           nodebrew help
-          elasticsearch --version
           set +x
           upgrade_system_deps $GITHUB_HEAD_REF
 
