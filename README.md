@@ -15,7 +15,7 @@ exec zsh --login
 ```
 
 ### git
-After shell setup up, you should edit `~/.gitconfig.local`.
+After you setup shell, you should edit `~/.gitconfig.local`.
 
 ### macos
 
