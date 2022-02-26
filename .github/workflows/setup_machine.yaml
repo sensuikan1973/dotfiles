@@ -7,6 +7,9 @@ on:
       - '**.md'
   push:
     branches: [main]
+    paths-ignore:
+      - '.github/dependabot.yml'
+      - '**.md'
 
 jobs:
   setup:
