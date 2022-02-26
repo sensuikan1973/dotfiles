@@ -79,6 +79,7 @@ jobs:
           source $HOME/.zshrc
           flutter doctor
           dart --version
+          code --version
 
       # # session for debug
       # - name: setup tmate session for debug ssh
