@@ -67,6 +67,7 @@ jobs:
           g status && fp
           rbenv versions
           ruby --version
+          nodebrew help
           upgrade_system_deps $GITHUB_HEAD_REF
 
       - name: rough command test for only macos
