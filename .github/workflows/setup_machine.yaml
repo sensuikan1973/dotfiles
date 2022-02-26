@@ -67,6 +67,8 @@ jobs:
           g status && fp
           flutter doctor
           dart --version
+          rbenv versions
+          ruby --version
           upgrade_system_deps $GITHUB_HEAD_REF
 
       # # session for debug
