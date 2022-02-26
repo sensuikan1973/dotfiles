@@ -71,6 +71,7 @@ jobs:
           upgrade_system_deps $GITHUB_HEAD_REF
 
       - name: rough command test for only macos
+        if: runner.os == 'macOS'
         shell: zsh {0}
         run: |-
           set -euxo pipefail
