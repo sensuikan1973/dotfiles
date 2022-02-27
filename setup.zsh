@@ -24,6 +24,7 @@ elif [ `uname` = "Linux" ]; then
 fi
 
 # brew
+brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup && brew upgrade
 brew install git # want to use latest git
 brew install coreutils # want to use gls
