@@ -32,7 +32,6 @@ brew "elasticsearch@6" # if you don't need this anymore, delete this.
 brew "redis"
 
 brew "minikube"
-brew "stern"
 
 brew "doxygen"
 
