@@ -40,13 +40,11 @@ brew "doxygen"
 
 brew "cocoapods"
 
-brew "ffmpeg"
-brew "libevent"
-
 brew "jq"
 
 brew "yarn"
 
 brew "openssl@3"
 
+brew "libevent"
 brew "libev"
