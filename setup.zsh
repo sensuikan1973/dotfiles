@@ -38,10 +38,16 @@ brew install elasticsearch@6 # if you don't need this anymore, delete this.
 resource_dir="$HOME/dotfiles/resources"
 
 # set zsh to login shell
-sudo ln -fs $resource_dir/etc/shells /etc/shells
-sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
+if [ "$(diff $resource_dir/etc/shells /etc/shells)" != "" ]; then
+  echo "changing /etc/shells"
+  sudo ln -fs $resource_dir/etc/shells /etc/shells
+fi
+if [ "${SHELL:-undefined}" != "$(brew --prefix)/bin/zsh" ]; then
+  echo "changing login shell"
+  sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
+fi
 
 # ruby gem
 ln -fs $resource_dir/ruby/.gemrc $HOME/.gemrc
 
-echo "setup has successeded"
+echo "setup has succeeded"
