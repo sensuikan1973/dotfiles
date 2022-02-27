@@ -44,4 +44,4 @@ sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
 # ruby gem
 ln -fs $resource_dir/ruby/.gemrc $HOME/.gemrc
 
-echo "setup has successeded"
+echo "setup has succeeded"
