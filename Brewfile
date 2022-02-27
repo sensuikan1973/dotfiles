@@ -35,8 +35,6 @@ brew "minikube"
 
 brew "doxygen"
 
-brew "cocoapods"
-
 brew "jq"
 
 brew "yarn"

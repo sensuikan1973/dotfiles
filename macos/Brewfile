@@ -9,3 +9,5 @@ cask "google-chrome"
 cask "android-studio"
 cask "google-cloud-sdk"
 cask "flutter"
+
+brew "cocoapods", link: true # workaround for https://github.com/sensuikan1973/dotfiles/pull/67#issuecomment-1053681650
