@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
-source $HOME/dotfiles/.zshrc
-
 echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
@@ -28,7 +26,7 @@ fi
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup && brew upgrade
-brew bundle
+brew bundle --file "$HOME/dotfiles/Brewfile"
 
 resource_dir="$HOME/dotfiles/resources"
 
