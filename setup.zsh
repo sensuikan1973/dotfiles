@@ -43,7 +43,7 @@ if [ $etc_shells_diff != "" ]; then
   echo "changing /etc/shells"
   sudo ln -fs $resource_dir/etc/shells /etc/shells
 fi
-if [ $(brew --prefix)/bin/zsh != $0 ]; then
+if [ -z "$SHELL" -o $SHELL != $(brew --prefix)/bin/zsh ]; then
   echo "changing login shell"
   sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
 fi
