@@ -1,3 +1,5 @@
+# See: https://zsh.sourceforge.io/Doc/Release/Variables-Index.html
+
 ZSH_SETTINGS_PATH=$HOME/dotfiles/zsh
 
 # completion
@@ -26,3 +28,17 @@ eval "$(pyenv init -)"
 
 # ruby
 eval "$(rbenv init -)"
+
+# See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
+# See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT
+TIMEFMT='
+==============================
+cmd     : %J
+total   : %E
+user    : %U
+system  : %S
+cpu     : %P
+max rss : %M KB
+=============================='
+REPORTTIME=3 # notify time if running time takes 3 or larger seconds.
+REPORTMEMORY=$((100000)) # notify time if use max rss 100MB or larger.

@@ -63,6 +63,7 @@ jobs:
           set -euxo pipefail
           source $HOME/.zshrc
           uname
+          time
           cd $HOME/dotfiles
           ls
           la
