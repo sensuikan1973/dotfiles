@@ -38,8 +38,7 @@ brew install elasticsearch@6 # if you don't need this anymore, delete this.
 resource_dir="$HOME/dotfiles/resources"
 
 # set zsh to login shell
-etc_shells_diff=$(diff $resource_dir/etc/shells /etc/shells)
-if [ "$etc_shells_diff" != "" ]; then
+if [ "$(diff $resource_dir/etc/shells /etc/shells)" != "" ]; then
   echo "changing /etc/shells"
   sudo ln -fs $resource_dir/etc/shells /etc/shells
 fi
