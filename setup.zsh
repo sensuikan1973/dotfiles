@@ -1,6 +1,8 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+source $HOME/dotfiles/.zshrc
+
 echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
