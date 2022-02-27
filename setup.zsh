@@ -26,14 +26,6 @@ fi
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup && brew upgrade
-brew install git # want to use latest git
-brew install coreutils # want to use gls
-brew install rbenv ruby-build # want to use multiple version ruby
-brew install pyenv # want to use multiple version python
-brew install zsh # want to use latest zsh
-brew install peco # select command in history
-brew install nodebrew # if you want to `.node-version` on each project, you can use nodenv.
-brew install elasticsearch@6 # if you don't need this anymore, delete this.
 
 resource_dir="$HOME/dotfiles/resources"
 

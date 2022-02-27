@@ -1,3 +1,6 @@
+# brew
+export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/Brewfile"
+
 # use diff-highlight with git
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
