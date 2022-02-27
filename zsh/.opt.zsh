@@ -49,6 +49,9 @@ setopt hist_no_store
 # append history. not renew .zsh_history.
 setopt append_history
 
+# record timestamp
+setopt extended_history
+
 # for peco, save many history.
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
