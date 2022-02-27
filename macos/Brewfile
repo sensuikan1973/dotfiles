@@ -6,8 +6,12 @@ cask "iterm2"
 cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
 cask "docker"
 cask "google-chrome"
-cask "android-studio"
 cask "google-cloud-sdk"
 cask "flutter"
 
-brew "cocoapods", link: true # workaround for https://github.com/sensuikan1973/dotfiles/pull/67#issuecomment-1053681650
+# optional packages
+unless ENV['DISABLE_OPTIONAL_BREW_PACKAGES']
+  brew "cocoapods"
+
+  cask "android-studio"
+end
