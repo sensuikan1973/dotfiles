@@ -16,8 +16,10 @@ killall Finder
 killall SystemUIServer
 
 # brew
-# See: https://brew.sh/index_ja.html
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+if ! which brew; then
+  echo "installing homebrew https://brew.sh/"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
 
 # GUI
 # NOTE: cask only supports macos. linux is not supported. See: https://github.com/Homebrew/discussions/discussions/1081
