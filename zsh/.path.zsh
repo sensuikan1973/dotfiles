@@ -1,6 +1,9 @@
 # brew
 export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/Brewfile"
 
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+
 # use diff-highlight with git
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 

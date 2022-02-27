@@ -20,8 +20,12 @@ if command -v gcloud &> /dev/null; then
 fi
 
 if command -v gem &> /dev/null; then
-  gem update --system
-  gem update
+  for rb_version in `rbenv versions --bare`; do
+    echo "ruby $rb_version, upgrade gem dependencies"
+    rbenv shell $rb_version
+    gem update --system
+    gem update
+  done
 fi
 
 if command -v docker &> /dev/null; then
