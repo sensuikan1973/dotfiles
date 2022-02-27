@@ -7,5 +7,5 @@ cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.
 cask "docker"
 cask "google-chrome"
 cask "android-studio"
-cask "flutter"
 cask "google-cloud-sdk"
+cask "flutter"
