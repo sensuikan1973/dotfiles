@@ -39,11 +39,11 @@ resource_dir="$HOME/dotfiles/resources"
 
 # set zsh to login shell
 etc_shells_diff=$(diff $resource_dir/etc/shells /etc/shells)
-if [ $etc_shells_diff != "" ]; then
+if [ "$etc_shells_diff" != "" ]; then
   echo "changing /etc/shells"
   sudo ln -fs $resource_dir/etc/shells /etc/shells
 fi
-if [ -z "$SHELL" -o $SHELL != $(brew --prefix)/bin/zsh ]; then
+if [ -z "$SHELL" -o "$SHELL" != "$(brew --prefix)/bin/zsh" ]; then
   echo "changing login shell"
   sudo chsh -s $(brew --prefix)/bin/zsh $(whoami)
 fi
