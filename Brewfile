@@ -34,8 +34,6 @@ brew "redis"
 brew "minikube"
 brew "stern"
 
-brew "lcov"
-
 brew "doxygen"
 
 brew "cocoapods"
