@@ -20,4 +20,4 @@ defaults write com.apple.finder ShowTabView -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # disable unnecessary animation.
-defaults write com.apple.finder DisableAllAnimations -boolean true
+defaults write com.apple.finder DisableAllAnimations -bool true
