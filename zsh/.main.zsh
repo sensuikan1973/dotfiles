@@ -27,7 +27,7 @@ eval "$(pyenv init --path)"
 eval "$(pyenv init -)"
 
 # ruby
-eval "$(rbenv init -)"
+eval "$(rbenv init - zsh)"
 
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT
