@@ -11,6 +11,9 @@ on:
       - '.github/dependabot.yml'
       - '**.md'
 
+env:
+  DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true # save time
+
 jobs:
   setup_and_update:
     runs-on: ${{ matrix.os }}
@@ -18,8 +21,6 @@ jobs:
       matrix:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 40
-    env:
-      DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true # save time
     steps:
       - name : debug
         run: |-
