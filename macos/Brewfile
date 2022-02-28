@@ -12,4 +12,4 @@ cask "google-cloud-sdk"
 cask "android-studio"
 cask "flutter"
 
-brew "cocoapods", link: true
+# brew "cocoapods" # TODO: resolve https://github.com/sensuikan1973/dotfiles/pull/67#issuecomment-1053681650
