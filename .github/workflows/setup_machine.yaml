@@ -12,7 +12,7 @@ on:
       - '**.md'
 
 jobs:
-  setup:
+  setup_and_update:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
