@@ -12,4 +12,4 @@ cask "flutter"
 
 tap "homebrew/cask"
 
-brew "cocoapods" unless system "/usr/local/bin/pod --failfast" # See: https://github.com/Homebrew/homebrew-bundle#usage
+brew "cocoapods" unless system "$(brew --prefix)/bin/pod --failfast" # See: https://github.com/Homebrew/homebrew-bundle#usage
