@@ -1,5 +1,9 @@
 # https://github.com/Homebrew/homebrew-bundle
 
+# NOTE:
+# The packages which is always required are only listed.
+# If you use another packages, you can install individually.
+
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/core"
@@ -16,14 +20,7 @@ brew "peco" # select command in history
 brew "nodebrew" # if you want to `.node-version` on each project, you can use nodenv.
 brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 brew "yarn" # e.g. for docusaurus
-brew "minikube" # k8s playground
-brew "elasticsearch@6" # if you don't need this anymore, delete this.
-brew "redis"
-brew "doxygen"
-brew "jq"
 brew "openssl@3"
-brew "libevent"
-brew "libev"
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
