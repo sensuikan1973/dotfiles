@@ -18,6 +18,8 @@ jobs:
       matrix:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 40
+    env:
+      DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true # save time
     steps:
       - name: setup for linux
         if: runner.os == 'Linux'
@@ -52,18 +54,12 @@ jobs:
       - name: 1st, run setup script
         shell: zsh {0}
         run: cd ~/dotfiles && zsh ./setup.zsh
-        env:
-          DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true
       - name: 2nd, run setup script
         shell: zsh {0}
         run: cd ~/dotfiles && zsh ./setup.zsh
-        env:
-          DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true
 
       - name: rough command test
         shell: zsh {0}
-        env:
-          DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           set -euxo pipefail

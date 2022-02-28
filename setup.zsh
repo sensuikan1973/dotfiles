@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+echo "DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES"
+echo "$DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES"
+
 echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
