@@ -22,7 +22,9 @@ brew "nodebrew" # if you want to `.node-version` on each project, you can use no
 brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 
 # optional packages
-unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES'].empty?
+puts "ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']"
+puts ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
+unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
   brew "elasticsearch@6" # if you don't need this anymore, delete this.
   brew "redis"
 

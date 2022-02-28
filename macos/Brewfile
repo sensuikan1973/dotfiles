@@ -10,7 +10,7 @@ cask "google-cloud-sdk"
 cask "flutter"
 
 # optional packages
-unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES'].empty?
+unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
   brew "cocoapods"
 
   cask "android-studio"
