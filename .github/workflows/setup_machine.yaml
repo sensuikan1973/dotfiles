@@ -11,9 +11,6 @@ on:
       - '.github/dependabot.yml'
       - '**.md'
 
-env:
-  DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true # save time
-
 jobs:
   setup_and_update:
     runs-on: ${{ matrix.os }}
@@ -22,11 +19,6 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 40
     steps:
-      - name : debug
-        run: |-
-          echo $DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES
-          ruby -e "puts \"ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']: #{ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']}\""
-
       - name: setup for linux
         if: runner.os == 'Linux'
         run: |-
@@ -59,10 +51,14 @@ jobs:
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
         shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: |-
+          export DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=true # save time
+          cd ~/dotfiles && zsh ./setup.zsh
       - name: 2nd, run setup script
         shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: |-
+          export DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=true # save time
+          cd ~/dotfiles && zsh ./setup.zsh
 
       - name: rough command test
         shell: zsh {0}
@@ -70,6 +66,7 @@ jobs:
         run: |-
           set -euxo pipefail
           source $HOME/.zshrc
+          export DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=true # save time
           uname
           time
           cd $HOME/dotfiles
@@ -88,6 +85,7 @@ jobs:
         run: |-
           set -euxo pipefail
           source $HOME/.zshrc
+          export DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=true # save time
           flutter doctor
           dart --version
           code --version
