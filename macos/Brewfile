@@ -12,4 +12,4 @@ cask "google-cloud-sdk"
 cask "android-studio"
 cask "flutter"
 
-brew "cocoapods" unless system "$(brew --prefix)/bin/pod --failfast" # See: https://github.com/Homebrew/homebrew-bundle#usage
+brew "cocoapods", link: true
