@@ -1,9 +1,5 @@
 # https://github.com/Homebrew/homebrew-bundle
 
-if OS.mac?
-  eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
-end
-
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -40,4 +36,8 @@ unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
 
   brew "libevent"
   brew "libev"
+end
+
+if OS.mac?
+  eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
 end
