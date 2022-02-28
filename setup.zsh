@@ -1,9 +1,6 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
-echo "DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES"
-echo "$DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES"
-
 echo "start setup script"
 which zsh
 echo $ZSH_NAME $ZSH_VERSION
@@ -29,7 +26,7 @@ fi
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup && brew upgrade
-DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=$DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES brew bundle --file "$HOME/dotfiles/Brewfile"
+brew bundle --install --file "$HOME/dotfiles/Brewfile"
 
 resource_dir="$HOME/dotfiles/resources"
 

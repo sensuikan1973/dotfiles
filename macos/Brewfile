@@ -7,13 +7,9 @@ cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.
 cask "docker"
 cask "google-chrome"
 cask "google-cloud-sdk"
+cask "android-studio"
 cask "flutter"
 
 tap "homebrew/cask"
 
-# optional packages
-unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
-  brew "cocoapods"
-
-  cask "android-studio"
-end
+brew "cocoapods" unless system "/usr/local/bin/pod --failfast"
