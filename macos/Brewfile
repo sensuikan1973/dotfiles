@@ -1,3 +1,5 @@
+tap "homebrew/cask"
+
 cask_args appdir: '/Applications'
 
 # GUI
@@ -9,7 +11,5 @@ cask "google-chrome"
 cask "google-cloud-sdk"
 cask "android-studio"
 cask "flutter"
-
-tap "homebrew/cask"
 
 brew "cocoapods" unless system "$(brew --prefix)/bin/pod --failfast" # See: https://github.com/Homebrew/homebrew-bundle#usage
