@@ -19,7 +19,7 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 40
     env:
-      DISABLE_OPTIONAL_BREW_PACKAGES: true # save time
+      INSTALL_OPTIONAL_BREW_PACKAGES: true # save time
     steps:
       - name: setup for linux
         if: runner.os == 'Linux'

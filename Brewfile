@@ -21,7 +21,7 @@ brew "nodebrew" # if you want to `.node-version` on each project, you can use no
 brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 
 # optional packages
-unless ENV['DISABLE_OPTIONAL_BREW_PACKAGES']
+unless ENV['INSTALL_OPTIONAL_BREW_PACKAGES']
   tap "dart-lang/dart"
 
   brew "elasticsearch@6" # if you don't need this anymore, delete this.
