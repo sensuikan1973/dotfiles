@@ -12,12 +12,12 @@ on:
       - '**.md'
 
 jobs:
-  setup:
+  setup_and_update:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-20.04, macos-11]
-    timeout-minutes: 30
+    timeout-minutes: 40
     steps:
       - name: setup for linux
         if: runner.os == 'Linux'

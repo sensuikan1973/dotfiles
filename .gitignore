@@ -1,5 +1,8 @@
 .DS_Store
 
+# zsh
 zsh/plugins
-
 .zsh/history/
+
+# brew
+Brewfile.lock.json
