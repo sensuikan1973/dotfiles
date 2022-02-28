@@ -8,6 +8,7 @@ tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "dart-lang/dart"
 
 brew "zsh" # want to use latest zsh
 brew "git" # want to use latest git
@@ -22,8 +23,6 @@ brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 
 # optional packages
 unless ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']
-  tap "dart-lang/dart"
-
   brew "elasticsearch@6" # if you don't need this anymore, delete this.
   brew "redis"
 
