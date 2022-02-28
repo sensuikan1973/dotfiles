@@ -29,7 +29,7 @@ fi
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup && brew upgrade
-brew bundle --file "$HOME/dotfiles/Brewfile"
+DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES=$DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES brew bundle --file "$HOME/dotfiles/Brewfile"
 
 resource_dir="$HOME/dotfiles/resources"
 
