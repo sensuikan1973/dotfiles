@@ -19,12 +19,12 @@ jobs:
         os: [ubuntu-20.04, macos-11]
     timeout-minutes: 40
     env:
-      INSTALL_OPTIONAL_BREW_PACKAGES: true # save time
+      DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES: true # save time
     steps:
       - name : debug
         run: |-
-          echo $INSTALL_OPTIONAL_BREW_PACKAGES
-          ruby -e "puts \"ENV['INSTALL_OPTIONAL_BREW_PACKAGES']: #{ENV['INSTALL_OPTIONAL_BREW_PACKAGES']}\""
+          echo $DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES
+          ruby -e "puts \"ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']: #{ENV['DISABLE_INSTALLING_OPTIONAL_BREW_PACKAGES']}\""
 
       - name: setup for linux
         if: runner.os == 'Linux'
