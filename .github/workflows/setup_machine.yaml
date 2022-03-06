@@ -71,6 +71,7 @@ jobs:
           g status && fp
           brew --prefix
           nodebrew help
+          dart --version
           find-bigN 5
           disk-rankN 5
           set +x
@@ -83,7 +84,6 @@ jobs:
           set -euxo pipefail
           source $HOME/.zshrc
           flutter doctor
-          dart --version
           code --version
           gcloud --version
 
