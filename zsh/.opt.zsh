@@ -65,3 +65,7 @@ setopt interactive_comments
 
 # See: https://haya.se/diary/?date=200808
 setopt no_multios
+
+# At logout, do not kill/check background job
+setopt no_hup
+setopt no_checkjobs
