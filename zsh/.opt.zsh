@@ -45,6 +45,7 @@ setopt share_history
 
 # ignore duplicated command on history.
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 
 # ignore history command on history.
 setopt hist_no_store
