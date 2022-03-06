@@ -62,3 +62,6 @@ export SAVEHIST=$HISTSIZE
 
 # regard "#" as comment on command line
 setopt interactive_comments
+
+# See: https://haya.se/diary/?date=200808
+setopt no_multios
