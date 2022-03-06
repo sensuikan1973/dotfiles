@@ -1,5 +1,8 @@
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
 
+# nod load /etc/z*
+setopt no_global_rcs
+
 # allow variable in PROMPT.
 setopt prompt_subst
 
@@ -42,6 +45,7 @@ setopt share_history
 
 # ignore duplicated command on history.
 setopt hist_ignore_dups
+setopt hist_ignore_all_dups
 
 # ignore history command on history.
 setopt hist_no_store
@@ -52,7 +56,26 @@ setopt append_history
 # record timestamp
 setopt extended_history
 
+# append history immediately
+setopt inc_append_history
+
 # for peco, save many history.
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
 export SAVEHIST=$HISTSIZE
+
+# regard "#" as comment on command line
+setopt interactive_comments
+
+# See: https://haya.se/diary/?date=200808
+setopt no_multios
+
+# At logout, do not kill/check background job
+setopt no_hup
+setopt no_checkjobs
+
+# wait 10 sec to ask y/N before rm execution
+setopt rm_star_wait
+
+# when exit code != 0, print the code
+setopt print_exit_value
