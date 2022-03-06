@@ -56,6 +56,9 @@ setopt append_history
 # record timestamp
 setopt extended_history
 
+# append history immediately
+setopt inc_append_history
+
 # for peco, save many history.
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
