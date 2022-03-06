@@ -1,5 +1,8 @@
 # See: https://zsh.sourceforge.io/Doc/Release/Options.html
 
+# nod load /etc/z*
+setopt no_global_rcs
+
 # allow variable in PROMPT.
 setopt prompt_subst
 
