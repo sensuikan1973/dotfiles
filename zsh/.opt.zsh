@@ -59,3 +59,6 @@ setopt extended_history
 export HISTFILE=~/.zsh_history
 export HISTSIZE=10000000
 export SAVEHIST=$HISTSIZE
+
+# regard "#" as comment on command line
+setopt interactive_comments
