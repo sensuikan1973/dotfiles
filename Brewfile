@@ -7,7 +7,6 @@
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/core"
-tap "dart-lang/dart"
 
 brew "zsh" # want to use latest zsh
 brew "git" # want to use latest git
