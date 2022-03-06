@@ -71,8 +71,8 @@ jobs:
           g status && fp
           brew --prefix
           nodebrew help
-          findbig5
-          diskrank5
+          find-bigN 5
+          disk-rankN 5
           set +x
           upgrade_system_deps $GITHUB_HEAD_REF
 
