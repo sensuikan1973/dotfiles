@@ -72,3 +72,6 @@ setopt no_checkjobs
 
 # wait 10 sec to ask y/N before rm execution
 setopt rm_star_wait
+
+# when exit code != 0, print the code
+setopt print_exit_value
