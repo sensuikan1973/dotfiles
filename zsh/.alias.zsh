@@ -28,5 +28,6 @@ alias cp="cp -i"
 alias mv="mv -i"
 
 # util
-alias findbig5='find . -type f -exec ls -s {} \; | sort -n -r | head -5'
-alias diskrank5='du -ah | sort -r -k1 | head -5'
+# Why print_exit_value is unsetopted ? See: https://www.zsh.org/mla/workers/2021/msg01174.html
+alias findbigN="find . -type f -exec ls -sh {} \; | sort --reverse --numeric-sort | head -n $1"
+alias diskrankN="du -ah | sort --reverse --numeric-sort --key=1 | head -n $1"
