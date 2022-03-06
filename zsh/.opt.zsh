@@ -69,3 +69,6 @@ setopt no_multios
 # At logout, do not kill/check background job
 setopt no_hup
 setopt no_checkjobs
+
+# wait 10 sec to ask y/N before rm execution
+setopt rm_star_wait
