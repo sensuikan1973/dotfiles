@@ -26,3 +26,7 @@ alias relogin='exec zsh --login'
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+
+# util
+alias findbig5='find . -type f -exec ls -s {} \; | sort -n -r | head -5'
+alias diskrank5='du -ah | sort -r -k1 | head -5'
