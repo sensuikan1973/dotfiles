@@ -25,7 +25,8 @@ fi
 
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
-brew cleanup && brew upgrade
+brew cleanup --prune=all
+brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 
 resource_dir="$HOME/dotfiles/resources"
