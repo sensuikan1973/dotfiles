@@ -16,7 +16,7 @@ if command -v flutter &> /dev/null; then
 fi
 
 if command -v gcloud &> /dev/null; then
-  gcloud components update
+  gcloud components update --quiet
 fi
 
 if command -v gem &> /dev/null; then
