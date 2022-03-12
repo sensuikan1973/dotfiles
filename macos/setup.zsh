@@ -13,6 +13,7 @@ echo "restart every systems to reflect update"
 killall Dock
 killall Finder
 killall SystemUIServer
+killall TextEdit
 killall Xcode
 
 # brew
