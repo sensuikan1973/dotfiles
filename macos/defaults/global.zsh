@@ -17,3 +17,6 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # always display extensions.
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# remove the delay when hovering the toolbar title
+defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
