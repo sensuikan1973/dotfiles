@@ -21,5 +21,5 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 # remove the delay when hovering the toolbar title
 defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
 
-# Choose the size of Finder sidebar icons as Medium
+# choose the size of Finder sidebar icons as Medium
 defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
