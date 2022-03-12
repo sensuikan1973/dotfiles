@@ -21,3 +21,6 @@ defaults write com.apple.finder ShowStatusBar -bool true
 
 # disable unnecessary animation.
 defaults write com.apple.finder DisableAllAnimations -bool true
+
+# changing file extension warning
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
