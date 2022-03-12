@@ -1,4 +1,4 @@
-# Include date and time in screenshot filenames.
+# include date and time in screenshot filenames.
 defaults write com.apple.screencapture include-date -bool true
 
 # set default screenshot location.
