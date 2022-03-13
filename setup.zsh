@@ -28,6 +28,7 @@ brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
 brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
+$(brew --prefix)/opt/nodebrew/bin/nodebrew setup_dirs # See: https://formulae.brew.sh/formula/nodebrew
 
 resource_dir="$HOME/dotfiles/resources"
 
