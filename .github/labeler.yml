@@ -1,0 +1,19 @@
+GitHub Actions:
+  - .github/workflows/**/*
+  - .github/dependabot.yml
+  - .github/labeler.yml
+
+git:
+  - git/**/*
+
+linux:
+  - linux/**/*
+
+macos:
+  - macos/**/*
+
+iTerm2:
+  - macos/iterm2/**/*
+
+zsh:
+  - zsh/**/*

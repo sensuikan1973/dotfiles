@@ -3,12 +3,16 @@ name: setup machine
 on:
   pull_request:
     paths-ignore:
-      - '.github/dependabot.yml'
+      - .github/dependabot.yml
+      - .github/workflows/labeling_pr.yaml
+      - .github/labeler.yml
       - '**.md'
   push:
     branches: [main]
     paths-ignore:
-      - '.github/dependabot.yml'
+      - .github/dependabot.yml
+      - .github/workflows/labeling_pr.yaml
+      - .github/labeler.yml
       - '**.md'
 
 jobs:
