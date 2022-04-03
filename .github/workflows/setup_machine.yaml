@@ -78,7 +78,13 @@ jobs:
           nodebrew help
           find-bigN 5
           disk-rankN 5
-          set +x
+
+      - name: upgrade_system_deps test
+        shell: zsh {0}
+        run: |-
+          set -euo pipefail
+          source $HOME/.zshrc
+          echo $GITHUB_HEAD_REF
           upgrade_system_deps $GITHUB_HEAD_REF
 
       - name: rough command test for only macos
