@@ -21,5 +21,5 @@ precmd () {
 }
 
 DIR='%F{081}%~%f'
-PROMPT='${DIR} ${vcs_info_msg_0_}
-$ '
+PROMPT="${DIR} ${vcs_info_msg_0_}
+$ "
