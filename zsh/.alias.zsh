@@ -14,12 +14,12 @@ alias amend='git commit --amend'
 alias fp='git fetch -p'
 
 # my functions
-alias ssh="$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh"
-alias find-bigN="$HOME/dotfiles/zsh/bin/find-bigN.zsh"
-alias disk-rankN="$HOME/dotfiles/zsh/bin/disk-rankN.zsh"
+alias ssh='$HOME/dotfiles/zsh/bin/ssh-profile-change.zsh'
+alias find-bigN='$HOME/dotfiles/zsh/bin/find-bigN.zsh'
+alias disk-rankN='$HOME/dotfiles/zsh/bin/disk-rankN.zsh'
 
 # system dependencies
-alias upgrade_system_deps="$HOME/dotfiles/zsh/bin/upgrade_system_deps.zsh"
+alias upgrade_system_deps='$HOME/dotfiles/zsh/bin/upgrade_system_deps.zsh'
 
 # restart shell
 alias relogin='exec zsh --login'
