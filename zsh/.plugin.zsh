@@ -1,4 +1,4 @@
-# shellcheck disable=SC1091,SC2034
+# shellcheck disable=SC1091,SC2034,SC2153
 
 zsh_plugins_dir="$HOME/dotfiles/zsh/plugins"
 
