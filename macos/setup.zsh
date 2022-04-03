@@ -1,3 +1,5 @@
+# shellcheck disable=SC1090
+
 set -euxo pipefail
 
 # defaults
