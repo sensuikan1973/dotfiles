@@ -1,3 +1,5 @@
+# shellcheck disable=SC1091
+
 source "$HOME/dotfiles/zsh/.main.zsh"
 
 if [ $(uname) = "Darwin" ]; then

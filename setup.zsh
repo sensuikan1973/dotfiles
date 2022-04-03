@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+# shellcheck disable=SC1091
+
 set -euxo pipefail
 
 echo "start setup script"

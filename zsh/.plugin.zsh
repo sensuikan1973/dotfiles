@@ -1,3 +1,5 @@
+# shellcheck disable=SC1091
+
 zsh_plugins_dir="$HOME/dotfiles/zsh/plugins"
 
 # zsh-syntax-highlighting

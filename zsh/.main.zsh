@@ -1,3 +1,5 @@
+# shellcheck disable=SC1091
+
 # See: https://zsh.sourceforge.io/Doc/Release/Variables-Index.html
 
 ZSH_SETTINGS_PATH="$HOME/dotfiles/zsh"
