@@ -12,6 +12,7 @@ on:
       - '!**.md'
       - '!.github/**/*'
       - '.github/workflows/setup_machine.yaml'
+  workflow_dispatch:
 
 jobs:
   setup_and_update:
