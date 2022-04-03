@@ -13,7 +13,7 @@ function install_plugin() {
     git clone "$git_repository" "$dest_dir"
   else
     echo "pull $git_repository"
-    cd $dest_dir
+    cd "$dest_dir"
     git pull --prune
   fi
 }
