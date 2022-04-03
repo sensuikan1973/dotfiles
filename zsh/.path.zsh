@@ -5,7 +5,8 @@ export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/Brewfile"
 export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
 
 # See: https://formulae.brew.sh/formula/nodebrew
-export NODEBREW_ROOT=$(brew --prefix)/var/nodebrew
+nodebrew_root="$(brew --prefix)/var/nodebrew"
+export NODEBREW_ROOT=$nodebrew_root
 export PATH=$PATH:$NODEBREW_ROOT/current/bin
 
 # Android
