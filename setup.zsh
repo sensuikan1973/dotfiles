@@ -17,9 +17,9 @@ fi
 ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
 source "$HOME/dotfiles/zsh/install_plugins.zsh"
 
-if [ `uname` = "Darwin" ]; then
+if [ $(uname) = "Darwin" ]; then
   source "$HOME/dotfiles/macos/setup.zsh"
-elif [ `uname` = "Linux" ]; then
+elif [ $(uname) = "Linux" ]; then
   source "$HOME/dotfiles/linux/setup.zsh"
 fi
 
@@ -44,7 +44,7 @@ fi
 
 # ruby gem
 ln -fs "$resource_dir/ruby/.gemrc" "$HOME/.gemrc"
-for rb_version in `rbenv versions --bare`; do
+for rb_version in $(rbenv versions --bare); do
   echo "installing ruby $rb_version"
   rbenv install "$rb_version" --skip-existing
 done
