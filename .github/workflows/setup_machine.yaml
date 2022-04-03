@@ -3,12 +3,14 @@ name: setup machine
 on:
   pull_request:
     paths:
+      - '!.vscode/**/*'
       - '!**.md'
       - '!.github/**/*'
       - '.github/workflows/setup_machine.yaml'
   push:
     branches: [main]
     paths:
+      - '!.vscode/**/*'
       - '!**.md'
       - '!.github/**/*'
       - '.github/workflows/setup_machine.yaml'
