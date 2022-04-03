@@ -3,13 +3,13 @@ set -euxo pipefail
 
 branch=${1:-main}
 
-cd $HOME/dotfiles
+cd "$HOME/dotfiles"
 git remote update --prune
-git checkout $branch
-git branch --set-upstream-to=origin/$branch $branch
+git checkout "$branch"
+git branch --set-upstream-to="origin/$branch" "$branch"
 git pull
 
-source $HOME/dotfiles/setup.zsh
+source "$HOME/dotfiles/setup.zsh"
 
 if command -v flutter &> /dev/null; then
   flutter upgrade
