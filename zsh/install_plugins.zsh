@@ -10,10 +10,11 @@ function install_plugin() {
   dest_dir="$zsh_plugins_dir/$dir_name"
   if [ ! -d "$dest_dir" ] ; then
     echo "clone $git_repository"
-    git clone $git_repository $dest_dir
+    git clone "$git_repository" "$dest_dir"
   else
     echo "pull $git_repository"
-    cd $dest_dir && git pull --prune
+    cd "$dest_dir"
+    git pull --prune
   fi
 }
 

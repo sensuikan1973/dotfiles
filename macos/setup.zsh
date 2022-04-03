@@ -1,11 +1,14 @@
+# shellcheck disable=SC1090
+
 set -euxo pipefail
 
 # defaults
-for file in $(find $HOME/dotfiles/macos/defaults -type f -name "*.zsh")
+# See: https://github.com/koalaman/shellcheck/wiki/SC2044
+while IFS= read -r -d '' file
 do
   echo "run $file"
-  source $file
-done
+  source "$file"
+done < <(find "$HOME/dotfiles/macos/defaults" -type f -name "*.zsh")
 # NOTE: Night Shift はスクリプト書かないと無理なので、ひとまずは手動で済ませて
 # REF: https://gist.github.com/thomasfinch/14bd3181799734c872d2ad3b207cc01c
 

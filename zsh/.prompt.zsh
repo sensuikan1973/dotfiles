@@ -1,3 +1,5 @@
+# shellcheck disable=SC2034,SC2016
+
 autoload -Uz vcs_info
 
 # format for `vcs_info_msg_0_`.
