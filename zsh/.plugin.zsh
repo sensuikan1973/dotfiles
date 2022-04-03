@@ -8,7 +8,7 @@ source "$zsh_plugins_dir/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets root)
 
 # dircolors-solarized
-eval $(gdircolors "$zsh_plugins_dir/dircolors-solarized/dircolors.ansi-universal")
+eval "$(gdircolors "$zsh_plugins_dir/dircolors-solarized/dircolors.ansi-universal")"
 
 # select command in history with `ctrl + R`.
 function peco-select-history() {
