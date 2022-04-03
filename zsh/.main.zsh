@@ -1,4 +1,4 @@
-# shellcheck disable=SC1091
+# shellcheck disable=SC1091,SC2034
 
 # See: https://zsh.sourceforge.io/Doc/Release/Variables-Index.html
 
