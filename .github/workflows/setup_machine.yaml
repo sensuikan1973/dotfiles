@@ -2,18 +2,16 @@ name: setup machine
 
 on:
   pull_request:
-    paths-ignore:
-      - .github/dependabot.yml
-      - .github/workflows/labeling_pr.yaml
-      - .github/labeler.yml
+    paths:
       - '**.md'
+      - '!.github/**/*'
+      - '.github/workflows/setup_machine.yaml'
   push:
     branches: [main]
-    paths-ignore:
-      - .github/dependabot.yml
-      - .github/workflows/labeling_pr.yaml
-      - .github/labeler.yml
+    paths:
       - '**.md'
+      - '!.github/**/*'
+      - '.github/workflows/setup_machine.yaml'
 
 jobs:
   setup_and_update:

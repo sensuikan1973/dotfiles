@@ -4,5 +4,4 @@
 # extend-exclude = ["foo/**/*"]
 
 [default.extend-words]
-# Don't correct the surname "Teh"
 iterm2 = "iterm2"
