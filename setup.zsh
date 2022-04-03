@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-# shellcheck disable=SC1091
+# shellcheck disable=SC1091,SC1090
 
 set -euxo pipefail
 
