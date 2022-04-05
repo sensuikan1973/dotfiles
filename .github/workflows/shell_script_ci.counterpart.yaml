@@ -2,14 +2,14 @@ name: Shell Script CI
 
 on:
   pull_request:
-    paths:
+    paths-ignore:
       - '**/*.sh'
       - '**/*.zsh'
       - '.zshrc'
       - '.github/workflows/shell_script_ci.yaml'
   push:
     branches: [main]
-    paths:
+    paths-ignore:
       - '**/*.sh'
       - '**/*.zsh'
       - '.zshrc'
@@ -21,6 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ludeeus/action-shellcheck@master
-        env:
-          SHELLCHECK_OPTS: -s bash # See: https://github.com/koalaman/shellcheck/issues/809
+      - run: .github/scripts/do_nothing_on_counterpart_workflow.sh
