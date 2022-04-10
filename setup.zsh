@@ -32,17 +32,7 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 "$(brew --prefix)/opt/nodebrew/bin/nodebrew" setup_dirs # See: https://formulae.brew.sh/formula/nodebrew
 
-resource_dir="$HOME/dotfiles/resources"
-
-# set zsh to login shell
-if [ "$(diff "$resource_dir/etc/shells" /etc/shells)" != "" ]; then
-  echo "changing /etc/shells"
-  sudo ln -fs "$resource_dir/etc/shells" /etc/shells
-fi
-if [ "${SHELL:-undefined}" != "$(brew --prefix)/bin/zsh" ]; then
-  echo "changing login shell"
-  sudo chsh -s "$(brew --prefix)/bin/zsh" "$(whoami)"
-fi
+source "$HOME/dotfiles/etc/setup.zsh"
 
 source "$HOME/dotfiles/ruby/setup.zsh"
 
