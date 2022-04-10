@@ -50,7 +50,7 @@ fi
 # https://github.com/rbenv/ruby-build/issues/156
 # https://github.com/rbenv/ruby-build#custom-build-configuration
 # https://github.com/ruby/ruby/commit/32e00d382f4ef204ac21868ded101597e36d230d
-RUBY_CONFIGURE_OPTS="--disable-install-doc"
+export RUBY_CONFIGURE_OPTS="--disable-install-doc"
 
 ln -fs "$resource_dir/ruby/.gemrc" "$HOME/.gemrc"
 for rb_version in $(rbenv versions --bare); do
