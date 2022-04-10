@@ -19,3 +19,6 @@ iTerm2:
 
 zsh:
   - zsh/**/*
+
+ruby:
+  - ruby/**/*
