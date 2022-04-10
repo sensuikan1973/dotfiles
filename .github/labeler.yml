@@ -1,7 +1,9 @@
 GitHub Actions:
   - .github/workflows/**/*
+  - .github/scripts/**/*
   - .github/dependabot.yml
   - .github/labeler.yml
+  - .github/.typos_config.toml
 
 git:
   - git/**/*
@@ -17,3 +19,7 @@ iTerm2:
 
 zsh:
   - zsh/**/*
+  - etc/**/*
+
+ruby:
+  - ruby/**/*

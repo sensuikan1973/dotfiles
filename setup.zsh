@@ -32,30 +32,8 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 "$(brew --prefix)/opt/nodebrew/bin/nodebrew" setup_dirs # See: https://formulae.brew.sh/formula/nodebrew
 
-resource_dir="$HOME/dotfiles/resources"
+source "$HOME/dotfiles/etc/setup.zsh"
 
-# set zsh to login shell
-if [ "$(diff "$resource_dir/etc/shells" /etc/shells)" != "" ]; then
-  echo "changing /etc/shells"
-  sudo ln -fs "$resource_dir/etc/shells" /etc/shells
-fi
-if [ "${SHELL:-undefined}" != "$(brew --prefix)/bin/zsh" ]; then
-  echo "changing login shell"
-  sudo chsh -s "$(brew --prefix)/bin/zsh" "$(whoami)"
-fi
-
-# ruby gem
-#
-# save time and space. I don't need Rdoc.
-# https://github.com/rbenv/ruby-build/issues/156
-# https://github.com/rbenv/ruby-build#custom-build-configuration
-# https://github.com/ruby/ruby/commit/32e00d382f4ef204ac21868ded101597e36d230d
-export RUBY_CONFIGURE_OPTS="--disable-install-doc"
-
-ln -fs "$resource_dir/ruby/.gemrc" "$HOME/.gemrc"
-for rb_version in $(rbenv versions --bare); do
-  echo "installing ruby $rb_version"
-  rbenv install "$rb_version" --skip-existing
-done
+source "$HOME/dotfiles/ruby/setup.zsh"
 
 echo "setup has succeeded"
