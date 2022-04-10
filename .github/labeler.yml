@@ -19,7 +19,7 @@ iTerm2:
 
 zsh:
   - zsh/**/*
+  - etc/**/*
 
 ruby:
   - ruby/**/*
-  - etc/**/*
