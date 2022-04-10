@@ -3,6 +3,7 @@ name: setup machine
 on:
   pull_request:
     paths:
+      - '**/*'
       - '!.vscode/**/*'
       - '!**.md'
       - '!.github/**/*'
@@ -10,6 +11,7 @@ on:
   push:
     branches: [main]
     paths:
+      - '**/*'
       - '!.vscode/**/*'
       - '!**.md'
       - '!.github/**/*'
