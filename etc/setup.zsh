@@ -2,8 +2,8 @@
 
 if [ "$(diff "$HOME/dotfiles/etc/shells" /etc/shells)" != "" ]; then
   echo "changing /etc/shells"
-  mkdir .backup/etc
-  cat /etc/shells > ".backup/etc/shells.${date -I seconds}"
+  mkdir "$HOME/dotfiles/.backup/etc"
+  cat /etc/shells > "$HOME/dotfiles/.backup/etc/shells.${date -I seconds}"
   sudo ln -fs "$HOME/dotfiles/etc/shells" /etc/shells
 fi
 
