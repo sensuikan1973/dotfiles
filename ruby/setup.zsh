@@ -10,7 +10,7 @@ ln -fs "$HOME/dotfiles/ruby/.gemrc" "$HOME/.gemrc"
 for rb_version in $(rbenv versions --bare); do
   echo "installing ruby $rb_version"
   rbenv install "$rb_version" --skip-existing
-  rbenv init || true
+  eval "$(rbenv init - zsh)" || true
   rbenv shell "$rb_version"
   gem update --system
   gem update
