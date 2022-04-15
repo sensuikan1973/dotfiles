@@ -78,8 +78,8 @@ jobs:
           g status && fp
           brew --prefix
           nodebrew help
-          find-bigN 5
-          disk-rankN 5
+          find-bigN.zsh 5
+          disk-rankN.zsh 5
 
       - name: upgrade_system_deps test
         shell: zsh {0}
