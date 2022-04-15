@@ -78,8 +78,8 @@ jobs:
           g status && fp
           brew --prefix
           nodebrew help
-          find-bigN.zsh 5
-          disk-rankN.zsh 5
+          find-bigN 5
+          disk-rankN 5
 
       - name: upgrade_system_deps test
         shell: zsh {0}
@@ -87,7 +87,7 @@ jobs:
           set -euo pipefail
           source $HOME/.zshrc
           echo $GITHUB_HEAD_REF
-          upgrade_system_deps.zsh $GITHUB_HEAD_REF
+          upgrade_system_deps $GITHUB_HEAD_REF
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
