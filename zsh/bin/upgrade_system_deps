@@ -21,11 +21,6 @@ if command -v gcloud &> /dev/null; then
   gcloud components update --quiet
 fi
 
-if command -v gem &> /dev/null; then
-  gem update --system
-  gem update
-fi
-
 if command -v docker &> /dev/null; then
   docker system prune --force
 fi

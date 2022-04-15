@@ -1,3 +1,6 @@
+# my functions
+export PATH=$PATH:$HOME/dotfiles/zsh/bin
+
 # brew
 export HOMEBREW_BUNDLE_FILE="$HOME/dotfiles/Brewfile"
 
