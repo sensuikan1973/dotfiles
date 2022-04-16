@@ -12,6 +12,5 @@ for rb_version in $(rbenv versions --bare); do
   rbenv install "$rb_version" --skip-existing
   eval "$(rbenv init - zsh)"
   rbenv shell "$rb_version"
-  gem update --system
-  gem update
+  gem update --system --no-document
 done
