@@ -54,6 +54,49 @@ jobs:
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
           git checkout $GITHUB_SHA
 
+      # Installing git
+      # ==> Downloading https://ghcr.io/v2/homebrew/core/git/manifests/2.36.0
+      # ==> Downloading https://ghcr.io/v2/homebrew/core/git/blobs/sha256:5739e703f9ad34dba01e343d76f363143f740bf6e05c945c8f19a073546c6ce5
+      # ==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sha256:5739e703f9ad34dba01e343d76f363143f740bf6e05c945c8f19a073546c6ce5?se=2022-04-23T20%3A40%3A00Z&sig=hhTQpQeM7oFk22letbvaStLuIWSZg0Tg1Dp1FjwBLSs%3D&sp=r&spr=https&sr=b&sv=2019-12-12
+      # ==> Pouring git--2.36.0.big_sur.bottle.tar.gz
+      # Error: The `brew link` step did not complete successfully
+      # The formula built, but is not symlinked into /usr/local
+      # Could not symlink etc/bash_completion.d/git-completion.bash
+      # Target /usr/local/etc/bash_completion.d/git-completion.bash
+      # is a symlink belonging to git@2.35.1. You can unlink it:
+      #   brew unlink git@2.35.1
+      #
+      # To force the link and overwrite all conflicting files:
+      #   brew link --overwrite git
+      #
+      # To list all files that would be deleted:
+      #   brew link --overwrite --dry-run git
+      #
+      # Possible conflicting files are:
+      # /usr/local/etc/bash_completion.d/git-completion.bash -> /usr/local/Cellar/git@2.35.1/2.35.1/etc/bash_completion.d/git-completion.bash
+      # /usr/local/etc/bash_completion.d/git-prompt.sh -> /usr/local/Cellar/git@2.35.1/2.35.1/etc/bash_completion.d/git-prompt.sh
+      # /usr/local/bin/git -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git
+      # /usr/local/bin/git-cvsserver -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git-cvsserver
+      # /usr/local/bin/git-receive-pack -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git-receive-pack
+      # /usr/local/bin/git-shell -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git-shell
+      # /usr/local/bin/git-upload-archive -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git-upload-archive
+      # /usr/local/bin/git-upload-pack -> /usr/local/Cellar/git@2.35.1/2.35.1/bin/git-upload-pack
+      # Error: Could not symlink share/doc/git-doc/MyFirstContribution.html
+      # Target /usr/local/share/doc/git-doc/MyFirstContribution.html
+      # is a symlink belonging to git@2.35.1. You can unlink it:
+      #   brew unlink git@2.35.1
+      #
+      # To force the link and overwrite all conflicting files:
+      #   brew link --overwrite git@2.35.1
+      #
+      # To list all files that would be deleted:
+      #   brew link --overwrite --dry-run git@2.35.1
+      # Installing git has failed!
+      - name: workaround pre setup for macOS
+        if: runner.os == 'macOS'
+        run: |-
+          rm "/usr/local/share/doc/git-doc/MyFirstContribution.html"
+
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
