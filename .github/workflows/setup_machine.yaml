@@ -96,7 +96,7 @@ jobs:
       - name: workaround pre setup for macOS
         if: runner.os == 'macOS'
         run: |-
-          rm "/usr/local/share/doc/git-doc/MyFirstContribution.html"
+          rm -rf "/usr/local/share/doc/git-doc/"
 
       # setup twice
       # NOTE: I want to ensure idempotent
