@@ -54,6 +54,7 @@ jobs:
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
           git checkout $GITHUB_SHA
 
+      # See: https://github.com/sensuikan1973/dotfiles/runs/6142343934?check_suite_focus=true#step:5:653
       # Installing git
       # ==> Downloading https://ghcr.io/v2/homebrew/core/git/manifests/2.36.0
       # ==> Downloading https://ghcr.io/v2/homebrew/core/git/blobs/sha256:5739e703f9ad34dba01e343d76f363143f740bf6e05c945c8f19a073546c6ce5
