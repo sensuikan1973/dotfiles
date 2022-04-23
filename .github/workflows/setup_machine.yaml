@@ -95,8 +95,7 @@ jobs:
       # Installing git has failed!
       - name: workaround pre setup for macOS
         if: runner.os == 'macOS'
-        run: |-
-          rm -rf "/usr/local/share/doc/git-doc/"
+        run: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"
 
       # setup twice
       # NOTE: I want to ensure idempotent
