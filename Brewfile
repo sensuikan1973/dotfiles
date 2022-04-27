@@ -4,7 +4,6 @@
 # The packages which is always required are only listed.
 # If you use another packages, you can install individually.
 
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/core"
 
