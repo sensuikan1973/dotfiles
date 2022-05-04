@@ -23,7 +23,7 @@ fi
 
 if command -v docker &> /dev/null; then
   # if docker daemon is running, execute pruning.
-  if $(docker stats --no-stream); then
+  if docker stats --no-stream; then
     docker system prune --force --all --volumes
   else
     echo "docker daemon is not running. so, pruning is not executed."
