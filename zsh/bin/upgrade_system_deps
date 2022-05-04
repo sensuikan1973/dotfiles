@@ -22,5 +22,8 @@ if command -v gcloud &> /dev/null; then
 fi
 
 if command -v docker &> /dev/null; then
-  docker system prune --force
+  # if docker daemon is running, execute pruning.
+  if $(docker stats --no-stream); then
+    docker system prune --force --all --volumes
+  fi
 fi
