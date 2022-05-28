@@ -86,7 +86,7 @@ jobs:
           ll
           g status && fp
           brew --prefix
-          nodebrew help
+          nodenv help
           find-bigN 5
           disk-rankN 5
 

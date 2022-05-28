@@ -15,7 +15,7 @@ brew "rbenv" # want to use multiple version ruby
 brew "ruby-build"
 brew "pyenv" # want to use multiple version python
 brew "peco" # select command in history
-brew "nodebrew" # if you want to `.node-version` on each project, you can use nodenv.
+brew "nodenv"
 brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 
 if OS.mac?

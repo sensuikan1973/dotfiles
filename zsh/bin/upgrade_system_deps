@@ -13,8 +13,6 @@ git pull
 
 source "$HOME/dotfiles/setup.zsh"
 
-nodebrew selfupdate
-
 if command -v flutter &> /dev/null; then
   flutter upgrade
 fi
