@@ -55,14 +55,6 @@ jobs:
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
           git checkout $GITHUB_SHA
 
-      # See: https://github.com/sensuikan1973/dotfiles/runs/6142343934?check_suite_focus=true#step:5:653
-      - name: workaround pre setup for macOS
-        if: runner.os == 'macOS'
-        run: |-
-          brew unlink git@2.35.1
-          # https://github.com/homebrew/install#uninstall-homebrew
-          # sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
@@ -86,7 +78,7 @@ jobs:
           ll
           g status && fp
           brew --prefix
-          nodebrew help
+          nodenv help
           find-bigN 5
           disk-rankN 5
 
