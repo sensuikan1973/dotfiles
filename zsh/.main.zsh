@@ -34,7 +34,6 @@ eval "$(rbenv init - zsh)"
 # nodenv
 # See: https://github.com/nodenv/nodenv#homebrew-on-macos
 eval "$(nodenv init -)"
-curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
 
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT
