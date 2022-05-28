@@ -36,7 +36,7 @@ source "$HOME/dotfiles/etc/setup.zsh"
 source "$HOME/dotfiles/ruby/setup.zsh"
 
 # for PATH
-source "$HOME/.zshrc"
+exec zsh --login
 
 # doctor
 # https://github.com/rbenv/rbenv#using-package-managers
