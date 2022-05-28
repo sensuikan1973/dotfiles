@@ -35,13 +35,4 @@ source "$HOME/dotfiles/etc/setup.zsh"
 
 source "$HOME/dotfiles/ruby/setup.zsh"
 
-# for PATH
-exec zsh --login
-
-# doctor
-# https://github.com/rbenv/rbenv#using-package-managers
-# https://github.com/nodenv/nodenv#homebrew-on-macos
-curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
-
 echo "setup has succeeded"
