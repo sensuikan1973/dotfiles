@@ -78,7 +78,9 @@ jobs:
           ll
           g status && fp
           brew --prefix
+          rbenv help
           nodenv help
+          pyenv help
           find-bigN 5
           disk-rankN 5
 
