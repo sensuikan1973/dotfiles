@@ -30,6 +30,7 @@ brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
 brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
+brew doctor || true
 
 source "$HOME/dotfiles/etc/setup.zsh"
 
