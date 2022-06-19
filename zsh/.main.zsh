@@ -25,7 +25,6 @@ source "$ZSH_SETTINGS_PATH/.plugin.zsh"
 
 # pyenv
 # See: https://github.com/pyenv/pyenv
-eval "$(pyenv init --path)"
 eval "$(pyenv init - zsh)"
 
 # rbenv
