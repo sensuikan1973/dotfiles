@@ -16,7 +16,6 @@ brew "ruby-build"
 brew "pyenv" # want to use multiple version python
 brew "peco" # select command in history
 brew "nodenv"
-brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
