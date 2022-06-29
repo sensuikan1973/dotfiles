@@ -5,6 +5,11 @@ set -euxo pipefail
 
 branch=${1:-main}
 
+# shellcheck disable=SC2168
+local -A opthash
+# See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzutil-Module
+zparseopts -D -F -A opthash -- -clean
+
 cd "$HOME/dotfiles"
 git remote update --prune
 git checkout "$branch"
@@ -28,6 +33,12 @@ fi
 if command -v gcloud &> /dev/null; then
   gcloud components update --quiet
 fi
+
+if [[ -ne "${opthash[(i)--clean]}" ]]; then
+  exit
+fi
+
+echo "also run cleaning"
 
 if command -v docker &> /dev/null; then
   # if docker daemon is running, execute pruning.
