@@ -28,7 +28,9 @@ Run this command.
 This command syncs your system with this repository and upgrade system dependencies and tools.
 
 ```zsh
-upgrade_system_deps # This script has idempotence.
+# This script has idempotence.
+# You can add clean flag to run cleaning.
+upgrade_system_deps --clean
 ```
 
 ---
