@@ -8,7 +8,10 @@ local -A opthash
 # See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzutil-Module
 zparseopts -D -F -A opthash -- -clean branch:
 
-branch=${"${opthash[-branch]}":-main}
+branch="main"
+if [[ -n "${opthash[(i)-branch]}" ]]; then
+  branch="${opthash[-branch]}"
+fi
 
 cd "$HOME/dotfiles"
 git remote update --prune
