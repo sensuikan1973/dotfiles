@@ -34,7 +34,8 @@ if command -v gcloud &> /dev/null; then
   gcloud components update --quiet
 fi
 
-if [[ -ne "${opthash[(i)--clean]}" ]]; then
+# https://zsh.sourceforge.io/Doc/Release/Conditional-Expressions.html
+if [[ -z "${opthash[(i)--clean]}" ]]; then
   exit
 fi
 
