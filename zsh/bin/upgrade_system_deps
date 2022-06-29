@@ -3,12 +3,12 @@
 
 set -euxo pipefail
 
-branch=${1:-main}
-
 # shellcheck disable=SC2168
 local -A opthash
 # See: https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzutil-Module
-zparseopts -D -F -A opthash -- -clean
+zparseopts -D -F -A opthash -- -clean branch:
+
+branch=${"${opthash[-branch]}":-main}
 
 cd "$HOME/dotfiles"
 git remote update --prune
