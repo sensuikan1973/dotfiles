@@ -90,8 +90,8 @@ jobs:
           set -euo pipefail
           source $HOME/.zshrc
           echo $GITHUB_HEAD_REF
-          upgrade_system_deps $GITHUB_HEAD_REF --clean
-          upgrade_system_deps $GITHUB_HEAD_REF
+          upgrade_system_deps -branch $GITHUB_HEAD_REF --clean
+          upgrade_system_deps -branch $GITHUB_HEAD_REF
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
