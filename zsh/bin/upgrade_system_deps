@@ -10,7 +10,7 @@ zparseopts -D -F -A opthash -- -clean branch:
 
 branch="main"
 if [[ -n "${opthash[(i)-branch]}" ]]; then
-  branch="${opthash[-branch]}"
+  branch=${opthash[-branch]:-main}
 fi
 
 cd "$HOME/dotfiles"
