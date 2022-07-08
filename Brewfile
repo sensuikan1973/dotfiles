@@ -16,6 +16,7 @@ brew "rbenv" # want to use multiple version ruby
 brew "ruby-build"
 brew "pyenv" # want to use multiple version python
 brew "nodenv"
+brew "openssl"
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
