@@ -14,3 +14,6 @@ export PATH=$PATH:~/Library/Android/sdk/platform-tools
 # Go
 export GOPATH=~/go
 export PATH=$PATH:$GOPATH/bin
+
+# Dart Global Pub
+export PATH="$PATH":"$HOME/.pub-cache/bin"
