@@ -2,7 +2,7 @@
 
 if [ "$(diff "$HOME/dotfiles/etc/shells" /etc/shells)" != "" ]; then
   echo "changing /etc/shells"
-  mkdir "$HOME/dotfiles/.backup/etc"
+  mkdir -p "$HOME/dotfiles/.backup/etc"
   cat /etc/shells > "$HOME/dotfiles/.backup/etc/shells.$(date +%s)"
   sudo ln -fs "$HOME/dotfiles/etc/shells" /etc/shells
 fi
