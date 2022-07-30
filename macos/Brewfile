@@ -1,10 +1,8 @@
-tap "homebrew/cask"
-
-brew "coreutils" # want to use gls
-
 # GUI
 # NOTE: cask only supports macos. linux is not supported. See: https://github.com/Homebrew/discussions/discussions/1081
+tap "homebrew/cask"
 cask_args appdir: '/Applications'
+
 cask "iterm2"
 cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
 cask "docker"
