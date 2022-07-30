@@ -64,11 +64,6 @@ jobs:
         shell: zsh {0}
         run: cd ~/dotfiles && zsh ./setup.zsh
 
-      # session for debug
-      - name: setup tmate session for debug ssh
-        # if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
-
       - name: rough command test
         shell: zsh {0}
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
@@ -108,3 +103,8 @@ jobs:
           dart --version
           code --version
           gcloud --version
+
+      # session for debug
+      - name: setup tmate session for debug ssh
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
