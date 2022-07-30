@@ -16,9 +16,3 @@ echo "restart every systems to reflect update"
 killall Dock
 killall Finder
 killall SystemUIServer
-
-# brew
-if ! which brew; then
-  echo "installing homebrew https://brew.sh/"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-fi
