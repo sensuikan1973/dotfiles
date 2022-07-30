@@ -19,6 +19,12 @@ fi
 ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
 source "$HOME/dotfiles/zsh/install_plugins.zsh"
 
+# brew
+if ! which brew; then
+  echo "installing homebrew https://brew.sh/"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+fi
+
 if [ "$(uname)" = "Darwin" ]; then
   source "$HOME/dotfiles/macos/setup.zsh"
 elif [ "$(uname)" = "Linux" ]; then
