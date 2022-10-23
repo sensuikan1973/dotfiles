@@ -105,12 +105,6 @@ jobs:
           code --version
           gcloud --version
 
-      # debug
-      - name: debug
-        if: ${{ failure() }}
-        run: |-
-          compaudit
-
       # # session for debug
       # - name: setup tmate session for debug ssh
       #   if: ${{ failure() }}
