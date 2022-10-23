@@ -52,3 +52,7 @@ if command -v docker &> /dev/null; then
     echo "docker daemon is not running. so, pruning is not executed."
   fi
 fi
+
+if [ "$(uname)" = "Darwin" ]; then
+  source "$HOME/dotfiles/macos/bin/upgrade_all_softwareupdate"
+fi
