@@ -1,10 +1,14 @@
 #!/usr/bin/env zsh
 # shellcheck disable=SC1091
 
-# https://zsh.sourceforge.io/Doc/Release/Conditional-Expressions.html
-# https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzutil-Module
 
 set -euxo pipefail
+
+# shellcheck disable=SC2168
+local -A opthash
+# https://zsh.sourceforge.io/Doc/Release/Zsh-Modules.html#The-zsh_002fzutil-Module
+# https://zsh.sourceforge.io/Doc/Release/Conditional-Expressions.html
+zparseopts -D -F -A opthash -- branch:
 
 branch="main"
 if [[ -n "${opthash[(i)-branch]}" ]]; then
