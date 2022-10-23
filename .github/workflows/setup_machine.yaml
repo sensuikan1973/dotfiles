@@ -22,6 +22,7 @@ on:
 jobs:
   setup_and_update:
     runs-on: ${{ matrix.os }}
+    fail-fast: false
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
