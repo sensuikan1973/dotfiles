@@ -73,6 +73,7 @@ jobs:
           source $HOME/.zshrc
           which brew
           brew --prefix
+          which zsh
           uname
           time
           cd $HOME/dotfiles
