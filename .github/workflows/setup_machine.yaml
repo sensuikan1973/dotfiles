@@ -70,7 +70,6 @@ jobs:
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           set -euxo pipefail
-          compaudit # debug of compinit
           source $HOME/.zshrc
           uname
           time
@@ -105,6 +104,12 @@ jobs:
           dart --version
           code --version
           gcloud --version
+
+      # debug
+      - name: debug
+        if: ${{ failure() }}
+        run: |-
+          compaudit
 
       # # session for debug
       # - name: setup tmate session for debug ssh
