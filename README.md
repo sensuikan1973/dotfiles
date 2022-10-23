@@ -24,7 +24,7 @@ Update `General settings` to load `~/dotfiles/macos/iterm2`.
 
 ## update
 
-Command `upgrade_system_deps` syncs your system with this repository and upgrade system dependencies and tools.
+Syncs your system with this repository and upgrade system dependencies and tools.
 
 ```zsh
 # This script has idempotence.
