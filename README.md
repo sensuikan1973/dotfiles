@@ -28,8 +28,7 @@ Command `upgrade_system_deps` syncs your system with this repository and upgrade
 
 ```zsh
 # This script has idempotence.
-# You can add clean flag to run cleaning.
-upgrade_system_deps --clean
+upgrade_system_deps
 ```
 
 ---

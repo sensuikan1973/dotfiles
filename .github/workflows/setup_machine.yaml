@@ -85,6 +85,7 @@ jobs:
           pyenv help
           find-bigN 5
           disk-rankN 5
+          force_prune_docker_system_all
 
       - name: upgrade_system_deps test
         shell: zsh {0}
@@ -92,7 +93,6 @@ jobs:
           set -euo pipefail
           source $HOME/.zshrc
           echo $GITHUB_HEAD_REF
-          upgrade_system_deps -branch "$GITHUB_HEAD_REF" --clean
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
       - name: rough command test for only macos
