@@ -69,6 +69,7 @@ jobs:
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           set -euxo pipefail
+          compaudit # debug of compinit
           source $HOME/.zshrc
           uname
           time
