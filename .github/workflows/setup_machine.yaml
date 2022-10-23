@@ -71,6 +71,8 @@ jobs:
         run: |-
           set -euxo pipefail
           source $HOME/.zshrc
+          which brew
+          brew --prefix
           uname
           time
           cd $HOME/dotfiles
@@ -78,7 +80,6 @@ jobs:
           la
           ll
           g status && fp
-          brew --prefix
           rbenv help
           nodenv help
           pyenv help
