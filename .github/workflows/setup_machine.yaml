@@ -23,7 +23,7 @@ jobs:
   setup_and_update:
     runs-on: ${{ matrix.os }}
     strategy:
-      fail-fast: false
+      # fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
     timeout-minutes: 40
@@ -73,6 +73,7 @@ jobs:
           source $HOME/.zshrc
           which brew
           brew --prefix
+          which zsh
           uname
           time
           cd $HOME/dotfiles
