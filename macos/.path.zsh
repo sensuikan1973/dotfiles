@@ -2,4 +2,4 @@
 # https://docs.brew.sh/FAQ#what-does-keg-only-mean
 
 # my functions
-export PATH=$PATH:$HOME/dotfiles/macos/.path.zsh
+export PATH=$PATH:$HOME/dotfiles/macos/bin
