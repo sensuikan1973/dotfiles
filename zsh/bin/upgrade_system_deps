@@ -35,5 +35,6 @@ if command -v flutter &> /dev/null; then
 fi
 
 if command -v gcloud &> /dev/null; then
+  gcloud config set survey/disable_prompts True
   gcloud components update --quiet
 fi

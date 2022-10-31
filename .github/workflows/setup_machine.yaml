@@ -106,6 +106,7 @@ jobs:
           dart --version
           code --version
           gcloud --version
+          gcloud config list
           upgrade_all_softwareupdate
 
       # # session for debug
