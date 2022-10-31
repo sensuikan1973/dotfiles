@@ -32,6 +32,8 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
 
+source "$HOME/.zshrc"
+
 if [ "$(uname)" = "Darwin" ]; then
   source "$HOME/dotfiles/macos/setup.zsh"
 elif [ "$(uname)" = "Linux" ]; then
