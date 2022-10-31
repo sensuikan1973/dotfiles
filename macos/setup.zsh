@@ -16,3 +16,5 @@ echo "restart every systems to reflect update"
 killall Dock
 killall Finder
 killall SystemUIServer
+
+gcloud config set survey/disable_prompts True

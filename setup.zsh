@@ -25,12 +25,6 @@ if ! which brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-if [ "$(uname)" = "Darwin" ]; then
-  source "$HOME/dotfiles/macos/setup.zsh"
-elif [ "$(uname)" = "Linux" ]; then
-  source "$HOME/dotfiles/linux/setup.zsh"
-fi
-
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
@@ -38,7 +32,11 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
 
-gcloud config set survey/disable_prompts True
+if [ "$(uname)" = "Darwin" ]; then
+  source "$HOME/dotfiles/macos/setup.zsh"
+elif [ "$(uname)" = "Linux" ]; then
+  source "$HOME/dotfiles/linux/setup.zsh"
+fi
 
 source "$HOME/dotfiles/etc/setup.zsh"
 
