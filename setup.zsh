@@ -25,7 +25,7 @@ if ! which brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
-source "$HOME/.zshrc"
+exec zsh --login
 
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
