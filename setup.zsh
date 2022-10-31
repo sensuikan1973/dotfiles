@@ -25,14 +25,14 @@ if ! which brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
+source "$HOME/.zshrc"
+
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
 brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
-
-source "$HOME/.zshrc"
 
 if [ "$(uname)" = "Darwin" ]; then
   source "$HOME/dotfiles/macos/setup.zsh"
