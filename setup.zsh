@@ -38,6 +38,8 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
 
+gcloud config set survey/disable_prompts True
+
 source "$HOME/dotfiles/etc/setup.zsh"
 
 source "$HOME/dotfiles/ruby/setup.zsh"
