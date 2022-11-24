@@ -1,3 +1,5 @@
+domain="com.apple.desktopservices"
+
 # not create .DS_Store in USB, NetworkStores.
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+defaults write "$domain" DSDontWriteNetworkStores -bool true
+defaults write "$domain" DSDontWriteUSBStores -bool true

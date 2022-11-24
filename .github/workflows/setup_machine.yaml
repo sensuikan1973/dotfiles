@@ -26,7 +26,7 @@ jobs:
       # fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
-    timeout-minutes: 40
+    timeout-minutes: 60
     steps:
       - name: setup for linux
         if: runner.os == 'Linux'
@@ -107,7 +107,7 @@ jobs:
           code --version
           gcloud --version
           gcloud config list
-          upgrade_all_softwareupdate
+          # upgrade_all_softwareupdate
 
       # # session for debug
       # - name: setup tmate session for debug ssh

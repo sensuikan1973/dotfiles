@@ -1,2 +1,4 @@
+domain="com.apple.appleseed.FeedbackAssistant"
+
 # do not autogather large files when submitting a report
-defaults write com.apple.appleseed.FeedbackAssistant Autogather -bool false
+defaults write "$domain" Autogather -bool false

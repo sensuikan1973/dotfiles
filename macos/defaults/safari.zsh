@@ -1,6 +1,8 @@
+domain="com.apple.Safari"
+
 # not send search query to Apple
-defaults write com.apple.Safari SuppressSearchSuggestions -bool true
-defaults write com.apple.Safari UniversalSearchEnabled -bool false
-defaults write com.apple.Safari IncludeDevelopMenu -bool true
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
-defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write "$domain" SuppressSearchSuggestions -bool true
+defaults write "$domain" UniversalSearchEnabled -bool false
+defaults write "$domain" IncludeDevelopMenu -bool true
+defaults write "$domain" IncludeInternalDebugMenu -bool true
+defaults write "$domain" WebKitDeveloperExtrasEnabledPreferenceKey -bool true

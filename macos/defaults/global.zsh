@@ -1,25 +1,27 @@
+domain="NSGlobalDomain"
+
 # increase speed of key repeat.
-defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write "$domain" KeyRepeat -int 2
+defaults write "$domain" InitialKeyRepeat -int 15
 
 # increase speed of mouse movement.
-defaults write NSGlobalDomain com.apple.mouse.scaling 30
-defaults write NSGlobalDomain com.apple.trackpad.scaling 30
+defaults write "$domain" com.apple.mouse.scaling 30
+defaults write "$domain" com.apple.trackpad.scaling 30
 
 # increase speedof window resize.
-defaults write NSGlobalDomain NSWindowResizeTime 0.001
+defaults write "$domain" NSWindowResizeTime 0.001
 
 # disable unnecessary animation.
-defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write "$domain" NSAutomaticWindowAnimationsEnabled -bool false
 
 # See: https://support.apple.com/ja-jp/HT204788
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+defaults write "$domain" NSDocumentSaveNewDocumentsToCloud -bool false
 
 # always display extensions.
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write "$domain" AppleShowAllExtensions -bool true
 
 # remove the delay when hovering the toolbar title
-defaults write NSGlobalDomain NSToolbarTitleViewRolloverDelay -float 0
+defaults write "$domain" NSToolbarTitleViewRolloverDelay -float 0
 
 # choose the size of Finder sidebar icons as Medium
-defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 2
+defaults write "$domain" NSTableViewDefaultSizeMode -int 2

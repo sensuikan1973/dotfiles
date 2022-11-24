@@ -1,4 +1,4 @@
-defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-defaults write com.apple.appstore ShowDebugMenu -bool true
+domain="com.apple.appstore"
 
-defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+defaults write "$domain" WebKitDeveloperExtras -bool true
+defaults write "$domain" ShowDebugMenu -bool true
