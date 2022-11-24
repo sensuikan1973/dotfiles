@@ -1,2 +1,4 @@
+domain="com.apple.TextEdit"
+
 # set default document format as plain text (.txt)
-defaults write com.apple.TextEdit "RichText" -bool false
+defaults write "$domain" RichText -bool false

@@ -1,1 +1,3 @@
-defaults write com.apple.universalaccess "showWindowTitlebarIcons" -bool true
+domain="com.apple.universalaccess"
+
+defaults write "$domain" showWindowTitlebarIcons -bool true

@@ -1,5 +1,7 @@
+domain="com.apple.screencapture"
+
 # include date and time in screenshot filenames.
-defaults write com.apple.screencapture include-date -bool true
+defaults write "$domain" include-date -bool true
 
 # set default screenshot location.
-defaults write com.apple.screencapture location -string "$HOME/Desktop"
+defaults write "$domain" location -string "$HOME/Desktop"

@@ -1,30 +1,32 @@
+domain="com.apple.finder"
+
 # display full path on title bar.
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+defaults write "$domain" _FXShowPosixPathInTitle -bool true
 
 # display directory prior to files.
-defaults write com.apple.finder _FXSortFoldersFirst -bool true
+defaults write "$domain" _FXSortFoldersFirst -bool true
 
 # search current directory by default when search.
-defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+defaults write "$domain" FXDefaultSearchScope -string "SCcf"
 
 # display hidden files.
-defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write "$domain" AppleShowAllFiles -bool true
 
 # display path bar.
-defaults write com.apple.finder ShowPathbar -bool true
+defaults write "$domain" ShowPathbar -bool true
 
 # display tab bar.
-defaults write com.apple.finder ShowTabView -bool true
+defaults write "$domain" ShowTabView -bool true
 
 # display status bar.
-defaults write com.apple.finder ShowStatusBar -bool true
+defaults write "$domain" ShowStatusBar -bool true
 
 # disable unnecessary animation.
-defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write "$domain" DisableAllAnimations -bool true
 
 # changing file extension warning
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
+defaults write "$domain" FXEnableExtensionChangeWarning -bool true
 
-defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+defaults write "$domain" FXPreferredViewStyle -string "Nlsv"
 
-defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool true
+defaults write "$domain" _FXSortFoldersFirstOnDesktop -bool true
