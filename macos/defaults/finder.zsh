@@ -24,3 +24,5 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 
 # changing file extension warning
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
+
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
