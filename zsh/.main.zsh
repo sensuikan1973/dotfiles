@@ -32,7 +32,7 @@ eval "$(pyenv init - zsh)"
 eval "$(rbenv init - zsh)"
 
 # nodenv
-# See: https://github.com/nodenv/nodenv#homebrew-on-macos
+# See: https://github.com/nodenv/nodenv
 eval "$(nodenv init - zsh)"
 
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
