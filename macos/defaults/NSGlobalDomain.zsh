@@ -25,3 +25,7 @@ defaults write "$domain" NSToolbarTitleViewRolloverDelay -float 0
 
 # choose the size of Finder sidebar icons as Medium
 defaults write "$domain" NSTableViewDefaultSizeMode -int 2
+
+defaults write "$domain" com.apple.sound.beep.feedback -bool false
+defaults write "$domain" com.apple.sound.beep.volume -int 0
+defaults write "$domain" com.apple.sound.uiaudio.enabled -bool false
