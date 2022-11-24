@@ -6,3 +6,5 @@ defaults write com.apple.dock autohide-delay -float 0
 
 # shift Dock to the left.
 defaults write com.apple.dock orientation -string "left"
+
+defaults write com.apple.dock "show-recents" -bool false
