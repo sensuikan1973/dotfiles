@@ -26,3 +26,5 @@ defaults write com.apple.finder DisableAllAnimations -bool true
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool true
 
 defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool true
