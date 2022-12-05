@@ -40,9 +40,7 @@ eval "$(nodenv init - zsh)"
 TIMEFMT='
 ==============================
 cmd     : %J
-total   : %E
-user    : %U
-system  : %S
+time    : %E (user: %U, system: %S)
 cpu     : %P
 max rss : %M KB
 =============================='
