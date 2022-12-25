@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+ruby_versions=('3.2.0')
+
 # save time and space. I don't need Rdoc.
 # https://github.com/rbenv/ruby-build/issues/156
 # https://github.com/rbenv/ruby-build#custom-build-configuration
@@ -7,10 +9,10 @@
 export RUBY_CONFIGURE_OPTS="--disable-install-doc"
 
 ln -fs "$HOME/dotfiles/ruby/.gemrc" "$HOME/.gemrc"
-for rb_version in $(rbenv versions --bare); do
-  echo "installing ruby $rb_version"
-  rbenv install "$rb_version" --skip-existing
+for ruby_version in $ruby_versions; do
+  echo "installing ruby $ruby_version"
+  rbenv install "$ruby_version" --skip-existing
   eval "$(rbenv init - zsh)"
-  rbenv shell "$rb_version"
+  rbenv shell "$ruby_version"
   gem update --system --no-document
 done
