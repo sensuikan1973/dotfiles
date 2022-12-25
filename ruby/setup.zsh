@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-ruby_versions=('3.2.0')
+latest_version=$(rbenv install --list | grep -E "^([0-9]+\.){1}[0-9]+(\.[0-9]+)?$" | sort --version-sort --reverse | head -1)
+ruby_versions=("$latest_version")
 
 # save time and space. I don't need Rdoc.
 # https://github.com/rbenv/ruby-build/issues/156
