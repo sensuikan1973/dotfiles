@@ -9,7 +9,7 @@ ruby_versions=('3.2.0')
 export RUBY_CONFIGURE_OPTS="--disable-install-doc"
 
 ln -fs "$HOME/dotfiles/ruby/.gemrc" "$HOME/.gemrc"
-for ruby_version in $ruby_versions; do
+for ruby_version in "${ruby_versions[@]}"; do
   echo "installing ruby $ruby_version"
   rbenv install "$ruby_version" --skip-existing
   eval "$(rbenv init - zsh)"
