@@ -18,6 +18,8 @@ on:
       - '!.github/**/*'
       - '.github/workflows/setup_machine.yaml'
   workflow_dispatch:
+  schedule:
+    - cron: '0 21 * * *' # everyday, 21:00 (UTC)
 
 jobs:
   setup_and_update:
