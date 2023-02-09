@@ -34,6 +34,7 @@ fi
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
+brew update
 brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
