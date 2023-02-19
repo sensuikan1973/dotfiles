@@ -30,8 +30,4 @@ upgrade_system_deps
 
 ## references
 
-### macos
-
-#### migration: bash -> [zsh](http://www.strcat.de/zsh/)
-
-See: https://support.apple.com/ja-jp/HT208050
+- macos migration from bash to [zsh](http://www.strcat.de/zsh/): https://support.apple.com/ja-jp/HT208050
