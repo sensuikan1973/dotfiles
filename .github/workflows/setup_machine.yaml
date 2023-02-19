@@ -87,6 +87,8 @@ jobs:
           find-bigN 5
           disk-rankN 5
           force_prune_docker_system_all
+          install_latest_nodejs
+          install_latest_ruby
 
       - name: upgrade_system_deps test
         shell: zsh {0}
