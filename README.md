@@ -17,11 +17,6 @@ exec zsh --login
 ### 2. git
 You should edit `~/.gitconfig.local`.
 
-### 3. [iTerm2](https://iterm2.com/) (macos only)
-
-Update `General settings` to load `~/dotfiles/macos/iterm2`.
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/23427957/153912371-de3c5612-dc43-4d5b-8e1f-3fab32876cb8.png">
-
 ## update
 
 Syncs your system with this repository and upgrade system dependencies and tools.
