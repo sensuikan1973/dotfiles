@@ -5,8 +5,8 @@ defaults write "$domain" KeyRepeat -int 2
 defaults write "$domain" InitialKeyRepeat -int 15
 
 # increase speed of mouse movement.
-defaults write "$domain" com.apple.mouse.scaling 30
-defaults write "$domain" com.apple.trackpad.scaling 30
+# https://apple.stackexchange.com/a/15487
+defaults write "$domain" com.apple.trackpad.scaling 2.5
 
 # increase speedof window resize.
 defaults write "$domain" NSWindowResizeTime 0.001
