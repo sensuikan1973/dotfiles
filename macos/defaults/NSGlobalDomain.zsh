@@ -4,7 +4,6 @@ domain="NSGlobalDomain"
 defaults write "$domain" KeyRepeat -int 2
 defaults write "$domain" InitialKeyRepeat -int 15
 
-# increase speed of mouse movement.
 # https://apple.stackexchange.com/a/15487
 defaults write "$domain" com.apple.trackpad.scaling 2.5
 
