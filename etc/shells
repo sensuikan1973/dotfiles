@@ -10,5 +10,7 @@
 /bin/tcsh
 /bin/zsh
 
-/usr/local/bin/zsh # macos
+/usr/local/bin/zsh # macos with intel
+/opt/homebrew/bin/zsh # macos with apple silicon
+
 /home/linuxbrew/.linuxbrew # linux
