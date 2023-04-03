@@ -41,8 +41,6 @@ jobs:
           sudo apt-get remove ruby
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/122#issuecomment-1494813855
-          sudo apt-get remove nodenv
 
       - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
