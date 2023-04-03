@@ -1,4 +1,4 @@
-domain="com.apple.menuextra.clock"
+domain="com.apple.menuextra"
 
 # display date, day, hour, second
-defaults write "$domain" DateFormat -string 'EEE d MMM HH:mm'
+defaults write "$domain.clock" DateFormat -string 'EEE d MMM HH:mm'
