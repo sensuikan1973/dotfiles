@@ -17,3 +17,5 @@ export PATH=$PATH:$GOPATH/bin
 
 # Dart Global Pub
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+a
