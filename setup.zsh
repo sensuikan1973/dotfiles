@@ -27,8 +27,10 @@ fi
 
 if [ "$(uname)" = "Darwin" ]; then
   source "$HOME/dotfiles/macos/setup.zsh"
+  source "$HOME/dotfiles/macos/.main.zsh"
 elif [ "$(uname)" = "Linux" ]; then
   source "$HOME/dotfiles/linux/setup.zsh"
+  source "$HOME/dotfiles/linux/.main.zsh"
 fi
 
 # brew
