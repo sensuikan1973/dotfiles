@@ -3,3 +3,6 @@
 
 # my functions
 export PATH=$PATH:$HOME/dotfiles/macos/bin
+
+# brew
+export PATH=$PATH:/opt/homebrew/bin
