@@ -5,4 +5,5 @@
 export PATH=$PATH:$HOME/dotfiles/macos/bin
 
 # brew
-export PATH=$(brew --prefix)/bin:$PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$PATH
