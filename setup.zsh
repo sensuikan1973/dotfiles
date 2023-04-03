@@ -41,6 +41,9 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
 
+nodenv rehash
+rbenv rehash
+
 source "$HOME/dotfiles/etc/setup.zsh"
 
 source "$HOME/dotfiles/ruby/setup.zsh"
