@@ -17,6 +17,7 @@ brew "ruby-build"
 brew "pyenv" # want to use multiple version python
 brew "nodenv" # want to use multiple version nodejs
 brew "openssl"
+brew "cocoapods" # to develop pedax
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
