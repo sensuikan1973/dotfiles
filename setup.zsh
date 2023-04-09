@@ -45,4 +45,9 @@ source "$HOME/dotfiles/etc/setup.zsh"
 
 source "$HOME/dotfiles/ruby/setup.zsh"
 
+# https://github.com/rbenv/rbenv-installer#rbenv-doctor
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
+# https://github.com/nodenv/nodenv#using-package-managers
+curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
+
 echo "setup has succeeded"

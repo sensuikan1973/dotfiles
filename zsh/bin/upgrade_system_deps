@@ -22,14 +22,6 @@ git pull
 
 source "$HOME/dotfiles/setup.zsh"
 
-# rbenv
-# https://github.com/rbenv/rbenv-installer#rbenv-doctor
-curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
-
-# nodenv
-# https://github.com/nodenv/nodenv#using-package-managers
-curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
-
 if command -v flutter &> /dev/null; then
   flutter upgrade
 fi
