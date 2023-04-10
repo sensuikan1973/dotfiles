@@ -42,10 +42,10 @@ jobs:
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 
-        - name: setup for macos
-          if: runner.os == 'macOS'
-          run: |-
-            brew link --overwrite python@3.11 # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501252395
+      - name: setup for macos
+        if: runner.os == 'macOS'
+        run: |-
+          brew link --overwrite python@3.11 # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501252395
 
       - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
