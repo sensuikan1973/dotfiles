@@ -28,7 +28,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
     timeout-minutes: 60
     steps:
-      - name: setup for linux
+      - name: workaround setup for github runner ubuntu
         if: runner.os == 'Linux'
         run: |-
           sudo apt-get update
@@ -42,7 +42,7 @@ jobs:
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 
-      - name: setup for macos
+      - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
         run: |-
           brew unlink go # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502176411
