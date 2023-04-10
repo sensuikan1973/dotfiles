@@ -7,7 +7,6 @@
 export RUBY_CONFIGURE_OPTS="--disable-install-doc"
 
 ln -fs "$HOME/dotfiles/ruby/.gemrc" "$HOME/.gemrc"
-eval "$(rbenv init - zsh)"
 for rb_version in $(rbenv versions --bare); do
   echo "installing ruby $rb_version"
   rbenv install "$rb_version" --skip-existing
