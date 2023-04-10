@@ -45,8 +45,11 @@ jobs:
       - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
         run: |-
-          brew unlink go # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502176411
-          rm '/usr/local/bin/2to3' # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
+          brew uninstall go # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502176411
+          # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
+          rm '/usr/local/bin/2to3'
+          rm '/usr/local/bin/2to3-3.11'
+          brew link --overwrite python@3.11
 
       - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
