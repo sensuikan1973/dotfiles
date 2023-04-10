@@ -45,8 +45,9 @@ jobs:
       - name: setup for macos
         if: runner.os == 'macOS'
         run: |-
-          brew link --overwrite python@3.11 # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501252395
-          brew link --overwrite go # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501255380
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"
+          # brew link --overwrite python@3.11 # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501252395
+          # brew link --overwrite go # https://github.com/sensuikan1973/dotfiles/pull/124#issuecomment-1501255380
 
       - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
