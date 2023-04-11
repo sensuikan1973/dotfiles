@@ -46,6 +46,7 @@ jobs:
         if: runner.os == 'macOS'
         run: |-
           # See: https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
+          brew bundle cleanup --file "$HOME/dotfiles/Brewfile"
           sudo NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
           sudo rm -rf /usr/local/bin
 
