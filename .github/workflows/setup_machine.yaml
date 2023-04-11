@@ -42,14 +42,6 @@ jobs:
           # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
           sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
 
-      - name: workaround setup for github runner macos
-        if: runner.os == 'macOS'
-        run: |-
-          # See: https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
-          brew bundle cleanup --file "$HOME/dotfiles/Brewfile"
-          sudo NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-          sudo rm -rf /usr/local/bin
-
       - name: show native zsh info
         shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
         run: echo $ZSH_NAME $ZSH_VERSION
@@ -63,6 +55,14 @@ jobs:
           # See: https://github.com/actions/checkout/issues/23
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
           git checkout $GITHUB_SHA
+
+      - name: workaround setup for github runner macos
+        if: runner.os == 'macOS'
+        run: |-
+          # See: https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
+          brew bundle cleanup --file "$HOME/dotfiles/Brewfile"
+          sudo NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+          sudo rm -rf /usr/local/bin
 
       # setup twice
       # NOTE: I want to ensure idempotent
