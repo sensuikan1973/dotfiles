@@ -59,6 +59,7 @@ jobs:
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           ${{ matrix.login_shell }}
+          echo "$SHELL"
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
