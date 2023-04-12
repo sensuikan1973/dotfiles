@@ -104,6 +104,7 @@ jobs:
           code --version
           gcloud --version
           gcloud config list
+          docker --version
           # upgrade_all_softwareupdate
 
       # # session for debug
