@@ -17,7 +17,6 @@ brew doctor
 
 # zsh
 source "$HOME/dotfiles/zsh/setup.sh"
-zsh -c "echo \"$ZSH_NAME\" \"$ZSH_VERSION\""
 
 # macos
 source "$HOME/dotfiles/macos/setup.sh"

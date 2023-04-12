@@ -59,6 +59,7 @@ jobs:
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
+          zsh --version
           which brew
           brew --prefix
           uname
