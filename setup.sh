@@ -16,10 +16,10 @@ brew bundle check --file "$HOME/dotfiles/Brewfile"
 brew doctor
 
 # zsh
+source "$HOME/dotfiles/zsh/setup.sh"
 which zsh
 zsh
 echo "$ZSH_NAME" "$ZSH_VERSION"
-source "$HOME/dotfiles/zsh/setup.sh"
 
 # macos
 source "$HOME/dotfiles/macos/setup.sh"
