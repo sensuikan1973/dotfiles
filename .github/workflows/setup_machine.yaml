@@ -37,6 +37,9 @@ jobs:
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
+          # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
+          rm -f /Applications/Google Chrome.app
+
       - name: checkout repository to HOME
         run: |-
           git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
