@@ -35,7 +35,6 @@ brew doctor || true
 
 # zsh
 which zsh
-echo "$ZSH_NAME" "$ZSH_VERSION"
 ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
 source "$HOME/dotfiles/zsh/install_plugins.sh"
 
