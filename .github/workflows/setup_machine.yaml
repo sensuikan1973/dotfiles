@@ -84,6 +84,7 @@ jobs:
           rbenv --version
           nodenv --version
           pyenv --version
+          # my functions
           find-bigN 3
           disk-rankN 3
           force_prune_docker_system_all
