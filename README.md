@@ -7,10 +7,10 @@
 
 ### 1. shell
 
-```zsh
+```sh
 git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-zsh ./setup.zsh # This script has idempotence.
+./setup.sh # This script has idempotence.
 exec zsh --login
 ```
 
