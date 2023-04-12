@@ -58,9 +58,8 @@ jobs:
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          ${{ matrix.login_shell }}
+          exec ${{ matrix.login_shell }} --login
           echo "$SHELL"
-          which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
@@ -84,8 +83,8 @@ jobs:
 
       - name: upgrade_system_deps test
         run: |-
-          ${{ matrix.login_shell }}
-          which zsh
+          exec ${{ matrix.login_shell }} --login
+          echo "$SHELL"
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
@@ -95,8 +94,8 @@ jobs:
       - name: rough command test for only macos
         if: runner.os == 'macOS'
         run: |-
-          ${{ matrix.login_shell }}
-          which zsh
+          exec ${{ matrix.login_shell }} --login
+          echo "$SHELL"
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
