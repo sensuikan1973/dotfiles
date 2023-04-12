@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 if [ "$(diff "$HOME/dotfiles/etc/shells" /etc/shells)" != "" ]; then
   echo "changing /etc/shells"
   mkdir -p "$HOME/dotfiles/.backup/etc"
