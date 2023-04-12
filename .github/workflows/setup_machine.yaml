@@ -81,9 +81,9 @@ jobs:
           la
           ll
           g status && fp
-          rbenv help
-          nodenv help
-          pyenv help
+          rbenv --version
+          nodenv --version
+          pyenv --version
           find-bigN 5
           disk-rankN 5
           force_prune_docker_system_all
