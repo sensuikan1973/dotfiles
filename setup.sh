@@ -2,14 +2,6 @@
 set -euxo pipefail
 echo "start setup script"
 
-# git
-ln -fs "$HOME/dotfiles/git/.gitignore" "$HOME/.gitignore"
-ln -fs "$HOME/dotfiles/git/.gitconfig" "$HOME/.gitconfig"
-if [[ ! -e $HOME/.gitconfig.local ]]; then
-  echo "copy .gitconfig.local"
-  cp git/.gitconfig.local "$HOME/.gitconfig.local"
-fi
-
 # macos
 source "$HOME/dotfiles/macos/setup.sh"
 source "$HOME/dotfiles/macos/.path.sh"
@@ -33,6 +25,7 @@ ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
 source "$HOME/dotfiles/zsh/install_plugins.sh"
 
 # others
+source "$HOME/dotfiles/git/setup.sh"
 source "$HOME/dotfiles/etc/setup.sh"
 source "$HOME/dotfiles/ruby/setup.sh"
 source "$HOME/dotfiles/nodejs/setup.sh"
