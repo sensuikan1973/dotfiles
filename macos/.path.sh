@@ -11,4 +11,5 @@ export PATH="/opt/homebrew/bin:$PATH"
 export PATH="/opt/homebrew/opt/**/bin:$PATH"
 
 # See: https://formulae.brew.sh/cask/google-cloud-sdk
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+brew_prefix="$(brew --prefix)"
+source "$brew_prefix/share/google-cloud-sdk/path.zsh.inc"
