@@ -21,6 +21,7 @@ jobs:
         include:
           - os: macos-latest
             # github runner macos is Intel Mac. See: https://github.com/actions/runner-images/issues/2187
+            # See: etc/shells
             login_shell: /usr/local/bin/zsh
     timeout-minutes: 60
     steps:
