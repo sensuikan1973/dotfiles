@@ -70,7 +70,7 @@ jobs:
         run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
+        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh || /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           which zsh
@@ -96,7 +96,7 @@ jobs:
           install_latest_ruby
 
       - name: upgrade_system_deps test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
+        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh || /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
         run: |-
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
@@ -107,7 +107,7 @@ jobs:
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh
+        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
         run: |-
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
