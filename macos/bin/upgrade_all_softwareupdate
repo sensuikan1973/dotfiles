@@ -3,4 +3,4 @@
 
 set -euxo pipefail
 
-softwareupdate --install --restart --all --agree-to-license
+softwareupdate --install --all --agree-to-license
