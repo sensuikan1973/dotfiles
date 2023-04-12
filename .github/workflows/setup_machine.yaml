@@ -38,7 +38,7 @@ jobs:
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
-          sudo rm -f /Applications/Google Chrome.app
+          sudo rm -rf /Applications/Google\ Chrome.app
 
       - name: checkout repository to HOME
         run: |-
