@@ -53,16 +53,23 @@ jobs:
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        run: cd ~/dotfiles && ./setup.sh
+        run: |-
+          cd ~/dotfiles
+          ./setup.sh
+          exec zsh --login
+          echo "$ZSH_NAME" "$ZSH_VERSION"
       - name: 2nd, run setup script
-        run: cd ~/dotfiles && ./setup.sh
+        run: |-
+          cd ~/dotfiles
+          ./setup.sh
+          exec zsh --login
+          echo "$ZSH_NAME" "$ZSH_VERSION"
 
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          exec "${{ matrix.login_shell }}" --login
+          exec zsh --login
           echo "$SHELL"
-          echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source "$HOME/.zshrc"
           which brew
@@ -85,9 +92,8 @@ jobs:
 
       - name: upgrade_system_deps test
         run: |-
-          exec "${{ matrix.login_shell }}" --login
+          exec zsh --login
           echo "$SHELL"
-          echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source "$HOME/.zshrc"
           echo "$GITHUB_HEAD_REF"
@@ -96,9 +102,8 @@ jobs:
       - name: rough command test for only macos
         if: runner.os == 'macOS'
         run: |-
-          exec "${{ matrix.login_shell }}" --login
+          exec zsh --login
           echo "$SHELL"
-          echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source "$HOME/.zshrc"
           flutter doctor
