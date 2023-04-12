@@ -65,7 +65,7 @@ jobs:
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        run: cd ~/dotfiles && ./setup.sh && exit
+        run: cd ~/dotfiles && ./setup.sh
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.sh
 
@@ -120,7 +120,7 @@ jobs:
           gcloud config list
           # upgrade_all_softwareupdate
 
-      # session for debug
-      - name: setup tmate session for debug ssh
-        if: ${{ failure() }}
-        uses: mxschmitt/action-tmate@v3
+      # # session for debug
+      # - name: setup tmate session for debug ssh
+      #   if: ${{ failure() }}
+      #   uses: mxschmitt/action-tmate@v3
