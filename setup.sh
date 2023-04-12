@@ -10,16 +10,15 @@ if [[ ! -e $HOME/.gitconfig.local ]]; then
   cp git/.gitconfig.local "$HOME/.gitconfig.local"
 fi
 
+# macos
+source "$HOME/dotfiles/macos/setup.sh"
+source "$HOME/dotfiles/macos/.path.sh"
+
 # brew
 if ! which brew; then
   echo "installing homebrew https://brew.sh/"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
-
-source "$HOME/dotfiles/macos/setup.sh"
-source "$HOME/dotfiles/macos/.path.sh"
-
-# brew
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
 brew update
