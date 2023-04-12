@@ -1,8 +1,5 @@
-#!/usr/bin/env zsh
 # shellcheck disable=SC1091,SC1090
-
 set -euxo pipefail
-
 echo "start setup script"
 
 # git
@@ -16,7 +13,7 @@ fi
 # brew
 if ! which brew; then
   echo "installing homebrew https://brew.sh/"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 if [ "$(uname)" = "Darwin" ]; then
