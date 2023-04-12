@@ -25,28 +25,12 @@ jobs:
     strategy:
       # fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-latest]
         include:
-          - os: ubuntu-latest
-            login_shell: /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
           - os: macos-latest
             login_shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
     timeout-minutes: 60
     steps:
-      - name: workaround setup for github runner ubuntu
-        if: runner.os == 'Linux'
-        run: |-
-          sudo apt-get update
-          # See: https://docs.brew.sh/Homebrew-on-Linux
-          sudo apt-get install build-essential procps curl file git
-          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
-          sudo apt-get remove google-cloud-sdk
-          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/59#issuecomment-1039674710
-          sudo apt-get remove ruby
-          # See: https://github.com/rbenv/ruby-build/wiki#ubuntudebianmint
-          sudo apt-get install \
-          autoconf bison patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
-
       - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
         run: |-

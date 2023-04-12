@@ -1,7 +1,6 @@
 # dotfiles
 
-![macos](https://img.shields.io/badge/macos-black.svg?logo=Apple) ![linux](https://img.shields.io/badge/linux-black.svg?logo=Linux)  
-[![setup setup_machine](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_machine.yaml/badge.svg)](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_machine.yaml)
+![macos](https://img.shields.io/badge/macos-black.svg?logo=Apple) [![setup setup_machine](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_machine.yaml/badge.svg)](https://github.com/sensuikan1973/dotfiles/actions/workflows/setup_machine.yaml)
 
 ## setup
 

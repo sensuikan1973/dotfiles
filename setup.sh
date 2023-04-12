@@ -16,13 +16,8 @@ if ! which brew; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-if [ "$(uname)" = "Darwin" ]; then
-  source "$HOME/dotfiles/macos/setup.sh"
-  source "$HOME/dotfiles/macos/.path.sh"
-elif [ "$(uname)" = "Linux" ]; then
-  source "$HOME/dotfiles/linux/setup.sh"
-  source "$HOME/dotfiles/linux/.path.sh"
-fi
+source "$HOME/dotfiles/macos/setup.sh"
+source "$HOME/dotfiles/macos/.path.sh"
 
 # brew
 brew analytics off # See: https://docs.brew.sh/Analytics
