@@ -20,7 +20,8 @@ jobs:
         os: [macos-latest]
         include:
           - os: macos-latest
-            login_shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
+            # github runner macos is Intel Mac. See: https://github.com/actions/runner-images/issues/2187
+            login_shell: /usr/local/bin/zsh
     timeout-minutes: 60
     steps:
       - name: workaround setup for github runner macos
@@ -46,7 +47,7 @@ jobs:
           # See: https://qiita.com/sonots/items/16df445132e704198e3e
           # See: https://github.com/actions/checkout/issues/23
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
-          git checkout $GITHUB_SHA
+          git checkout "$GITHUB_SHA"
 
       # setup twice
       # NOTE: I want to ensure idempotent
@@ -87,7 +88,7 @@ jobs:
           echo "$SHELL"
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
-          source $HOME/.zshrc
+          source "$HOME/.zshrc"
           echo $GITHUB_HEAD_REF
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
@@ -98,7 +99,7 @@ jobs:
           echo "$SHELL"
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
-          source $HOME/.zshrc
+          source "$HOME/.zshrc"
           flutter doctor
           dart --version
           code --version
