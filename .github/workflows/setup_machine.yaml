@@ -72,7 +72,7 @@ jobs:
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          /usr/local/bin/zsh | /opt/homebrew/bin/zsh
+          /usr/local/bin/zsh || /opt/homebrew/bin/zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
@@ -96,7 +96,7 @@ jobs:
 
       - name: upgrade_system_deps test
         run: |-
-          /usr/local/bin/zsh | /opt/homebrew/bin/zsh
+          /usr/local/bin/zsh || /opt/homebrew/bin/zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
@@ -106,7 +106,7 @@ jobs:
       - name: rough command test for only macos
         if: runner.os == 'macOS'
         run: |-
-          /usr/local/bin/zsh | /opt/homebrew/bin/zsh
+          /usr/local/bin/zsh || /opt/homebrew/bin/zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
           source $HOME/.zshrc
