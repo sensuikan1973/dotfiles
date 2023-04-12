@@ -73,10 +73,11 @@ jobs:
         run: |-
           set -euxo pipefail
           source $HOME/.zshrc
+          which zsh
           zsh
+          echo "$ZSH_NAME" "$ZSH_VERSION"
           which brew
           brew --prefix
-          which zsh
           uname
           time
           cd $HOME/dotfiles
@@ -97,7 +98,9 @@ jobs:
         run: |-
           set -euo pipefail
           source $HOME/.zshrc
+          which zsh
           zsh
+          echo "$ZSH_NAME" "$ZSH_VERSION"
           echo $GITHUB_HEAD_REF
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
@@ -106,7 +109,9 @@ jobs:
         run: |-
           set -euxo pipefail
           source $HOME/.zshrc
+          which zsh
           zsh
+          echo "$ZSH_NAME" "$ZSH_VERSION"
           flutter doctor
           dart --version
           code --version
