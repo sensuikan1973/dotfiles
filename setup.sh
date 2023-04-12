@@ -17,13 +17,10 @@ brew doctor
 
 # zsh
 source "$HOME/dotfiles/zsh/setup.sh"
-which zsh
-zsh
-echo "$ZSH_NAME" "$ZSH_VERSION"
+zsh -c "echo \"$ZSH_NAME\" \"$ZSH_VERSION\""
 
 # macos
 source "$HOME/dotfiles/macos/setup.sh"
-source "$HOME/dotfiles/macos/.path.sh"
 
 # others
 source "$HOME/dotfiles/git/setup.sh"
