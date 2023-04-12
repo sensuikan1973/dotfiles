@@ -32,7 +32,6 @@ jobs:
         if: runner.os == 'Linux'
         run: |-
           sudo apt-get update
-          sudo apt-get install zsh
           # See: https://docs.brew.sh/Homebrew-on-Linux
           sudo apt-get install build-essential procps curl file git
           # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
