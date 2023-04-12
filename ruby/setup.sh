@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 # save time and space. I don't need Rdoc.
 # https://github.com/rbenv/ruby-build/issues/156
 # https://github.com/rbenv/ruby-build#custom-build-configuration
