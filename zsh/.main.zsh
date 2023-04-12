@@ -10,19 +10,19 @@ ZSH_SETTINGS_PATH="$HOME/dotfiles/zsh"
 autoload -Uz compinit && compinit -i
 
 # PATH
-source "$ZSH_SETTINGS_PATH/.path.sh"
+source "$ZSH_SETTINGS_PATH/.path.zsh"
 
 # PROMPT
-source "$ZSH_SETTINGS_PATH/.prompt.sh"
+source "$ZSH_SETTINGS_PATH/.prompt.zsh"
 
 # alias
-source "$ZSH_SETTINGS_PATH/.alias.sh"
+source "$ZSH_SETTINGS_PATH/.alias.zsh"
 
 # option
-source "$ZSH_SETTINGS_PATH/.opt.sh"
+source "$ZSH_SETTINGS_PATH/.opt.zsh"
 
 # plugin
-source "$ZSH_SETTINGS_PATH/.plugin.sh"
+source "$ZSH_SETTINGS_PATH/.plugin.zsh"
 
 # pyenv
 # See: https://github.com/pyenv/pyenv
