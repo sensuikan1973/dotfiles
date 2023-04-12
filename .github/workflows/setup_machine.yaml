@@ -84,8 +84,8 @@ jobs:
           rbenv --version
           nodenv --version
           pyenv --version
-          find-bigN 5
-          disk-rankN 5
+          find-bigN 3
+          disk-rankN 3
           force_prune_docker_system_all
           install_latest_nodejs
           install_latest_ruby
