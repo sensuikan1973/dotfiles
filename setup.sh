@@ -2,10 +2,6 @@
 set -euxo pipefail
 echo "start setup script"
 
-# macos
-source "$HOME/dotfiles/macos/setup.sh"
-source "$HOME/dotfiles/macos/.path.sh"
-
 # brew
 if ! which brew; then
   echo "installing homebrew https://brew.sh/"
@@ -18,6 +14,10 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew bundle check --file "$HOME/dotfiles/Brewfile"
 brew doctor
+
+# macos
+source "$HOME/dotfiles/macos/setup.sh"
+source "$HOME/dotfiles/macos/.path.sh"
 
 # zsh
 which zsh
