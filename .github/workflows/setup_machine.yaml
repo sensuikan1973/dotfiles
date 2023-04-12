@@ -38,8 +38,8 @@ jobs:
           sudo apt-get remove google-cloud-sdk
           # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/59#issuecomment-1039674710
           sudo apt-get remove ruby
-          # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
-          sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
+          # See: https://github.com/rbenv/ruby-build/wiki#ubuntudebianmint
+          sudo apt-get install autoconf bison patch build-essential rustc libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libgmp-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev uuid-dev
 
       - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
