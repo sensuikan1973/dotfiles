@@ -35,10 +35,10 @@ jobs:
           brew unlink python@3.11 && brew link --overwrite python@3.11
 
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
-          NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+          NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
 
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
-          rm -f /Applications/Google Chrome.app
+          sudo rm -f /Applications/Google Chrome.app
 
       - name: checkout repository to HOME
         run: |-
