@@ -22,12 +22,4 @@ git pull
 
 source "$HOME/dotfiles/setup.zsh"
 
-if command -v flutter &> /dev/null; then
-  flutter upgrade
-fi
-
-if command -v gcloud &> /dev/null; then
-  gcloud config set survey/disable_prompts True
-  gcloud config set core/disable_usage_reporting True
-  gcloud components update --quiet
-fi
+source "$HOME/dotfiles/macos/bin/upgrade_cask"

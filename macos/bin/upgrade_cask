@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+# shellcheck disable=SC1091
+
+set -euxo pipefail
+
+flutter upgrade
+
+gcloud config set survey/disable_prompts True
+gcloud config set core/disable_usage_reporting True
+gcloud components update --quiet
