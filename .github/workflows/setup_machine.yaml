@@ -65,12 +65,12 @@ jobs:
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        run: cd ~/dotfiles && ./setup.sh
+        run: cd ~/dotfiles && ./setup.sh && exit
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh
+        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
           which zsh
@@ -96,7 +96,7 @@ jobs:
           install_latest_ruby
 
       - name: upgrade_system_deps test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh
+        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
         run: |-
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
@@ -120,7 +120,7 @@ jobs:
           gcloud config list
           # upgrade_all_softwareupdate
 
-      # # session for debug
-      # - name: setup tmate session for debug ssh
-      #   if: ${{ failure() }}
-      #   uses: mxschmitt/action-tmate@v3
+      # session for debug
+      - name: setup tmate session for debug ssh
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
