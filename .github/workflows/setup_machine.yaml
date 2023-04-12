@@ -26,6 +26,11 @@ jobs:
       # fail-fast: false
       matrix:
         os: [ubuntu-latest, macos-latest]
+        include:
+          - os: ubuntu-latest
+            login_shell: /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
+          - os: macos-latest
+            login_shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
     timeout-minutes: 60
     steps:
       - name: workaround setup for github runner ubuntu
@@ -70,9 +75,9 @@ jobs:
         run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh || /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
+          ${{ matrix.login_shell }}
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
@@ -96,8 +101,8 @@ jobs:
           install_latest_ruby
 
       - name: upgrade_system_deps test
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh || /home/linuxbrew/.linuxbrew/bin/zsh # See: etc/shells
         run: |-
+          ${{ matrix.login_shell }}
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
@@ -107,8 +112,8 @@ jobs:
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
-        shell: /usr/local/bin/zsh || /opt/homebrew/bin/zsh # See: etc/shells
         run: |-
+          ${{ matrix.login_shell }}
           which zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
           set -euxo pipefail
