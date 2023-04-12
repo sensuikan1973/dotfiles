@@ -4,8 +4,6 @@
 set -euxo pipefail
 
 echo "start setup script"
-which zsh
-echo "$ZSH_NAME" "$ZSH_VERSION"
 
 # git
 ln -fs "$HOME/dotfiles/git/.gitignore" "$HOME/.gitignore"
@@ -14,10 +12,6 @@ if [[ ! -e $HOME/.gitconfig.local ]]; then
   echo "copy .gitconfig.local"
   cp git/.gitconfig.local "$HOME/.gitconfig.local"
 fi
-
-# zsh
-ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-source "$HOME/dotfiles/zsh/install_plugins.zsh"
 
 # brew
 if ! which brew; then
@@ -41,8 +35,15 @@ brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
 
-source "$HOME/dotfiles/etc/setup.zsh"
+# zsh
+which zsh
+echo "$ZSH_NAME" "$ZSH_VERSION"
+ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
+source "$HOME/dotfiles/zsh/install_plugins.zsh"
 
+# others
+source "$HOME/dotfiles/etc/setup.zsh"
 source "$HOME/dotfiles/ruby/setup.zsh"
+source "$HOME/dotfiles/nodejs/setup.zsh"
 
 echo "setup has succeeded"
