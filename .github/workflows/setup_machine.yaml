@@ -52,12 +52,7 @@ jobs:
           rm '/usr/local/bin/idle3.11'
           brew unlink python@3.11 && brew link --overwrite python@3.11
 
-      - name: show native zsh info
-        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
-        run: echo $ZSH_NAME $ZSH_VERSION
-
       - name: checkout repository to HOME
-        shell: zsh {0}
         run: |-
           git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
@@ -69,11 +64,9 @@ jobs:
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: cd ~/dotfiles && ./setup.sh
       - name: 2nd, run setup script
-        shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
         shell: zsh {0}
