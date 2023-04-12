@@ -54,8 +54,8 @@ jobs:
 
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
+        shell: /usr/local/bin/zsh # See: etc/shells and https://github.com/actions/runner-images/issues/2187
         run: |-
-          exec zsh --login
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
@@ -80,8 +80,8 @@ jobs:
           install_latest_ruby
 
       - name: upgrade_system_deps test
+        shell: /usr/local/bin/zsh
         run: |-
-          exec zsh --login
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
@@ -90,8 +90,8 @@ jobs:
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
+        shell: /usr/local/bin/zsh
         run: |-
-          exec zsh --login
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
