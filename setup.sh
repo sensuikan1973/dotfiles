@@ -17,11 +17,11 @@ if ! which brew; then
 fi
 
 if [ "$(uname)" = "Darwin" ]; then
-  source "$HOME/dotfiles/macos/setup.zsh"
-  source "$HOME/dotfiles/macos/.path.zsh"
+  source "$HOME/dotfiles/macos/setup.sh"
+  source "$HOME/dotfiles/macos/.path.sh"
 elif [ "$(uname)" = "Linux" ]; then
-  source "$HOME/dotfiles/linux/setup.zsh"
-  source "$HOME/dotfiles/linux/.path.zsh"
+  source "$HOME/dotfiles/linux/setup.sh"
+  source "$HOME/dotfiles/linux/.path.sh"
 fi
 
 # brew
@@ -37,11 +37,11 @@ brew doctor || true
 which zsh
 echo "$ZSH_NAME" "$ZSH_VERSION"
 ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-source "$HOME/dotfiles/zsh/install_plugins.zsh"
+source "$HOME/dotfiles/zsh/install_plugins.sh"
 
 # others
-source "$HOME/dotfiles/etc/setup.zsh"
-source "$HOME/dotfiles/ruby/setup.zsh"
-source "$HOME/dotfiles/nodejs/setup.zsh"
+source "$HOME/dotfiles/etc/setup.sh"
+source "$HOME/dotfiles/ruby/setup.sh"
+source "$HOME/dotfiles/nodejs/setup.sh"
 
 echo "setup has succeeded"

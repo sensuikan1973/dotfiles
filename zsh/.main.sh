@@ -10,30 +10,30 @@ ZSH_SETTINGS_PATH="$HOME/dotfiles/zsh"
 autoload -Uz compinit && compinit -i
 
 # PATH
-source "$ZSH_SETTINGS_PATH/.path.zsh"
+source "$ZSH_SETTINGS_PATH/.path.sh"
 
 # PROMPT
-source "$ZSH_SETTINGS_PATH/.prompt.zsh"
+source "$ZSH_SETTINGS_PATH/.prompt.sh"
 
 # alias
-source "$ZSH_SETTINGS_PATH/.alias.zsh"
+source "$ZSH_SETTINGS_PATH/.alias.sh"
 
 # option
-source "$ZSH_SETTINGS_PATH/.opt.zsh"
+source "$ZSH_SETTINGS_PATH/.opt.sh"
 
 # plugin
-source "$ZSH_SETTINGS_PATH/.plugin.zsh"
+source "$ZSH_SETTINGS_PATH/.plugin.sh"
 
 # pyenv
 # See: https://github.com/pyenv/pyenv
-eval "$(pyenv init - zsh)"
+eval "$(pyenv init -)"
 
 # rbenv
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init -)"
 
 # nodenv
 # See: https://github.com/nodenv/nodenv
-eval "$(nodenv init - zsh)"
+eval "$(nodenv init -)"
 
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT

@@ -9,11 +9,11 @@ for rb_version in $(rbenv versions --bare); do
   echo "installing ruby $rb_version"
   rbenv install "$rb_version" --skip-existing
   rbenv rehash
-  eval "$(rbenv init - zsh)"
+  eval "$(rbenv init -)"
   rbenv shell "$rb_version"
   gem update --system --no-document
 done
 
 # https://github.com/rbenv/rbenv-installer#rbenv-doctor
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init -)"
 curl -fsSL https://github.com/rbenv/rbenv-installer/raw/main/bin/rbenv-doctor | bash
