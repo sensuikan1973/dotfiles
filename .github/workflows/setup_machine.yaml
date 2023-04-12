@@ -71,11 +71,10 @@ jobs:
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         run: |-
-          set -euxo pipefail
-          source $HOME/.zshrc
-          which zsh
           zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
+          set -euxo pipefail
+          source $HOME/.zshrc
           which brew
           brew --prefix
           uname
@@ -96,22 +95,20 @@ jobs:
 
       - name: upgrade_system_deps test
         run: |-
-          set -euo pipefail
-          source $HOME/.zshrc
-          which zsh
           zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
+          set -euxo pipefail
+          source $HOME/.zshrc
           echo $GITHUB_HEAD_REF
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
       - name: rough command test for only macos
         if: runner.os == 'macOS'
         run: |-
-          set -euxo pipefail
-          source $HOME/.zshrc
-          which zsh
           zsh
           echo "$ZSH_NAME" "$ZSH_VERSION"
+          set -euxo pipefail
+          source $HOME/.zshrc
           flutter doctor
           dart --version
           code --version
