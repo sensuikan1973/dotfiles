@@ -10,8 +10,6 @@
 git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ./setup.sh # This script has idempotence.
-exec zsh --login
-echo "$ZSH_NAME" "$ZSH_VERSION"
 ```
 
 ### 2. git

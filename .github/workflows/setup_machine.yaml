@@ -53,17 +53,9 @@ jobs:
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        run: |-
-          cd ~/dotfiles
-          ./setup.sh
-          exec zsh --login
-          echo "$ZSH_NAME" "$ZSH_VERSION"
+        run: cd ~/dotfiles && ./setup.sh
       - name: 2nd, run setup script
-        run: |-
-          cd ~/dotfiles
-          ./setup.sh
-          exec zsh --login
-          echo "$ZSH_NAME" "$ZSH_VERSION"
+        run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables

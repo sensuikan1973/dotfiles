@@ -15,14 +15,16 @@ brew bundle --file "$HOME/dotfiles/Brewfile"
 brew bundle check --file "$HOME/dotfiles/Brewfile"
 brew doctor
 
+# zsh
+which zsh
+exec zsh --login
+echo "$ZSH_NAME" "$ZSH_VERSION"
+ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
+source "$HOME/dotfiles/zsh/install_plugins.sh"
+
 # macos
 source "$HOME/dotfiles/macos/setup.sh"
 source "$HOME/dotfiles/macos/.path.sh"
-
-# zsh
-which zsh
-ln -fs "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-source "$HOME/dotfiles/zsh/install_plugins.sh"
 
 # others
 source "$HOME/dotfiles/git/setup.sh"
