@@ -23,9 +23,3 @@ Syncs your system with this repository and upgrade system dependencies and tools
 # This script has idempotence.
 upgrade_system_deps
 ```
-
----
-
-## references
-
-- macos migration from bash to [zsh](http://www.strcat.de/zsh/): https://support.apple.com/ja-jp/HT208050
