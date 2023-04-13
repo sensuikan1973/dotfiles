@@ -91,14 +91,6 @@ jobs:
           source "$HOME/.zshrc"
           echo "$GITHUB_HEAD_REF"
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
-
-      - name: rough command test for only macos
-        if: runner.os == 'macOS'
-        shell: /usr/local/bin/zsh {0}
-        run: |-
-          echo "$SHELL"
-          set -euxo pipefail
-          source "$HOME/.zshrc"
           flutter doctor
           dart --version
           code --version
