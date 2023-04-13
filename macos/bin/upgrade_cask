@@ -3,7 +3,7 @@
 
 set -euxo pipefail
 
-flutter upgrade
+flutter upgrade --force
 
 gcloud config set survey/disable_prompts True
 gcloud config set core/disable_usage_reporting True
