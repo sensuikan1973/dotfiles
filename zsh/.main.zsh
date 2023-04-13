@@ -26,14 +26,14 @@ source "$ZSH_SETTINGS_PATH/.plugin.zsh"
 
 # pyenv
 # See: https://github.com/pyenv/pyenv
-eval "$(pyenv init - zsh)"
+eval "$(pyenv init -)"
 
 # rbenv
-eval "$(rbenv init - zsh)"
+eval "$(rbenv init -)"
 
 # nodenv
 # See: https://github.com/nodenv/nodenv
-eval "$(nodenv init - zsh)"
+eval "$(nodenv init -)"
 
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT

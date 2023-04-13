@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
+  # See: https://www.shellcheck.net/wiki/
   shellcheck:
     runs-on: ubuntu-latest
     steps:

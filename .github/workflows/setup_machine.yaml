@@ -3,21 +3,13 @@ name: setup machine
 
 on:
   pull_request:
-    paths:
-      - '**/*'
-      - '!.vscode/**/*'
-      - '!**.md'
-      - '!.github/**/*'
-      - '.github/workflows/setup_machine.yaml'
   push:
     branches: [main]
-    paths:
-      - '**/*'
-      - '!.vscode/**/*'
-      - '!**.md'
-      - '!.github/**/*'
-      - '.github/workflows/setup_machine.yaml'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   setup_and_update:
@@ -25,27 +17,12 @@ jobs:
     strategy:
       # fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [macos-latest]
     timeout-minutes: 60
     steps:
-      - name: workaround setup for github runner ubuntu
-        if: runner.os == 'Linux'
-        run: |-
-          sudo apt-get update
-          sudo apt-get install zsh
-          # See: https://docs.brew.sh/Homebrew-on-Linux
-          sudo apt-get install build-essential procps curl file git
-          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/57#issuecomment-1039400757
-          sudo apt-get remove google-cloud-sdk
-          # NOTE: workaround for https://github.com/sensuikan1973/dotfiles/pull/59#issuecomment-1039674710
-          sudo apt-get remove ruby
-          # See: https://github.com/rbenv/ruby-build/wiki#suggested-build-environment
-          sudo apt-get install autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libdb-dev
-
       - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
         run: |-
-          brew uninstall go # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502176411
           # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
           rm '/usr/local/bin/2to3'
           rm '/usr/local/bin/2to3-3.11'
@@ -53,68 +30,67 @@ jobs:
           rm '/usr/local/bin/idle3.11'
           brew unlink python@3.11 && brew link --overwrite python@3.11
 
-      - name: show native zsh info
-        shell: zsh {0} # See: https://github.com/actions/virtual-environments/issues/264#issuecomment-574032011
-        run: echo $ZSH_NAME $ZSH_VERSION
+          # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
+          NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
+
+          # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
+          sudo rm -rf /Applications/Google\ Chrome.app
 
       - name: checkout repository to HOME
-        shell: zsh {0}
         run: |-
           git clone https://github.com/sensuikan1973/dotfiles.git ~/dotfiles
           cd ~/dotfiles
           # See: https://qiita.com/sonots/items/16df445132e704198e3e
           # See: https://github.com/actions/checkout/issues/23
           git fetch origin '+refs/pull/*:refs/remotes/pr/*' --prune
-          git checkout $GITHUB_SHA
+          git checkout "$GITHUB_SHA"
 
       # setup twice
       # NOTE: I want to ensure idempotent
       - name: 1st, run setup script
-        shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: cd ~/dotfiles && ./setup.sh
       - name: 2nd, run setup script
-        shell: zsh {0}
-        run: cd ~/dotfiles && zsh ./setup.zsh
+        run: cd ~/dotfiles && ./setup.sh
 
       - name: rough command test
-        shell: zsh {0}
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
+        # See: etc/shells and https://github.com/actions/runner-images/issues/2187
+        shell: /usr/local/bin/zsh {0}
         run: |-
+          echo "$SHELL"
           set -euxo pipefail
-          source $HOME/.zshrc
+          source "$HOME/.zshrc"
+          zsh --version
           which brew
           brew --prefix
-          which zsh
           uname
           time
-          cd $HOME/dotfiles
+          cd "$HOME/dotfiles"
           ls
           la
           ll
           g status && fp
-          rbenv help
-          nodenv help
-          pyenv help
-          find-bigN 5
-          disk-rankN 5
+          rbenv --version
+          nodenv --version
+          pyenv --version
+          # my functions
+          find-bigN 3
+          disk-rankN 3
           force_prune_docker_system_all
           install_latest_nodejs
+          # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1506168490
+          # https://github.com/rbenv/ruby-build/discussions/2118
+          brew reinstall libyaml
           install_latest_ruby
 
       - name: upgrade_system_deps test
-        shell: zsh {0}
+        shell: /usr/local/bin/zsh {0}
         run: |-
-          set -euo pipefail
-          source $HOME/.zshrc
-          echo $GITHUB_HEAD_REF
-          upgrade_system_deps -branch "$GITHUB_HEAD_REF"
-
-      - name: rough command test for only macos
-        if: runner.os == 'macOS'
-        shell: zsh {0}
-        run: |-
+          echo "$SHELL"
           set -euxo pipefail
-          source $HOME/.zshrc
+          source "$HOME/.zshrc"
+          echo "$GITHUB_HEAD_REF"
+          upgrade_system_deps -branch "$GITHUB_HEAD_REF"
           flutter doctor
           dart --version
           code --version

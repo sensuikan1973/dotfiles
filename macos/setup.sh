@@ -4,7 +4,7 @@ set -euxo pipefail
 
 # defaults
 # See: https://github.com/koalaman/shellcheck/wiki/SC2044#for-posix
-find "$HOME/dotfiles/macos/defaults" ! -name "$(printf "*\n*")" -type f -name "*.zsh" > tmp
+find "$HOME/dotfiles/macos/defaults" ! -name "$(printf "*\n*")" -type f -name "*.sh" > tmp
 while IFS= read -r file
 do
   echo "run $file"

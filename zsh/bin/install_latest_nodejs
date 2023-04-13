@@ -7,6 +7,6 @@ latest_version=$(\
     sort --version-sort --reverse | \
     head -1
 )
-nodenv install "$latest_version" --skip-existing
+nodenv install "$latest_version" --skip-existing --verbose
 nodenv rehash
 nodenv versions

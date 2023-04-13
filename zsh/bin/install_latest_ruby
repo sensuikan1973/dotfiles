@@ -1,12 +1,18 @@
 #!/usr/bin/env zsh
 set -euxo pipefail
 
+# save time and space. I don't need Rdoc.
+# https://github.com/rbenv/ruby-build/issues/156
+# https://github.com/rbenv/ruby-build#custom-build-configuration
+# https://github.com/ruby/ruby/commit/32e00d382f4ef204ac21868ded101597e36d230d
+export RUBY_CONFIGURE_OPTS="--disable-install-doc"
+
 latest_version=$(\
     rbenv install --list | \
     grep -E "^([0-9]+\.){1}[0-9]+(\.[0-9]+)?$" | \
     sort --version-sort --reverse | \
     head -1\
 )
-rbenv install "$latest_version" --skip-existing
+rbenv install "$latest_version" --skip-existing --verbose
 rbenv rehash
 rbenv versions
