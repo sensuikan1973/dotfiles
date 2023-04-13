@@ -13,6 +13,6 @@ latest_version=$(\
     sort --version-sort --reverse | \
     head -1\
 )
-rbenv install "$latest_version" --skip-existing
+rbenv install "$latest_version" --skip-existing --verbose
 rbenv rehash
 rbenv versions
