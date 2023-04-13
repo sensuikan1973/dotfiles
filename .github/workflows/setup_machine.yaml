@@ -23,16 +23,8 @@ jobs:
       - name: workaround setup for github runner macos
         if: runner.os == 'macOS'
         run: |-
-          # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
-          rm '/usr/local/bin/2to3'
-          rm '/usr/local/bin/2to3-3.11'
-          rm '/usr/local/bin/idle3'
-          rm '/usr/local/bin/idle3.11'
-          brew unlink python@3.11 && brew link --overwrite python@3.11
-
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
-
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
           sudo rm -rf /Applications/Google\ Chrome.app
 
