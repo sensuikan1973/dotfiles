@@ -1,4 +1,6 @@
 ln -fs "$HOME/dotfiles/ruby/.gemrc" "$HOME/.gemrc"
+
+eval "$(rbenv init -)"
 for rb_version in $(rbenv versions --bare); do
   rbenv shell "$rb_version"
   gem update --system --no-document
