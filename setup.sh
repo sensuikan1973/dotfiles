@@ -13,7 +13,7 @@ brew update
 brew upgrade
 brew bundle --file "$HOME/dotfiles/Brewfile"
 brew bundle check --file "$HOME/dotfiles/Brewfile"
-brew doctor
+brew doctor || true
 
 # zsh
 source "$HOME/dotfiles/zsh/setup.sh"
