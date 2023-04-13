@@ -78,6 +78,7 @@ jobs:
           disk-rankN 3
           force_prune_docker_system_all
           install_latest_nodejs
+          brew reinstall libyaml # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1506168490
           install_latest_ruby
 
       - name: upgrade_system_deps test
