@@ -17,7 +17,7 @@ jobs:
     strategy:
       # fail-fast: false
       matrix:
-        os: [macos-latest]
+        os: [macos-latest-xl]
     timeout-minutes: 60
     steps:
       - name: workaround setup for github runner macos
