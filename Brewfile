@@ -5,7 +5,6 @@
 # If you use another packages, you can install individually.
 
 tap "homebrew/bundle"
-tap "homebrew/core"
 
 brew "zsh" # want to use latest zsh
 brew "git" # want to use latest git
