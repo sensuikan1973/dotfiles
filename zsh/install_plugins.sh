@@ -18,7 +18,6 @@ function install_plugin() {
   fi
 }
 
-install_plugin "https://github.com/zsh-users/zsh-syntax-highlighting.git" "zsh-syntax-highlighting"
 install_plugin "https://github.com/seebi/dircolors-solarized.git" "dircolors-solarized"
 
 echo "zsh plugins has been installed"
