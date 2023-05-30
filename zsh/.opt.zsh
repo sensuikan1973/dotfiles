@@ -80,5 +80,5 @@ setopt rm_star_wait
 # when exit code != 0, print the code
 setopt print_exit_value
 
-DIRSTACKSIZE=100
+export DIRSTACKSIZE=100
 setopt AUTO_PUSHD
