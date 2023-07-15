@@ -19,7 +19,7 @@ jobs:
         with:
           repository: "sensuikan1973/dotfiles"
       # See: https://github.com/actions/labeler/issues/575
-      - uses: actions/labeler@v5.0.0-alpha.1
+      - uses: actions/labeler@master
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           dot: true
