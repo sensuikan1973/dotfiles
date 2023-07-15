@@ -41,7 +41,7 @@ setopt interactivecomments
 setopt numeric_glob_sort
 
 # share history with other terminal on the same host.
-setopt share_history
+# setopt share_history
 
 # ignore duplicated command on history.
 setopt hist_ignore_dups
