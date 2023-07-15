@@ -40,9 +40,6 @@ setopt interactivecomments
 # not alphabetical but numeric sort.
 setopt numeric_glob_sort
 
-# share history with other terminal on the same host.
-setopt share_history
-
 # ignore duplicated command on history.
 setopt hist_ignore_dups
 setopt hist_ignore_all_dups
@@ -82,3 +79,11 @@ setopt print_exit_value
 
 export DIRSTACKSIZE=100
 setopt AUTO_PUSHD
+
+## ===== I don't like opts =====
+
+# auto completion by Tab repeat.
+unsetopt auto_menu
+
+# share history with other terminal on the same host.
+unsetopt share_history
