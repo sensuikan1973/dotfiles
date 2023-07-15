@@ -82,3 +82,6 @@ setopt print_exit_value
 
 export DIRSTACKSIZE=100
 setopt AUTO_PUSHD
+
+# I don't like auto completion by Tab repeat
+unsetopt auto_menu
