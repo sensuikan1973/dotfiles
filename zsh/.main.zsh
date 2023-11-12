@@ -40,8 +40,5 @@ TIMEFMT='
 ==============================
 cmd     : %J
 time    : %E (user: %U, system: %S)
-cpu     : %P
-max rss : %M KB
 =============================='
 REPORTTIME=3 # notify time if running time takes 3 or larger seconds.
-REPORTMEMORY=$((100000)) # notify time if use max rss 100MB or larger.
