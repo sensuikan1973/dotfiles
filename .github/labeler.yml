@@ -1,29 +1,37 @@
 ---
 GitHub Actions:
-  - .github/workflows/**/*
-  - .github/scripts/**/*
-  - .github/dependabot.yml
-  - .github/labeler.yml
-  - .github/.typos_config.toml
+  - changed-files:
+      - any-glob-to-any-file: .github/workflows/**/*
+      - any-glob-to-any-file: .github/scripts/**/*
+      - any-glob-to-any-file: .github/dependabot.yml
+      - any-glob-to-any-file: .github/labeler.yml
+      - any-glob-to-any-file: .github/.typos_config.toml
 
 git:
-  - git/**/*
+  - changed-files:
+      - any-glob-to-any-file: git/**/*
 
 linux:
-  - linux/**/*
+  - changed-files:
+      - any-glob-to-any-file: linux/**/*
 
 macos:
-  - macos/**/*
+  - changed-files:
+      - any-glob-to-any-file: macos/**/*
 
 iTerm2:
-  - macos/iterm2/**/*
+  - changed-files:
+      - any-glob-to-any-file: macos/iterm2/**/*
 
 zsh:
-  - zsh/**/*
-  - etc/**/*
+  - changed-files:
+      - any-glob-to-any-file: zsh/**/*
+      - any-glob-to-any-file: etc/**/*
 
 ruby:
-  - ruby/**/*
+  - changed-files:
+      - any-glob-to-any-file: ruby/**/*
 
 nodejs:
-  - nodejs/**/*
+  - changed-files:
+      - any-glob-to-any-file: nodejs/**/*
