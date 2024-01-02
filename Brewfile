@@ -18,6 +18,7 @@ brew "nodenv" # want to use multiple version nodejs
 brew "openssl"
 brew "zsh-syntax-highlighting"
 brew "cocoapods" # for iOS app "Orca" and Flutter macOS app "pedax"
+brew "p7zip" # for https://github.com/sensuikan1973/libedax4dart/blob/25b7be1c522306cbe0f6066dd982e86030157782/scripts/build_libedax.sh#L20C1-L21
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
