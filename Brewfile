@@ -17,6 +17,7 @@ brew "pyenv" # want to use multiple version python
 brew "nodenv" # want to use multiple version nodejs
 brew "openssl"
 brew "zsh-syntax-highlighting"
+brew "cocoapods" # for iOS app "Orca" and Flutter macOS app "pedax"
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
