@@ -15,7 +15,8 @@ brew "rbenv" # want to use multiple version ruby
 brew "ruby-build"
 brew "pyenv" # want to use multiple version python
 brew "nodenv" # want to use multiple version nodejs
-brew "openssl"
+brew "openssl@3"
+brew "openssl@1.1" # for job with reluctance
 brew "zsh-syntax-highlighting"
 brew "p7zip" # for https://github.com/sensuikan1973/libedax4dart/blob/25b7be1c522306cbe0f6066dd982e86030157782/scripts/build_libedax.sh#L20C1-L21
 
