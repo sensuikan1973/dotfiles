@@ -76,6 +76,7 @@ jobs:
           # https://github.com/rbenv/ruby-build/discussions/2118
           brew reinstall libyaml
           install_latest_ruby
+          7z i
 
       - name: upgrade_system_deps test
         shell: /usr/local/bin/zsh {0}
