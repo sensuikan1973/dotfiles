@@ -17,6 +17,7 @@ brew "pyenv" # want to use multiple version python
 brew "nodenv" # want to use multiple version nodejs
 brew "openssl"
 brew "zsh-syntax-highlighting"
+brew "p7zip" # for https://github.com/abulmo/edax-reversi/releases/tag/v4.4
 
 if OS.mac?
   eval File.read("#{ENV['HOME']}/dotfiles/macos/Brewfile")
