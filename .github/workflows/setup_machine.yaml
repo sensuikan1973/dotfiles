@@ -77,10 +77,11 @@ jobs:
           # https://github.com/rbenv/ruby-build/discussions/2118
           brew reinstall libyaml
           install_latest_ruby
-          unset NODENV_VERSION # https://www.aruse.net/entry/2020/03/21/131101
-          nodenv shell $(nodenv versions | head -n 1)
+          export NODENV_VERSION=$(nodenv versions | head -n 1) # https://www.aruse.net/entry/2020/03/21/131101
+          node --version
           yarn --version
           rbenv shell $(rbenv versions | head -n 1)
+          ruby --version
           pod --version
           7z i
           openssl --version
