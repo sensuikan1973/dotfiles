@@ -82,6 +82,8 @@ jobs:
           yarn --version
           rbenv shell $(rbenv versions | head -n 1)
           pod --version
+          7z i
+          openssl --version
 
       - name: upgrade_system_deps test
         shell: /usr/local/bin/zsh {0}
