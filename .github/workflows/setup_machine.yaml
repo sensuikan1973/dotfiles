@@ -64,6 +64,7 @@ jobs:
           la
           ll
           g status && fp
+          7z i
           rbenv --version
           nodenv --version
           pyenv --version
@@ -76,9 +77,10 @@ jobs:
           # https://github.com/rbenv/ruby-build/discussions/2118
           brew reinstall libyaml
           install_latest_ruby
-          7z i
-          pod --version
+          nodenv shell $(nodenv versions | head -n 1)
           yarn --version
+          rbenv shell $(rbenv versions | head -n 1)
+          pod --version
 
       - name: upgrade_system_deps test
         shell: /usr/local/bin/zsh {0}
