@@ -82,7 +82,7 @@ jobs:
           yarn --version
           rbenv shell $(rbenv versions --bare | head -n 1)
           ruby --version
-          pod --version
+          # pod --version
           7z i
           openssl --version
 
