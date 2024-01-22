@@ -31,6 +31,8 @@ jobs:
           sudo rm -rf /Applications/Google\ Chrome.app
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
           rm -f '/usr/local/bin/pod'
+          # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903326589
+          rm '/usr/local/bin/2to3-3.12'
 
       - name: checkout repository to HOME
         run: |-
