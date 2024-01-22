@@ -7,6 +7,7 @@ curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doct
 # for https://github.com/sensuikan1973/pedax/tree/main/website
 for node_version in $(nodenv versions --bare); do
   NODENV_VERSION="$node_version"
+  echo "$NODENV_VERSION"
   nodenv versions
   corepack enable
 done
