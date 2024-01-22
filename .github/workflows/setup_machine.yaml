@@ -30,9 +30,11 @@ jobs:
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
           sudo rm -rf /Applications/Google\ Chrome.app
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
-          rm -f '/usr/local/bin/pod'
+          rm '/usr/local/bin/pod'
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903326589
           rm '/usr/local/bin/2to3-3.12'
+          # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903348781
+          rm '/usr/local/bin/idle3.12'
 
       - name: checkout repository to HOME
         run: |-
