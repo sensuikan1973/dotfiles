@@ -25,16 +25,12 @@ jobs:
         run: |-
           # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
           brew unlink python@3.11 && brew link --overwrite python@3.11
+          # https://github.com/sensuikan1973/dotfiles/pull/155
+          brew unlink python@3.12 && brew link --overwrite python@3.12
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
           sudo rm -rf /Applications/Google\ Chrome.app
-          # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
-          rm '/usr/local/bin/pod'
-          # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903326589
-          rm '/usr/local/bin/2to3-3.12'
-          # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903348781
-          rm '/usr/local/bin/idle3.12'
 
       - name: checkout repository to HOME
         run: |-
