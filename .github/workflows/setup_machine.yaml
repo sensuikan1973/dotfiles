@@ -99,6 +99,7 @@ jobs:
           set -euxo pipefail
           source "$HOME/.zshrc"
           echo "$GITHUB_HEAD_REF"
+          install_latest_nodejs
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
           flutter doctor
           dart --version
