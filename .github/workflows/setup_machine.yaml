@@ -28,7 +28,7 @@ jobs:
           # https://github.com/sensuikan1973/dotfiles/pull/155
           brew unlink python@3.12 && brew link --overwrite python@3.12
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
-          brew unlink cocoapods && brew link --overwrite cocoapods
+          rm -f '/usr/local/bin/pod'
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
