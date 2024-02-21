@@ -70,7 +70,6 @@ jobs:
           la
           ll
           g status && fp
-          7z i
           rbenv --version
           nodenv --version
           pyenv --version
