@@ -107,8 +107,8 @@ jobs:
           zsh --version
           echo "$GITHUB_HEAD_REF"
           # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
-          brew uninstall /opt/homebrew/bin/rbenv-install
-          brew uninstall /opt/homebrew/bin/rbenv
+          rm /opt/homebrew/bin/rbenv-install || true
+          rm /opt/homebrew/bin/rbenv || true
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
       # # session for debug
