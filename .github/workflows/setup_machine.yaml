@@ -23,7 +23,6 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: workaround setup for github runner macos
-        if: runner.os == 'macOS'
         run: |-
           # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
           brew unlink python@3.11 && brew link --overwrite python@3.11
