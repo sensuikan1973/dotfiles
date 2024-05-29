@@ -109,6 +109,9 @@ jobs:
           # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
           rm -f /opt/homebrew/bin/rbenv-install || true
           rm -f /opt/homebrew/bin/rbenv || true
+          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2138433241
+          rm -f /opt/homebrew/bin/nodenv-install || true
+          rm -f /opt/homebrew/bin/nodenv-install || true
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
       # # session for debug
