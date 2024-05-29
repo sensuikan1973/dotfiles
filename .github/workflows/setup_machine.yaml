@@ -58,6 +58,7 @@ jobs:
         # See: etc/shells and https://github.com/actions/runner-images/issues/2187
         # shell: /usr/local/bin/zsh {0} # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136544850
         run: |-
+          /usr/local/bin/zsh {0}
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
@@ -92,8 +93,9 @@ jobs:
           openssl --version
 
       - name: upgrade_system_deps test
-        shell: /usr/local/bin/zsh {0}
+        # shell: /usr/local/bin/zsh {0}
         run: |-
+          /usr/local/bin/zsh {0}
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
