@@ -32,6 +32,8 @@ jobs:
           brew unlink python@3.12 && brew link --overwrite python@3.12
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
           rm -f '/usr/local/bin/pod'
+          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
+          brew unlink rbenv
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
