@@ -51,7 +51,7 @@ jobs:
       - name: 1st, run setup script
         run: cd ~/dotfiles && ./setup.sh
       - name: 2nd, run setup script
-        run: cd ~/dotfiles && ./setup.sh
+        run: cd ~/dotfiles && ./setup.sh && which zsh
 
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
