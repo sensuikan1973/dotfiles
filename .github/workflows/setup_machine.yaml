@@ -32,8 +32,6 @@ jobs:
           brew unlink python@3.12 && brew link --overwrite python@3.12
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
           rm -f '/usr/local/bin/pod'
-          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
-          brew unlink rbenv
           # https://docs.brew.sh/FAQ#how-do-i-uninstall-homebrew
           NONINTERACTIVE=1 sudo /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/uninstall.sh)"
           # https://github.com/sensuikan1973/dotfiles/pull/129#issuecomment-1505823099
@@ -94,6 +92,11 @@ jobs:
           ruby --version
           # pod --version
           openssl --version
+          flutter doctor
+          dart --version
+          code --version
+          gcloud --version
+          gcloud config list
 
       - name: upgrade_system_deps test
         shell: zsh {0}
@@ -103,13 +106,10 @@ jobs:
           source "$HOME/.zshrc"
           zsh --version
           echo "$GITHUB_HEAD_REF"
+          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
+          brew uninstall /opt/homebrew/bin/rbenv-install
+          brew uninstall /opt/homebrew/bin/rbenv
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
-          flutter doctor
-          dart --version
-          code --version
-          gcloud --version
-          gcloud config list
-          # upgrade_all_softwareupdate
 
       # # session for debug
       # - name: setup tmate session for debug ssh
