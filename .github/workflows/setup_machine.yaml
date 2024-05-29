@@ -56,13 +56,12 @@ jobs:
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         # See: etc/shells and https://github.com/actions/runner-images/issues/2187
-        # shell: /usr/local/bin/zsh {0} # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136544850
         run: |-
+          $(which zsh)
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
           zsh --version
-          zsh
           which brew
           brew --prefix
           uname
@@ -93,13 +92,12 @@ jobs:
           openssl --version
 
       - name: upgrade_system_deps test
-        # shell: /usr/local/bin/zsh {0}
         run: |-
+          $(which zsh)
           echo "$SHELL"
           set -euxo pipefail
           source "$HOME/.zshrc"
           zsh --version
-          zsh
           echo "$GITHUB_HEAD_REF"
           upgrade_system_deps -branch "$GITHUB_HEAD_REF"
           flutter doctor
