@@ -17,7 +17,8 @@ jobs:
     strategy:
       # fail-fast: false
       matrix:
-        # macos-13 is for intel silicon mac. https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+        # macos-13 is for intel silicon mac.
+        # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
         os: [macos-latest, macos-13]
     timeout-minutes: 60
     steps:
