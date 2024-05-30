@@ -15,13 +15,14 @@ jobs:
   setup_and_update:
     runs-on: ${{ matrix.os }}
     strategy:
-      # fail-fast: false
+      fail-fast: false
       matrix:
-        os: [macos-latest]
+        # macos-13 is for intel silicon mac.
+        # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+        os: [macos-latest, macos-13]
     timeout-minutes: 60
     steps:
       - name: workaround setup for github runner macos
-        if: runner.os == 'macOS'
         run: |-
           # https://github.com/sensuikan1973/dotfiles/pull/125#issuecomment-1502177344
           brew unlink python@3.11 && brew link --overwrite python@3.11
@@ -52,10 +53,12 @@ jobs:
       - name: 2nd, run setup script
         run: cd ~/dotfiles && ./setup.sh
 
+      - run: which zsh
+
       - name: rough command test
         # See: https://docs.github.com/ja/actions/learn-github-actions/environment-variables
         # See: etc/shells and https://github.com/actions/runner-images/issues/2187
-        shell: /usr/local/bin/zsh {0}
+        shell: zsh {0}
         run: |-
           echo "$SHELL"
           set -euxo pipefail
@@ -89,21 +92,27 @@ jobs:
           ruby --version
           # pod --version
           openssl --version
-
-      - name: upgrade_system_deps test
-        shell: /usr/local/bin/zsh {0}
-        run: |-
-          echo "$SHELL"
-          set -euxo pipefail
-          source "$HOME/.zshrc"
-          echo "$GITHUB_HEAD_REF"
-          upgrade_system_deps -branch "$GITHUB_HEAD_REF"
           flutter doctor
           dart --version
           code --version
           gcloud --version
           gcloud config list
-          # upgrade_all_softwareupdate
+
+      - name: upgrade_system_deps test
+        shell: zsh {0}
+        run: |-
+          echo "$SHELL"
+          set -euxo pipefail
+          source "$HOME/.zshrc"
+          zsh --version
+          echo "$GITHUB_HEAD_REF"
+          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2136927932
+          rm -f /opt/homebrew/bin/rbenv-install || true
+          rm -f /opt/homebrew/bin/rbenv || true
+          # https://github.com/sensuikan1973/dotfiles/pull/159#issuecomment-2138433241
+          rm -f /opt/homebrew/bin/nodenv-install || true
+          rm -f /opt/homebrew/bin/nodenv || true
+          upgrade_system_deps -branch "$GITHUB_HEAD_REF"
 
       # # session for debug
       # - name: setup tmate session for debug ssh

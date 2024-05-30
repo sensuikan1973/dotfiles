@@ -9,6 +9,7 @@ if ! which brew; then
 fi
 brew analytics off # See: https://docs.brew.sh/Analytics
 brew cleanup --prune=all
+brew autoremove
 brew tap --repair
 brew update
 brew upgrade
