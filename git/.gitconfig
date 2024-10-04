@@ -1,7 +1,7 @@
 [include]
     path = ~/.gitconfig.local
 [core]
-    editor          = code --wait # use Visual Studio Code
+    editor          = code --wait --new-window # use Visual Studio Code
     pager           = less
     whitespace      = fix,-indent-with-non-tab,trailing-space,cr-at-eol,space-before-tab
     excludesfile    = ~/.gitignore
