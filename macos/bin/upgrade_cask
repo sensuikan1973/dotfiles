@@ -4,6 +4,7 @@
 set -euxo pipefail
 
 flutter upgrade --force
+flutter --disable-analytics # https://docs.flutter.dev/reference/crash-reporting#disabling-analytics-reporting
 
 gcloud config set survey/disable_prompts True
 gcloud config set core/disable_usage_reporting True
