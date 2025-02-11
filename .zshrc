@@ -1,4 +1,4 @@
-# shellcheck disable=SC1091
+# shellcheck disable=SC1091,SC2015
 
 source "$HOME/dotfiles/macos/.main.zsh"
 
