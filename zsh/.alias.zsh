@@ -11,7 +11,7 @@ alias g='git'
 alias st='git status'
 alias b='git branch'
 alias amend='git commit --amend'
-alias fp='git fetch --all --prune'
+alias fp='git fetch --all --prune && git pull'
 
 # restart shell
 alias relogin='exec zsh --login'
