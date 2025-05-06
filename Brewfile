@@ -4,8 +4,6 @@
 # The packages which is always required are only listed.
 # If you use another packages, you can install individually.
 
-tap "homebrew/bundle"
-
 brew "zsh" # want to use latest zsh
 brew "zsh-syntax-highlighting"
 brew "git" # want to use latest git
