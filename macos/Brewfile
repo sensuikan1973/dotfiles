@@ -6,7 +6,7 @@ cask "iterm2"
 cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
 cask "docker-desktop"
 cask "google-chrome"
-cask "google-cloud-sdk"
+cask "gcloud-cli"
 cask "flutter"
 cask "android-studio"
 tap "dart-lang/dart"
