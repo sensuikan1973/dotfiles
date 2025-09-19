@@ -37,7 +37,7 @@
     tree        = log --graph --pretty='format:%C(yellow)%h%Creset %s %Cgreen(%an)%Creset %Cred%d%Creset'
     wt          = whatchanged --stat
     branch-name = symbolic-ref --short HEAD
-    delete-local-branches-merged-to = "!f () { git switch $1; git branch --merged | egrep -v '\\*|main|master' | xargs git branch -d; };f"
+    delete-local-branches-merged-to-main = "git branch --merged=main | grep -v main | grep -v '*' | xargs git branch -d"
 [push]
     # default = current # I want to avoid unintended push.
 [pull]
