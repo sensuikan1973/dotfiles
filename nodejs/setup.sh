@@ -10,5 +10,6 @@ for node_version in $(nodenv versions --bare); do
   nodenv shell "$node_version"
   nodenv versions
   npm install -g corepack
+  nodenv rehash
   corepack enable
 done
