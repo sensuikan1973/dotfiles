@@ -18,3 +18,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Dart Global Pub
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# openjdk
+# https://zenn.dev/hayato94087/articles/c0345e6c2c53e7
+export PATH="/usr/local/opt/openjdk/bin:$PATH"
