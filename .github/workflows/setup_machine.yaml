@@ -72,6 +72,8 @@ jobs:
           rbenv --version
           nodenv --version
           pyenv --version
+          javac -version
+          java -version
           # my functions
           find-bigN 3
           disk-rankN 3
