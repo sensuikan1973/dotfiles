@@ -10,3 +10,5 @@ defaults write "$domain" autohide-delay -float 0
 defaults write "$domain" orientation -string "left"
 
 defaults write "$domain" show-recents -bool false
+
+defaults write "$domain" tilesize -int 77
