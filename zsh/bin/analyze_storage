@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# 参考: https://qiita.com/hann-solo/items/879573a65d8aa201ae14
+sudo du --si -xct 1000000000 /System/Volumes/Data | tee >(grep -ve $'*	' > ~/Desktop/DiskSpace.txt) | sort -nr > ~/Desktop/SortedDiskSpace.txt
