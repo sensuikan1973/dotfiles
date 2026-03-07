@@ -6,10 +6,10 @@ cask "iterm2"
 cask "visual-studio-code" # NOTE: about settings, use https://code.visualstudio.com/docs/editor/settings-sync
 cask "docker-desktop"
 cask "google-chrome"
-cask "gcloud-cli"
+cask "gcloud-cli" # https://docs.cloud.google.com/sdk/docs/downloads-homebrew
 cask "flutter"
 cask "android-studio"
-cask "sequel-ace"
-cask "db-browser-for-sqlite"
+cask "sequel-ace" # https://sequel-ace.com/
+cask "db-browser-for-sqlite" # https://sqlitebrowser.org/dl/
 cask "corretto@17" # instead of https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/macos-install.html
 tap "dart-lang/dart"
