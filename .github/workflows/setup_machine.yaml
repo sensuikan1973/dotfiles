@@ -25,6 +25,7 @@ jobs:
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903326589
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903348781
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903356380
+          brew install python@3.12 || true
           brew unlink python@3.12 && brew link --overwrite python@3.12
           # https://github.com/sensuikan1973/dotfiles/pull/155#issuecomment-1903251250
           rm -f '/usr/local/bin/pod'
