@@ -12,4 +12,5 @@ cask "android-studio"
 cask "sequel-ace" # https://sequel-ace.com/
 cask "db-browser-for-sqlite" # https://sqlitebrowser.org/dl/
 cask "corretto@17" # instead of https://docs.aws.amazon.com/corretto/latest/corretto-17-ug/macos-install.html
+cask "anki"
 tap "dart-lang/dart"
