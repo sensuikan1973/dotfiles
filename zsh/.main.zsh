@@ -34,6 +34,9 @@ eval "$(rbenv init -)"
 # See: https://github.com/nodenv/nodenv
 eval "$(nodenv init -)"
 
+# direnv
+eval "$(direnv hook zsh)
+
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#Parameters-Used-By-The-Shell
 # See: https://zsh.sourceforge.io/Doc/Release/Parameters.html#index-TIMEFMT
 TIMEFMT='
