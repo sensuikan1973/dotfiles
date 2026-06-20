@@ -30,3 +30,6 @@ Temporary Items
 # my memo
 .memo.*
 .memo/
+
+# AI tools
+CLAUDE.local.md
