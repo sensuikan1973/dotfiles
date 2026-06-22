@@ -32,4 +32,5 @@ Temporary Items
 .memo/
 
 # AI tools
-CLAUDE.local.md # https://code.claude.com/docs/ja/memory#choose-where-to-put-claude-md-files
+# https://code.claude.com/docs/ja/memory#choose-where-to-put-claude-md-files
+CLAUDE.local.md
