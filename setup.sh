@@ -12,7 +12,7 @@ brew cleanup --prune=all
 brew autoremove
 brew tap --repair
 brew update
-brew upgrade
+brew upgrade --no-ask
 brew bundle install --file "$HOME/dotfiles/Brewfile"
 brew bundle check --file "$HOME/dotfiles/Brewfile"
 brew doctor || true
