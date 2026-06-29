@@ -1,5 +1,8 @@
 # shellcheck disable=SC1091,SC2034
 
+# homebrew
+eval "$(/opt/homebrew/bin/brew shellenv zsh)"
+
 # See: https://zsh.sourceforge.io/Doc/Release/Variables-Index.html
 
 ZSH_SETTINGS_PATH="$HOME/dotfiles/zsh"
