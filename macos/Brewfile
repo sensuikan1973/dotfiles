@@ -15,4 +15,4 @@ cask "corretto@17" # instead of https://docs.aws.amazon.com/corretto/latest/corr
 cask "anki"
 cask "slack"
 cask "brave-browser"
-tap "dart-lang/dart"
+tap "dart-lang/dart", trusted: true
