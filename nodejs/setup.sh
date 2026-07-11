@@ -1,7 +1,7 @@
 eval "$(nodenv init -)"
 
-# https://github.com/nodenv/nodenv#using-package-managers
-curl -fsSL https://github.com/nodenv/nodenv-installer/raw/master/bin/nodenv-doctor | bash
+# https://github.com/nodenv/nodenv-installer#nodenv-doctor
+curl -fsSL https://github.com/nodenv/nodenv-installer/raw/HEAD/bin/nodenv-doctor | bash
 
 # https://yarnpkg.com/getting-started/install
 for node_version in $(nodenv versions --bare); do
