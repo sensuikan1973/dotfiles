@@ -9,7 +9,7 @@ ZSH_SETTINGS_PATH="$HOME/dotfiles/zsh"
 
 # completion
 # See: 「man zshcompsys」
-autoload -Uz compinit && compinit -i
+autoload -Uz compinit && compinit -id
 
 # PATH
 source "$ZSH_SETTINGS_PATH/.path.zsh"
