@@ -8,4 +8,3 @@ export PATH="$PATH:$HOME/dotfiles/macos/bin"
 
 # brew
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/**/bin:$PATH"
