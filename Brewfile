@@ -12,7 +12,6 @@ brew "coreutils" # want to use gls
 brew "peco" # select command in history
 brew "rbenv" # want to use multiple version ruby
 brew "ruby-build"
-brew "pyenv" # want to use multiple version python
 brew "nodenv" # want to use multiple version nodejs
 brew "node-build"
 brew "openssl"
